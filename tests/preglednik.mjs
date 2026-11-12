@@ -1,8 +1,8 @@
 // Provjera stranice u pravom pregledniku (Chromium, preko Playwrighta).
 //
 // Pokretanje:  node tests/preglednik.mjs
-// Treba pakete "playwright" i (za provjeru hero animacije) "sharp". Ako nisu u projektu,
-// putanje se mogu zadati varijablama okoline PLAYWRIGHT_PATH i SHARP_PATH.
+// Treba paket "playwright". Ako nije u projektu, putanja se može zadati
+// varijablom okoline PLAYWRIGHT_PATH.
 // Snimke zaslona se spremaju u mapu iz varijable SNIMKE (ako je zadana).
 
 import { createRequire } from 'node:module';
@@ -14,13 +14,6 @@ import { fileURLToPath } from 'node:url';
 
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
-let sharp = null;
-try {
-  sharp = require(process.env.SHARP_PATH || 'sharp');
-} catch {
-  /* bez sharpa se preskače provjera hero animacije */
-}
-
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'site');
 const SNIMKE = process.env.SNIMKE || null;
 const STRANICE = ['index.html', 'hipoterapija.html', 'fizikalna-terapija.html', 'okupacijska-terapija.html', 'logopedska-terapija.html', 'privatnost.html'];
@@ -214,133 +207,30 @@ for (const [opis, tijelo, ocekivano] of slucajevi) {
   await zatvori();
 }
 
-// === 5. Hero animacija ===
-console.log('\nHero animacija');
-{
-  // Ako je animacija uključena u postavkama, sve sličice moraju postojati na disku.
-  const { postavke } = await import(new URL('../site/js/postavke.js', import.meta.url));
-  if (postavke.hero.ukljuceno) {
-    const nedostaju = [];
-    for (let broj = 1; broj <= postavke.hero.brojSlicica; broj++) {
-      const odgovor = await fetch(`${OSNOVA}/${postavke.hero.putanja(broj)}`);
-      if (!odgovor.ok || !(odgovor.headers.get('content-type') || '').startsWith('image/')) nedostaju.push(broj);
-    }
-    provjeri(nedostaju.length === 0, `svih ${postavke.hero.brojSlicica} sličica postoji${nedostaju.length ? ' — nedostaju: ' + nedostaju.join(', ') : ''}`);
-    const { stranica, problemi, zatvori } = await otvori('index.html');
-    await stranica.waitForSelector('.hero--animiran');
-    await stranica.waitForFunction(() => document.querySelector('[data-uvod]').hidden);
-    provjeri(problemi.length === 0, `prave sličice: hero se pokreće bez grešaka${problemi.length ? ' — ' + problemi.join('; ') : ''}`);
-    await stranica.waitForTimeout(800);
-    await snimi(stranica, 'hero-pravi-0.png', false);
-    for (const [udio, ime] of [[0.5, 'hero-pravi-50.png'], [0.95, 'hero-pravi-95.png']]) {
-      await stranica.evaluate((u) => {
-        const sekcija = document.querySelector('[data-hero]');
-        window.scrollTo({ top: sekcija.offsetTop + u * (sekcija.offsetHeight - window.innerHeight), behavior: 'instant' });
-      }, udio);
-      await stranica.waitForTimeout(900);
-      await snimi(stranica, ime, false);
-    }
-    await zatvori();
-  } else {
-    console.log('  (animacija je isključena u postavkama; prave sličice se ne provjeravaju)');
-  }
-}
-if (!sharp) {
-  console.log('  (preskočeno: nema paketa sharp za izradu ispitnih sličica)');
-} else {
-  const BROJ = 120;
-  const slicice = await Promise.all(
-    Array.from({ length: BROJ }, (_, i) => {
-      const siva = Math.round(20 + (i / (BROJ - 1)) * 200);
-      return sharp({ create: { width: 320, height: 180, channels: 3, background: { r: siva, g: siva, b: siva } } }).jpeg().toBuffer();
-    }),
-  );
-  const zatrazene = new Set();
-  const priprema = async (s) => {
-    await sPostavkama(s, (izvor) => izvor.replace(/ukljuceno: (true|false)/, 'ukljuceno: true'));
-    await s.route('**/assets/frames/konj-*.jpg', (ruta) => {
-      const broj = Number(/konj-(\d+)\.jpg/.exec(ruta.request().url())[1]);
-      zatrazene.add(broj);
-      ruta.fulfill({ contentType: 'image/jpeg', body: slicice[broj - 1] });
-    });
-  };
-  const sredinaPlatna = (s) =>
-    s.evaluate(() => {
-      const platno = document.querySelector('[data-hero-platno]');
-      return platno.getContext('2d').getImageData(Math.floor(platno.width / 2), Math.floor(platno.height / 2), 1, 1).data[0];
-    });
-  const aktivnaFaza = (s) => s.evaluate(() => [...document.querySelectorAll('[data-hero-faza]')].findIndex((e) => e.classList.contains('hero__faza--aktivna')));
-  const skrolajNa = async (s, udio) => {
-    await s.evaluate((u) => {
-      const sekcija = document.querySelector('[data-hero]');
-      window.scrollTo({ top: sekcija.offsetTop + u * (sekcija.offsetHeight - window.innerHeight), behavior: 'instant' });
-    }, udio);
-    await s.waitForTimeout(250);
-  };
-
-  {
-    const { stranica, problemi, zatvori } = await otvori('index.html', { priprema });
-    await stranica.waitForSelector('.hero--animiran');
-    await stranica.waitForFunction(() => document.querySelector('[data-uvod]').hidden);
-    await stranica.waitForTimeout(1500); // pozadinsko učitavanje ostalih sličica
-    provjeri(zatrazene.size === BROJ, `zatraženo je svih ${BROJ} sličica (zatraženo: ${zatrazene.size})`);
-    provjeri(problemi.length === 0, `animirani hero bez grešaka${problemi.length ? ' — ' + problemi.join('; ') : ''}`);
-
-    await skrolajNa(stranica, 0);
-    const naPocetku = [await sredinaPlatna(stranica), await aktivnaFaza(stranica)];
-    await skrolajNa(stranica, 0.5);
-    const naSredini = [await sredinaPlatna(stranica), await aktivnaFaza(stranica)];
-    await snimi(stranica, 'hero-animiran-sredina.png', false);
-    // Bijeli rub sličice mora se stopiti s krem podlogom stranice (#f7f2e8).
-    const rub = await stranica.evaluate(() => {
-      const okvir = document.querySelector('[data-hero-platno]').getBoundingClientRect();
-      return { x: Math.round(okvir.right - 20), y: Math.round(okvir.top + 20) };
-    });
-    const tocka = await sharp(await stranica.screenshot({ clip: { ...rub, width: 1, height: 1 } })).raw().toBuffer();
-    provjeri(Math.abs(tocka[0] - 0xf7) <= 2 && Math.abs(tocka[1] - 0xf2) <= 2 && Math.abs(tocka[2] - 0xe8) <= 2, `bijela pozadina sličice stapa se s podlogom (boja ruba: ${[...tocka.subarray(0, 3)]})`);
-    await skrolajNa(stranica, 1);
-    const naKraju = [await sredinaPlatna(stranica), await aktivnaFaza(stranica)];
-    await skrolajNa(stranica, 0);
-    const natrag = [await sredinaPlatna(stranica), await aktivnaFaza(stranica)];
-
-    provjeri(naPocetku[0] < naSredini[0] && naSredini[0] < naKraju[0], `sličica prati skrolanje prema dolje (${naPocetku[0]} < ${naSredini[0]} < ${naKraju[0]})`);
-    provjeri(Math.abs(natrag[0] - naPocetku[0]) <= 2, 'sličica se vraća pri skrolanju natrag');
-    provjeri(naPocetku[1] === 0 && naSredini[1] === 1 && naKraju[1] === 2 && natrag[1] === 0, `naslov prolazi faze 0, 1, 2 i natrag na 0 (${[naPocetku[1], naSredini[1], naKraju[1], natrag[1]]})`);
-    const zalijepljeno = await stranica.evaluate(() => {
-      window.scrollTo({ top: 600, behavior: 'instant' });
-      return Math.round(document.querySelector('.hero__pozornica').getBoundingClientRect().top);
-    });
-    const zaglavlje = await stranica.evaluate(() => document.querySelector('.zaglavlje').offsetHeight);
-    provjeri(Math.abs(zalijepljeno - zaglavlje) <= 2, `pozornica stoji na mjestu ispod zaglavlja (${zalijepljeno} px)`);
-    await zatvori();
-  }
-  {
-    zatrazene.clear();
-    const { stranica, zatvori } = await otvori('index.html', { sirina: 375, visina: 760, priprema });
-    provjeri(!(await stranica.locator('.hero--animiran').count()) && zatrazene.size === 0, 'mobitel: nema animacije i ne učitava se nijedna sličica');
-    provjeri(await stranica.locator('.hero__slika img').isVisible(), 'mobitel: prikazana je statična slika');
-    await zatvori();
-  }
-  {
-    zatrazene.clear();
-    const { stranica, zatvori } = await otvori('index.html', { kontekst: { reducedMotion: 'reduce' }, priprema });
-    provjeri(!(await stranica.locator('.hero--animiran').count()) && zatrazene.size === 0, 'smanjeno kretanje: nema animacije ni sličica');
-    const skrivenih = await stranica.evaluate(() => [...document.querySelectorAll('[data-pojavi]')].filter((e) => getComputedStyle(e).opacity !== '1' || getComputedStyle(e, '::after').content !== 'none').length);
-    provjeri(skrivenih === 0, 'smanjeno kretanje: sav sadržaj je vidljiv odmah');
-    await zatvori();
-  }
-  {
-    // Nijedna sličica se ne učita: hero ostaje statičan, a uvodni zaslon se sklanja.
-    const { stranica, zatvori } = await otvori('index.html', {
-      priprema: async (s) => {
-        await sPostavkama(s, (izvor) => izvor.replace(/ukljuceno: (true|false)/, 'ukljuceno: true'));
-        await s.route('**/assets/frames/konj-*.jpg', (ruta) => ruta.abort());
-      },
-    });
-    await stranica.waitForFunction(() => document.querySelector('[data-uvod]').hidden, null, { timeout: 6000 });
-    provjeri(!(await stranica.locator('.hero--animiran').count()) && (await stranica.locator('.hero__slika img').isVisible()), 'sličice se ne učitaju: ostaje statična slika');
-    await zatvori();
-  }
+// === 5. Hero ===
+console.log('\nHero');
+for (const [sirina, visina] of [[375, 760], [768, 1024], [1024, 768], [1440, 900], [1920, 1080]]) {
+  const { stranica, zatvori } = await otvori('index.html', { sirina, visina });
+  const stanje = await stranica.evaluate(() => {
+    const slika = document.querySelector('.hero__slika img');
+    const okvir = (birac) => document.querySelector(birac).getBoundingClientRect();
+    const naslov = okvir('.hero h1');
+    const gumb = okvir('.hero .gumb');
+    const redovi = [...document.querySelectorAll('.hero__red')].map((red) => red.getClientRects().length);
+    return {
+      ucitana: slika.complete && slika.naturalWidth > 0,
+      izvor: slika.currentSrc.split('/').pop(),
+      naslovURubu: naslov.left >= 0 && naslov.right <= window.innerWidth,
+      gumbDno: Math.round(gumb.bottom),
+      visina: window.innerHeight,
+      prelomljenihRedova: redovi.filter((broj) => broj > 1).length,
+    };
+  });
+  provjeri(stanje.ucitana, `hero @${sirina}: fotografija je učitana (${stanje.izvor})`);
+  provjeri(stanje.naslovURubu && stanje.prelomljenihRedova === 0, `hero @${sirina}: svaki red naslova stane u jedan redak`);
+  provjeri(stanje.gumbDno <= stanje.visina, `hero @${sirina}: gumb "Dogovorite termin" vidljiv je bez skrolanja (dno na ${stanje.gumbDno} od ${stanje.visina} px)`);
+  await snimi(stranica, `hero-${sirina}.png`, false);
+  await zatvori();
 }
 
 // === 6. Pojavljivanje, tipkovnica, izbornik, bez JavaScripta ===

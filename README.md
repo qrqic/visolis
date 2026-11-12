@@ -10,7 +10,7 @@ Statična stranica udruge Vis Solis. Čisti HTML, CSS i JavaScript, bez alata za
 | `site/css/` | Stilovi, podijeljeni po cjelinama |
 | `site/js/` | JavaScript moduli, svaki radi jednu stvar |
 | `site/data/aktualno.json` | Izborna najava na početnoj |
-| `site/assets/` | Slike, fontovi, sličice hero animacije |
+| `site/assets/` | Slike i fontovi |
 | `izvori/` | Izvorne fotografije (ne ulaze u git ni na internet) |
 | `alati/` | Skripta za pripremu fotografija |
 | `tests/` | Testovi |
@@ -48,7 +48,7 @@ Stranica se ne može pregledati dvoklikom na `index.html`, jer preglednik tako n
 
 Obavezni su `naslov` i `prikazuj_do`. Nakon dana `prikazuj_do` najava se sama skriva. Za uklanjanje najave upisati `{}`.
 
-**Telefon, adresa za slanje obrasca, hero animacija.** Sve je u `site/js/postavke.js`.
+**Telefon i adresa za slanje obrasca.** U `site/js/postavke.js`.
 
 **Boje.** Varijable na vrhu `site/css/osnova.css`.
 
@@ -58,13 +58,13 @@ Obavezni su `naslov` i `prikazuj_do`. Nakon dana `prikazuj_do` najava se sama sk
 
 **Nova fotografija.** Staviti izvornik u `izvori/`, dodati red u popis u `alati/obradi-slike.mjs` i pokrenuti `node alati/obradi-slike.mjs` (treba paket `sharp`).
 
-**Nove sličice hero animacije.** Novi video hoda staviti u `izvori/higgsfield/` i pokrenuti `node alati/izrezi-slicice.mjs izvori/higgsfield/<video>.mp4` (trebaju ffmpeg i paket `sharp`). Ako sličica nema, u `postavke.js` postaviti `hero.ukljuceno` na `false`.
+**Fotografija u heroju.** Nazivi datoteka su u `site/index.html` (sekcija HERO), a strana teksta i žarište u `site/css/hero.css`.
 
 ## Testovi
 
 ```
-npm test                    # logika: hero, učitavanje, aktualno, obrazac
-node tests/preglednik.mjs   # provjera u Chromiumu (trebaju paketi playwright i sharp)
+npm test                    # logika: aktualno, obrazac
+node tests/preglednik.mjs   # provjera u Chromiumu (treba paket playwright)
 ```
 
 ## Objava

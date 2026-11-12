@@ -46,23 +46,23 @@
     </div>
   </header>
 
-  <!-- Uvodni zaslon: prikazuje ga hero.js samo dok se učitavaju sličice animacije. -->
-  <div class="uvod" data-uvod hidden aria-hidden="true">
-    <img src="assets/img/znak.svg" width="64" height="72" alt="">
-    <span class="uvod__postotak"><span data-uvod-postotak>0</span> %</span>
-  </div>
-
   <main id="sadrzaj">
 
-    <!-- HERO -->
-    <section class="hero" id="vrh" data-hero aria-labelledby="hero-naslov">
-      <div class="spremnik hero__pozornica">
+    <!-- HERO: velika fotografija preko cijelog ekrana, tekst preko nje.
+         Za zamjenu fotografije promijeniti nazive datoteka ovdje i, po potrebi,
+         stranu teksta (klasa hero--tekst-lijevo ili hero--tekst-desno) i žarište u hero.css. -->
+    <section class="hero hero--tekst-desno" id="vrh" aria-labelledby="hero-naslov">
+      <picture class="hero__slika">
+        <source type="image/webp" srcset="assets/img/hero-glava-768.webp 768w, assets/img/hero-glava-1280.webp 1280w, assets/img/hero-glava-1920.webp 1920w, assets/img/hero-glava-2560.webp 2560w" sizes="100vw">
+        <img src="assets/img/hero-glava-1920.jpg" width="1920" height="1280" alt="Smeđi konj s crnom grivom i svijetlim ularom, glava izbliza, u hladu drveća" fetchpriority="high">
+      </picture>
+      <div class="spremnik hero__sadrzaj">
         <div class="hero__tekst">
           <span class="oznaka">Udruga za terapiju i aktivnosti pomoću konja · Bistra</span>
           <h1 id="hero-naslov">
-            <span class="hero__faza hero__faza--aktivna" data-hero-faza>Terapija uz konje.</span>
-            <span class="hero__faza" data-hero-faza>Korak po korak.</span>
-            <span class="hero__faza" data-hero-faza>U vašem ritmu.</span>
+            <span class="hero__red">Terapija uz konje.</span>
+            <span class="hero__red">Korak po korak.</span>
+            <span class="hero__red">U vašem ritmu.</span>
           </h1>
           <p class="uvodni">Vis Solis provodi hipoterapiju te fizikalnu, okupacijsku i logopedsku terapiju uz pomoć konja, za djecu i odrasle, u Gornjoj Bistri kraj Zagreba.</p>
           <div class="hero__radnje">
@@ -70,11 +70,6 @@
             <a class="strelica" href="#programi">Pogledajte programe</a>
           </div>
         </div>
-        <picture class="hero__slika">
-            <source type="image/webp" srcset="assets/img/hero-konj-640.webp 640w, assets/img/hero-konj-960.webp 960w" sizes="(min-width: 64rem) 50vw, 100vw">
-            <img src="assets/img/hero-konj-960.jpg" width="960" height="720" alt="Svijetlosmeđi konj sa svijetlom grivom i repom u hodu, gledan s boka" fetchpriority="high">
-          </picture>
-        <canvas class="hero__platno" data-hero-platno hidden aria-hidden="true"></canvas>
       </div>
     </section>
 

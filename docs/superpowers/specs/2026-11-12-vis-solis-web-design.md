@@ -4,6 +4,8 @@
 - **Status:** čeka pregled naručitelja
 - **Naručitelj:** Vis Solis – udruga za terapiju i aktivnosti pomoću konja (Udruga VS), Bistra
 
+> **Izmjena 12. 11. 2026.:** nakon pregleda na stranici naručitelj je odustao od hero animacije. Hero je sada jedna velika fotografija konja preko cijelog ekrana, s tekstom preko nje (na uskim ekranima fotografija je iznad teksta). Poglavlje 6, redak "Hero" u poglavlju 3, moduli `hero.js` i `ucitavanje.js` u poglavlju 8, mapa `assets/frames/` te točke 10.3 i 10.4 o videu više ne vrijede. Sve ostalo vrijedi.
+
 ## 1. Cilj i publika
 
 Udruga nema web stranicu. Stranica treba napraviti dvije stvari:

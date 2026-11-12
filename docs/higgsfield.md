@@ -11,6 +11,8 @@ Stanje 12. 11. 2026. Cijene su iz provjere prije pokretanja (`get_cost`).
 
 Ukupno potrošeno: 14,5 kredita.
 
+**Napomena:** animacija hoda je 12. 11. 2026. izbačena sa stranice na zahtjev naručitelja; hero je sada velika fotografija. Video ostaje u `izvori/higgsfield/`, a kod animacije i skripta za rezanje sličica u povijesti gita (commit `a22e89f`).
+
 ## Upit za sliku
 
 > Using the reference photo, show the exact same horse alone: the same light chestnut Haflinger-type horse with the same long flaxen mane, forelock and tail, same white blaze on the face, same build and proportions. Remove the rider, the saddle, the saddle pad, the bridle, the reins and the leg wraps completely, so the horse is bare. Strict side view, horse facing right, whole body in frame with generous margin, captured mid-stride in a calm natural walk with all four legs clearly separated and visible. Place the horse in the right two thirds of the frame, leaving the left third empty. Pure seamless white studio background (#FFFFFF), no horizon, no grass, no scenery, only a very soft faint contact shadow under the hooves. Soft even natural daylight, true-to-life coat colour, razor sharp, photorealistic professional equine photography.
@@ -18,7 +20,3 @@ Ukupno potrošeno: 14,5 kredita.
 ## Upit za video (početna sličica: odabrana slika)
 
 > Locked-off static camera, strict side view. Starting from this exact frame, the horse walks calmly in place at a slow, steady, natural four-beat walk, as if on an invisible treadmill: it stays at exactly the same position and the same size in the frame the whole time while its legs step in a correct, realistic walking gait with clear footfalls. Its head nods gently with each stride, the flaxen mane and tail sway softly. Pure seamless white background throughout, only a soft contact shadow under the hooves. No camera movement, no zoom, no pan, no cuts, no change of lighting or exposure. The horse stays bare the whole time: no rider, no saddle, no bridle, no people. Soft even daylight. Photorealistic, razor sharp, no text. The final frame returns to a pose close to the starting frame.
-
-## Obrada
-
-`node alati/izrezi-slicice.mjs izvori/higgsfield/hod-kling-std.mp4` reže video u 120 sličica, podiže pozadinu na čistu bijelu i radi statičnu sliku konja iz prve sličice.

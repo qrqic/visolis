@@ -20,9 +20,13 @@ const IZLAZ = path.join(korijen, 'site', 'assets', 'img');
 // Omjer šesterokuta s vrhom gore: širina je 0,866 visine.
 const SESTEROKUT = { omjer: 0.866, sirine: [480, 800], jpg: 800 };
 const FOTOGRAFIJA = { sirine: [640, 1024, 1600], jpg: 1280 };
+// Hero je preko cijelog ekrana, pa treba i veće širine.
+const HERO = { sirine: [768, 1280, 1920, 2560], jpg: 1920 };
 
 /** izrez: { left, top, width, height } u pikselima izvorne slike (izborno). */
 const slike = [
+  { izvor: '0U8A8968.JPG', ime: 'hero-glava', ...HERO },
+  { izvor: 'DSC0124.jpg', ime: 'hero-sivi', ...HERO },
   { izvor: 'DSC0112.jpg', ime: 'o-nama-kas', ...FOTOGRAFIJA },
   { izvor: 'DSC3065.jpg', ime: 'o-nama-portret', ...FOTOGRAFIJA },
   { izvor: 'DSC0124.jpg', ime: 'o-nama-sivi', ...FOTOGRAFIJA },
