@@ -1,0 +1,113 @@
+/* Fontovi i veličine teksta. Za zamjenu fonta dovoljno je promijeniti ovu datoteku. */
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../assets/fonts/lora.woff') format('woff');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('../assets/fonts/lora-kurziv.woff') format('woff');
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/inter-400.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/inter-500.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-naslov: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-tekst: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  font-family: var(--font-tekst);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-naslov);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.75rem, 8.5vw, 6.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  line-height: 1.08;
+}
+
+h3 {
+  font-size: 1.4375rem;
+  line-height: 1.25;
+}
+
+em {
+  font-family: var(--font-naslov);
+  font-style: italic;
+  color: var(--jantar-tamni);
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--jantar);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration-color: var(--jantar-tamni);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Sitna oznaka iznad naslova: "01 — Programi". */
+.oznaka {
+  display: block;
+  margin-bottom: 1.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--jantar-tamni);
+}
+
+.uvodni {
+  font-size: clamp(1.125rem, 1.6vw, 1.3125rem);
+  line-height: 1.55;
+  color: var(--prigusen);
+  max-width: 34em;
+}
+
+.prigusen {
+  color: var(--prigusen);
+}

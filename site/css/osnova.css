@@ -1,0 +1,189 @@
+/* Varijable, reset i osnovna pravila koja vrijede na svim stranicama. */
+
+:root {
+  --krem: #f7f2e8;
+  --pijesak: #efe7d8;
+  --tekst: #2b2420;
+  --prigusen: #6b5f56;
+  --jantar: #e0a22b;
+  --jantar-prelazak: #cf9220;
+  --jantar-tamni: #8a5a0b;
+  --zuta: #fbf29a;
+  --greska: #9b2c1a;
+  --linija: rgba(43, 36, 32, 0.14);
+
+  --rub: clamp(1.25rem, 5vw, 4rem);
+  --razmak-sekcije: clamp(4.5rem, 10vw, 9rem);
+  --sirina: 90rem;
+  --zaglavlje: 4.5rem;
+  --zaobljenje: 1.25rem;
+  --trajanje: 0.7s;
+  --krivulja: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--krem);
+  color: var(--tekst);
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure,
+blockquote {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+img,
+picture,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+[id] {
+  scroll-margin-top: calc(var(--zaglavlje) + 1.5rem);
+}
+
+:focus-visible {
+  outline: 2px solid var(--jantar-tamni);
+  outline-offset: 3px;
+  border-radius: 0.25rem;
+}
+
+.samo-citac {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.preskoci {
+  position: absolute;
+  left: var(--rub);
+  top: -4rem;
+  z-index: 200;
+  padding: 0.75rem 1.25rem;
+  background: var(--tekst);
+  color: var(--krem);
+  border-radius: 0 0 0.75rem 0.75rem;
+}
+
+.preskoci:focus {
+  top: 0;
+}
+
+/* Sadržaj koji čeka naručitelja. Prije objave nijedan takav blok ne smije ostati. */
+.ceka {
+  padding: 1rem 1.25rem;
+  border: 1.5px dashed var(--jantar-tamni);
+  border-radius: 0.75rem;
+  background: rgba(251, 242, 154, 0.4);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.ceka::before {
+  content: 'Čeka sadržaj';
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--jantar-tamni);
+}
+
+/* Pojavljivanje pri skrolanju. Skriva se samo kad JavaScript radi i kretanje nije smanjeno. */
+.pokret [data-pojavi] {
+  opacity: 0;
+  transform: translateY(1.75rem);
+  transition:
+    opacity var(--trajanje) var(--krivulja),
+    transform var(--trajanje) var(--krivulja);
+}
+
+/* Fotografije se otkrivaju odozdo: preko slike stoji pokrov u boji podloge koji se skuplja prema gore.
+   Slika se pritom ne izrezuje, jer preglednik izrezanu sliku ne smatra vidljivom
+   pa je ne bi ni učitao (loading="lazy"). */
+.pokret [data-pojavi='slika'] {
+  position: relative;
+  opacity: 1;
+  transform: none;
+  overflow: hidden;
+  border-radius: var(--zaobljenje);
+}
+
+.pokret [data-pojavi='slika']::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--podloga, var(--krem));
+  transform-origin: top;
+  transition: transform 1.1s var(--krivulja);
+}
+
+.pokret [data-pojavi].vidljivo {
+  opacity: 1;
+  transform: none;
+}
+
+.pokret [data-pojavi='slika'].vidljivo::after {
+  transform: scaleY(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

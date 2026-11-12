@@ -64,20 +64,20 @@ Moduli ne smiju dirati `document` ni `window` pri uvozu, samo unutar funkcija `p
 
 **Datoteke:** `package.json`, `README.md`, `.gitignore`, `alati/obradi-slike.mjs`, `site/assets/fonts/*`, `site/assets/img/*`, `izvori/*`
 
-- [ ] `package.json` s `"type": "module"` i skriptom `"test": "node --test tests/"`.
-- [ ] Kopirati izvorne fotografije u `izvori/` (ne ulaze u git).
-- [ ] Fontovi: Inter (400, 500) i Lora (500, 600, kurziv 500) suziti na latinicu s hrvatskim znakovima i spremiti kao WOFF u `site/assets/fonts/`.
-- [ ] `alati/obradi-slike.mjs`: za svaku fotografiju iz tablice u specifikaciji 10.2 (osim `0U8A8831.JPG`) napraviti WebP u širinama 640, 1024 i 1600 px te JPEG 1280 px.
-- [ ] Provjera: nijedna izlazna slika nije veća od 400 KB; `0U8A8831` ne postoji u `site/`.
-- [ ] Commit.
+- [x] `package.json` s `"type": "module"` i skriptom `"test": "node --test tests/"`.
+- [x] Kopirati izvorne fotografije u `izvori/` (ne ulaze u git).
+- [x] Fontovi: Inter (400, 500) i Lora (500, 600, kurziv 500) suziti na latinicu s hrvatskim znakovima i spremiti kao WOFF u `site/assets/fonts/`.
+- [x] `alati/obradi-slike.mjs`: za svaku fotografiju iz tablice u specifikaciji 10.2 (osim `0U8A8831.JPG`) napraviti WebP u širinama 640, 1024 i 1600 px te JPEG 1280 px.
+- [x] Provjera: nijedna izlazna slika nije veća od 400 KB; `0U8A8831` ne postoji u `site/`.
+- [x] Commit.
 
 ### Zadatak 2: Čista logika, test pa kod
 
 **Datoteke:** `tests/*.test.mjs`, `site/js/postavke.js`, `site/js/hero.js`, `site/js/ucitavanje.js`, `site/js/aktualno.js`, `site/js/obrazac.js`
 
-- [ ] Napisati testove (slučajevi ispod), pokrenuti `npm test` i potvrditi da padaju jer funkcije ne postoje.
-- [ ] Napisati funkcije, pokrenuti `npm test` i potvrditi da svi prolaze.
-- [ ] Commit.
+- [x] Napisati testove (slučajevi ispod), pokrenuti `npm test` i potvrditi da padaju jer funkcije ne postoje.
+- [x] Napisati funkcije, pokrenuti `npm test` i potvrditi da svi prolaze.
+- [x] Commit.
 
 Slučajevi:
 
@@ -111,45 +111,45 @@ Slučajevi:
 
 **Datoteke:** `site/index.html`, `site/css/*.css`, `site/assets/img/znak.svg`, `site/data/aktualno.json`
 
-- [ ] `osnova.css`: varijable boja i razmaka, reset, fokus, klasa `ceka`.
-- [ ] `tipografija.css`: `@font-face`, ljestvica veličina, oznake sekcija.
-- [ ] `raspored.css`: spremnik širine do 90 rem, zaglavlje, podnožje, sekcije, izmjenična podloga.
-- [ ] `komponente.css`: gumbi, kartice programa, koraci, krdo u šesterokutima, najava, obrazac.
-- [ ] `hero.css`: statični i animirani raspored, uvodni zaslon.
-- [ ] `index.html`: svih osam sekcija iz specifikacije 4.3, redom.
-- [ ] Provjera: stranica je čitljiva s isključenim JavaScriptom; nema vodoravnog pomicanja na 375 px.
-- [ ] Commit.
+- [x] `osnova.css`: varijable boja i razmaka, reset, fokus, klasa `ceka`.
+- [x] `tipografija.css`: `@font-face`, ljestvica veličina, oznake sekcija.
+- [x] `raspored.css`: spremnik širine do 90 rem, zaglavlje, podnožje, sekcije, izmjenična podloga.
+- [x] `komponente.css`: gumbi, kartice programa, koraci, krdo u šesterokutima, najava, obrazac.
+- [x] `hero.css`: statični i animirani raspored, uvodni zaslon.
+- [x] `index.html`: svih osam sekcija iz specifikacije 4.3, redom.
+- [x] Provjera: stranica je čitljiva s isključenim JavaScriptom; nema vodoravnog pomicanja na 375 px.
+- [x] Commit.
 
 ### Zadatak 4: Ponašanje u pregledniku
 
 **Datoteke:** `site/js/glavni.js`, `izbornik.js`, `pojavljivanje.js`, dijelovi `aktualno.js`, `obrazac.js`, `ucitavanje.js`, `hero.js` koji rade s DOM-om
 
-- [ ] `izbornik.js`: gumb otvara i zatvara izbornik, `aria-expanded` prati stanje, Escape zatvara.
-- [ ] `pojavljivanje.js`: elementi s `data-pojavi` dobivaju klasu `vidljivo` pri ulasku u ekran; uz smanjeno kretanje ne radi ništa.
-- [ ] `aktualno.js`: čita `data/aktualno.json`; prikazuje sekciju samo kad je `jeLiAktualno` istinit.
-- [ ] `obrazac.js`: provjera, slanje, poruke za uspjeh, grešku i neupisanu adresu slanja.
-- [ ] `ucitavanje.js` i `hero.js`: učitavanje sličica, uvodni zaslon, crtanje na canvas, izmjena naslova.
-- [ ] Commit.
+- [x] `izbornik.js`: gumb otvara i zatvara izbornik, `aria-expanded` prati stanje, Escape zatvara.
+- [x] `pojavljivanje.js`: elementi s `data-pojavi` dobivaju klasu `vidljivo` pri ulasku u ekran; uz smanjeno kretanje ne radi ništa.
+- [x] `aktualno.js`: čita `data/aktualno.json`; prikazuje sekciju samo kad je `jeLiAktualno` istinit.
+- [x] `obrazac.js`: provjera, slanje, poruke za uspjeh, grešku i neupisanu adresu slanja.
+- [x] `ucitavanje.js` i `hero.js`: učitavanje sličica, uvodni zaslon, crtanje na canvas, izmjena naslova.
+- [x] Commit.
 
 ### Zadatak 5: Podstranice
 
 **Datoteke:** `site/hipoterapija.html`, `fizikalna-terapija.html`, `okupacijska-terapija.html`, `logopedska-terapija.html`, `privatnost.html`, `site/js/podstranica.js`, `site/css/podstranica.css`
 
-- [ ] Četiri podstranice iste građe (specifikacija 4.4). Dijelovi koji čekaju terapeute označeni su blokom `ceka`.
-- [ ] `privatnost.html`: nacrt pravila privatnosti.
-- [ ] Commit.
+- [x] Četiri podstranice iste građe (specifikacija 4.4). Dijelovi koji čekaju terapeute označeni su blokom `ceka`.
+- [x] `privatnost.html`: nacrt pravila privatnosti.
+- [x] Commit.
 
 ### Zadatak 6: Provjera u pregledniku
 
 **Datoteke:** `tests/preglednik.mjs`
 
-- [ ] Svih šest stranica: nema grešaka u konzoli, nema neuspjelih zahtjeva, nema mrtvih unutarnjih poveznica.
-- [ ] Širine 375, 768, 1024, 1440 px: nema vodoravnog pomicanja.
-- [ ] Obrazac: prazna polja, neupisana adresa slanja, uspjeh i neuspjeh uz lažnu adresu.
-- [ ] Aktualno: ispravan zapis, prošli datum, `{}`, neispravan JSON.
-- [ ] Hero animacija na kopiji stranice s ispitnim sličicama: canvas se mijenja pri skrolanju, naslov prolazi sve tri faze.
-- [ ] Smanjeno kretanje: sav sadržaj vidljiv.
-- [ ] Commit.
+- [x] Svih šest stranica: nema grešaka u konzoli, nema neuspjelih zahtjeva, nema mrtvih unutarnjih poveznica.
+- [x] Širine 375, 768, 1024, 1440 px: nema vodoravnog pomicanja.
+- [x] Obrazac: prazna polja, neupisana adresa slanja, uspjeh i neuspjeh uz lažnu adresu.
+- [x] Aktualno: ispravan zapis, prošli datum, `{}`, neispravan JSON.
+- [x] Hero animacija na kopiji stranice s ispitnim sličicama: canvas se mijenja pri skrolanju, naslov prolazi sve tri faze.
+- [x] Smanjeno kretanje: sav sadržaj vidljiv.
+- [x] Commit.
 
 ### Zadatak 7: Hero sličice (uz potvrdu troška)
 

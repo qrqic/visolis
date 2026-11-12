@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vis Solis — terapija i aktivnosti pomoću konja, Bistra</title>
+  <meta name="description" content="Udruga Vis Solis iz Bistre provodi hipoterapiju te fizikalnu, okupacijsku i logopedsku terapiju uz pomoć konja. Dogovorite termin.">
+  <meta name="theme-color" content="#f7f2e8">
+  <meta property="og:title" content="Vis Solis — terapija i aktivnosti pomoću konja, Bistra">
+  <meta property="og:description" content="Udruga Vis Solis iz Bistre provodi hipoterapiju te fizikalnu, okupacijsku i logopedsku terapiju uz pomoć konja. Dogovorite termin.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="hr_HR">
+  <link rel="icon" href="assets/img/znak.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/lora.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="css/osnova.css">
+  <link rel="stylesheet" href="css/tipografija.css">
+  <link rel="stylesheet" href="css/raspored.css">
+  <link rel="stylesheet" href="css/komponente.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <script src="js/rano.js"></script>
+  <script type="module" src="js/glavni.js"></script>
+</head>
+<body>
+  <a class="preskoci" href="#sadrzaj">Preskoči na sadržaj</a>
+
+  <header class="zaglavlje">
+    <div class="spremnik zaglavlje__red">
+      <a class="znak" href="#vrh" aria-label="Vis Solis, početna stranica">
+        <img src="assets/img/znak.svg" width="34" height="38" alt="">
+        <span>Vis Solis</span>
+      </a>
+      <button class="izbornik-gumb" type="button" data-izbornik-gumb aria-expanded="false" aria-controls="izbornik">
+        <span>Izbornik</span>
+        <span class="izbornik-gumb__crte" aria-hidden="true"></span>
+      </button>
+      <nav class="izbornik" id="izbornik" data-izbornik aria-label="Glavni izbornik">
+        <ul class="izbornik__popis">
+          <li><a href="#programi">Programi</a></li>
+          <li><a href="#krdo">Krdo</a></li>
+          <li><a href="#o-nama">O nama</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+        <a class="gumb gumb--mali" href="#kontakt">Dogovorite termin</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Uvodni zaslon: prikazuje ga hero.js samo dok se učitavaju sličice animacije. -->
+  <div class="uvod" data-uvod hidden aria-hidden="true">
+    <img src="assets/img/znak.svg" width="64" height="72" alt="">
+    <span class="uvod__postotak"><span data-uvod-postotak>0</span> %</span>
+  </div>
+
+  <main id="sadrzaj">
+
+    <!-- HERO -->
+    <section class="hero" id="vrh" data-hero aria-labelledby="hero-naslov">
+      <div class="spremnik hero__pozornica">
+        <div class="hero__tekst">
+          <span class="oznaka">Udruga za terapiju i aktivnosti pomoću konja · Bistra</span>
+          <h1 id="hero-naslov">
+            <span class="hero__faza hero__faza--aktivna" data-hero-faza>Terapija uz konje.</span>
+            <span class="hero__faza" data-hero-faza>Korak po korak.</span>
+            <span class="hero__faza" data-hero-faza>U vašem ritmu.</span>
+          </h1>
+          <p class="uvodni">Vis Solis provodi hipoterapiju te fizikalnu, okupacijsku i logopedsku terapiju uz pomoć konja, za djecu i odrasle, u Gornjoj Bistri kraj Zagreba.</p>
+          <div class="hero__radnje">
+            <a class="gumb" href="#kontakt">Dogovorite termin</a>
+            <a class="strelica" href="#programi">Pogledajte programe</a>
+          </div>
+        </div>
+        <picture class="hero__slika">
+            <source type="image/webp" srcset="assets/img/hero-konj-640.webp 640w, assets/img/hero-konj-1024.webp 1024w, assets/img/hero-konj-1600.webp 1600w" sizes="(min-width: 64rem) 50vw, 100vw">
+            <img src="assets/img/hero-konj-1280.jpg" width="1280" height="853" alt="Svijetlosmeđi konj sa svijetlom grivom u kasu preko cvjetne livade, s jahačicom u sedlu" fetchpriority="high">
+          </picture>
+        <canvas class="hero__platno" data-hero-platno hidden aria-hidden="true"></canvas>
+      </div>
+    </section>
+
+    <!-- AKTUALNO: puni se iz data/aktualno.json; skriveno dok nema važeće najave. -->
+    <section class="aktualno" data-aktualno hidden aria-labelledby="aktualno-naslov">
+      <div class="spremnik aktualno__red">
+        <img class="aktualno__slika" data-aktualno-slika alt="" hidden>
+        <div>
+          <span class="oznaka">Aktualno <time data-aktualno-datum hidden></time></span>
+          <h2 id="aktualno-naslov" data-aktualno-naslov></h2>
+          <p class="aktualno__tekst" data-aktualno-tekst hidden></p>
+        </div>
+        <a class="strelica" data-aktualno-poveznica rel="noopener" hidden></a>
+      </div>
+    </section>
+
+    <!-- 01 PROGRAMI -->
+    <section class="sekcija sekcija--pijesak" id="programi" aria-labelledby="programi-naslov">
+      <div class="spremnik">
+        <div class="sekcija__glava" data-pojavi>
+          <span class="oznaka">01 — Programi</span>
+          <h2 id="programi-naslov">Četiri terapije, jedan <em>suradnik</em> na četiri noge.</h2>
+          <p class="uvodni">U svakom programu konj je dio terapijskog rada. Odaberite program i pogledajte što obuhvaća.</p>
+        </div>
+        <ul class="programi">
+          <li class="kartica" data-pojavi>
+            <span class="kartica__broj">01</span>
+            <h3><a href="hipoterapija.html">Hipoterapija</a></h3>
+            <p>Terapija u kojoj kretanje konja u hodu postaje dio terapijskog rada.</p>
+            <span class="kartica__vise" aria-hidden="true">Više o programu</span>
+          </li>
+          <li class="kartica" data-pojavi>
+            <span class="kartica__broj">02</span>
+            <h3><a href="fizikalna-terapija.html">Fizikalna terapija uz pomoć konja</a></h3>
+            <p>Fizioterapijski rad koji se dijelom odvija na konju i uz njega.</p>
+            <span class="kartica__vise" aria-hidden="true">Više o programu</span>
+          </li>
+          <li class="kartica" data-pojavi>
+            <span class="kartica__broj">03</span>
+            <h3><a href="okupacijska-terapija.html">Okupacijska terapija uz pomoć konja</a></h3>
+            <p>Svakodnevne vještine vježbaju se kroz brigu o konju i aktivnosti uz njega.</p>
+            <span class="kartica__vise" aria-hidden="true">Više o programu</span>
+          </li>
+          <li class="kartica" data-pojavi>
+            <span class="kartica__broj">04</span>
+            <h3><a href="logopedska-terapija.html">Logopedska terapija uz pomoć konja</a></h3>
+            <p>Rad na govoru i komunikaciji u poticajnom okruženju, uz konja.</p>
+            <span class="kartica__vise" aria-hidden="true">Više o programu</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 02 KAKO POČETI -->
+    <section class="sekcija" id="kako-poceti" aria-labelledby="kako-naslov">
+      <div class="spremnik">
+        <div class="sekcija__glava" data-pojavi>
+          <span class="oznaka">02 — Kako početi</span>
+          <h2 id="kako-naslov">Od prvog upita do prvog termina.</h2>
+        </div>
+        <ol class="koraci">
+          <li data-pojavi>
+            <h3>Javite nam se</h3>
+            <p>Pošaljite upit preko obrasca ili nas nazovite. Dovoljno je par rečenica o tome što vas zanima.</p>
+          </li>
+          <li data-pojavi>
+            <h3>Upoznajemo se</h3>
+            <p>Razgovaramo o potrebama i očekivanjima, a vi upoznajete prostor, tim i konje.</p>
+          </li>
+          <li data-pojavi>
+            <h3>Prvi termin</h3>
+            <p>Dogovaramo program i ritam dolazaka koji vam odgovara.</p>
+          </li>
+        </ol>
+        <p class="ceka">Terapeuti trebaju potvrditi ove korake: je li potrebna liječnička dokumentacija ili uputnica, kako izgleda početna procjena i koliko traje.</p>
+      </div>
+    </section>
+
+    <!-- 03 DRUŽENJE S KONJIMA -->
+    <section class="sekcija sekcija--pijesak" id="druzenje" aria-labelledby="druzenje-naslov">
+      <div class="spremnik dva-stupca">
+        <picture class="fotografija" data-pojavi="slika">
+            <source type="image/webp" srcset="assets/img/druzenje-galop-640.webp 640w, assets/img/druzenje-galop-1024.webp 1024w, assets/img/druzenje-galop-1600.webp 1600w" sizes="(min-width: 64rem) 50vw, 100vw">
+            <img src="assets/img/druzenje-galop-1280.jpg" width="1280" height="853" alt="Bijeli konj u galopu preko livade, s jahačicom s kacigom" loading="lazy" decoding="async">
+          </picture>
+        <div class="tekst-blok" data-pojavi>
+          <span class="oznaka">03 — Druženje s konjima</span>
+          <h2 id="druzenje-naslov">Ne mora sve biti terapija.</h2>
+          <p class="uvodni">Uz terapijske programe organiziramo i rekreaciju te druženja s krdom tijekom cijele godine.</p>
+          <ul class="popis-crtice">
+            <li>Rekreativno jahanje</li>
+            <li>Šetnje na konjima</li>
+            <li>Dječji ljetni kampovi</li>
+            <li>Obiteljski dani i dani otvorenih vrata</li>
+            <li>Advent na konjima</li>
+          </ul>
+          <p>Termine i najave događanja objavljujemo na društvenim mrežama.</p>
+          <div class="mreze">
+            <a class="strelica" href="https://www.instagram.com/udruga_vis_solis/" rel="noopener">Instagram</a>
+            <a class="strelica" href="https://www.facebook.com/p/Vis-Solis-udruga-za-terapije-i-aktivnosti-pomo%C4%87u-konja-61556972145488/" rel="noopener">Facebook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 NAŠE KRDO -->
+    <section class="sekcija" id="krdo" aria-labelledby="krdo-naslov">
+      <div class="spremnik">
+        <div class="sekcija__glava" data-pojavi>
+          <span class="oznaka">04 — Naše krdo</span>
+          <h2 id="krdo-naslov">Dvanaestak konja, svaki sa svojom naravi.</h2>
+          <p class="uvodni">Upoznajte konje s kojima radimo.</p>
+        </div>
+        <div class="krdo">
+          <figure data-pojavi>
+            <div class="sesterokut">
+              <picture>
+                <source type="image/webp" srcset="assets/img/krdo-svijetlosmedi-480.webp 480w, assets/img/krdo-svijetlosmedi-800.webp 800w" sizes="(min-width: 48rem) 30vw, 45vw">
+                <img src="assets/img/krdo-svijetlosmedi-800.jpg" width="800" height="924" alt="Svijetlosmeđi konj sa svijetlom grivom i pletenicom" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <figcaption><strong>Ime konja</strong><span>Svijetlosmeđi konj</span></figcaption>
+          </figure>
+          <figure data-pojavi>
+            <div class="sesterokut">
+              <picture>
+                <source type="image/webp" srcset="assets/img/krdo-smedi-480.webp 480w, assets/img/krdo-smedi-800.webp 800w" sizes="(min-width: 48rem) 30vw, 45vw">
+                <img src="assets/img/krdo-smedi-800.jpg" width="800" height="924" alt="Smeđi konj s crnom grivom, glava iz profila" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <figcaption><strong>Ime konja</strong><span>Smeđi konj</span></figcaption>
+          </figure>
+          <figure data-pojavi>
+            <div class="sesterokut">
+              <picture>
+                <source type="image/webp" srcset="assets/img/krdo-sivi-480.webp 480w, assets/img/krdo-sivi-800.webp 800w" sizes="(min-width: 48rem) 30vw, 45vw">
+                <img src="assets/img/krdo-sivi-800.jpg" width="800" height="924" alt="Sivi konj prilazi kameri preko pašnjaka" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <figcaption><strong>Ime konja</strong><span>Sivi konj</span></figcaption>
+          </figure>
+        </div>
+        <p class="ceka">Trebaju imena konja i po jedna rečenica o svakome, te fotografije ostalih konja iz krda.</p>
+      </div>
+    </section>
+
+    <!-- 05 O NAMA -->
+    <section class="sekcija sekcija--pijesak" id="o-nama" aria-labelledby="o-nama-naslov">
+      <div class="spremnik dva-stupca dva-stupca--obrnuto">
+        <div class="o-nama__tekst" data-pojavi>
+          <span class="oznaka">05 — O nama</span>
+          <h2 id="o-nama-naslov">Vis solis: <em>snaga sunca</em>.</h2>
+          <p class="uvodni">Vis Solis je udruga za terapiju i aktivnosti pomoću konja iz Bistre u Zagrebačkoj županiji, osnovana u kolovozu 2024. godine.</p>
+          <p>Okupili smo se oko jednostavne ideje: da vrijeme provedeno uz konja može biti i terapija i radost, i da treba biti dostupno onima kojima je najpotrebnije.</p>
+          <p class="ceka">Treba priča udruge u nekoliko rečenica, imena i zvanja članova tima te potvrda da se smiju navesti projekti „Siguran korak uz konja” i „Konj za svakoga” i suradnja sa Specijalnom bolnicom za kronične bolesti dječje dobi Gornja Bistra.</p>
+        </div>
+        <div class="galerija">
+          <picture class="fotografija" data-pojavi="slika">
+            <source type="image/webp" srcset="assets/img/o-nama-portret-640.webp 640w, assets/img/o-nama-portret-1024.webp 1024w, assets/img/o-nama-portret-1600.webp 1600w" sizes="(min-width: 64rem) 50vw, 100vw">
+            <img src="assets/img/o-nama-portret-1280.jpg" width="1280" height="852" alt="Članica tima sa psom u krilu drži uzde svijetlosmeđeg konja" loading="lazy" decoding="async">
+          </picture>
+          <picture class="fotografija" data-pojavi="slika">
+            <source type="image/webp" srcset="assets/img/o-nama-sivi-640.webp 640w, assets/img/o-nama-sivi-1024.webp 1024w, assets/img/o-nama-sivi-1600.webp 1600w" sizes="(min-width: 64rem) 25vw, 50vw">
+            <img src="assets/img/o-nama-sivi-1280.jpg" width="1280" height="853" alt="Članica tima jaše sivog konja preko livade" loading="lazy" decoding="async">
+          </picture>
+          <picture class="fotografija" data-pojavi="slika">
+            <source type="image/webp" srcset="assets/img/o-nama-crni-640.webp 640w, assets/img/o-nama-crni-1024.webp 1024w, assets/img/o-nama-crni-1600.webp 1600w" sizes="(min-width: 64rem) 25vw, 50vw">
+            <img src="assets/img/o-nama-crni-1280.jpg" width="1280" height="852" alt="Članica tima na crnom konju među poljskim cvijećem" loading="lazy" decoding="async">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 KONTAKT -->
+    <section class="sekcija" id="kontakt" aria-labelledby="kontakt-naslov">
+      <div class="spremnik dva-stupca">
+        <div class="tekst-blok" data-pojavi>
+          <span class="oznaka">06 — Kontakt</span>
+          <h2 id="kontakt-naslov">Dogovorite termin.</h2>
+          <p class="uvodni">Pošaljite upit ili nazovite. Javit ćemo vam se i zajedno dogovoriti prvi dolazak.</p>
+          <dl class="kontakt__podaci">
+            <div>
+              <dt>Telefon</dt>
+              <dd><a class="kontakt__telefon" href="tel:+385955554789">+385 95 555 4789</a></dd>
+            </div>
+            <div>
+              <dt>E-mail</dt>
+              <dd>upiti@example.com <span class="prigusen">(privremena adresa, čeka pravu)</span></dd>
+            </div>
+            <div>
+              <dt>Gdje nas naći</dt>
+              <dd>Bolnička ulica 21, Gornja Bistra<br><a class="strelica" href="https://www.google.com/maps/search/?api=1&query=Bolni%C4%8Dka+ulica+21%2C+Gornja+Bistra" rel="noopener">Otvori na karti</a></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div>
+          <form class="obrazac" data-obrazac novalidate aria-labelledby="kontakt-naslov">
+            <div class="polje">
+              <label for="ime">Ime i prezime</label>
+              <input type="text" id="ime" name="ime" autocomplete="name" aria-required="true" aria-describedby="greska-ime">
+              <p class="polje__greska" id="greska-ime" data-greska="ime" hidden></p>
+            </div>
+            <div class="polje">
+              <label for="kontakt-polje">Telefon ili e-mail</label>
+              <input type="text" id="kontakt-polje" name="kontakt" aria-required="true" aria-describedby="greska-kontakt">
+              <p class="polje__greska" id="greska-kontakt" data-greska="kontakt" hidden></p>
+            </div>
+            <div class="polje">
+              <label for="program">Što vas zanima <span class="polje__napomena">(nije obavezno)</span></label>
+              <select id="program" name="program">
+                <option value="">Još ne znam</option>
+              <option>Hipoterapija</option>
+              <option>Fizikalna terapija uz pomoć konja</option>
+              <option>Okupacijska terapija uz pomoć konja</option>
+              <option>Logopedska terapija uz pomoć konja</option>
+                <option>Rekreativno jahanje</option>
+                <option>Nešto drugo</option>
+              </select>
+            </div>
+            <div class="polje">
+              <label for="poruka">Poruka <span class="polje__napomena">(nije obavezno)</span></label>
+              <textarea id="poruka" name="poruka" rows="4"></textarea>
+            </div>
+            <div class="polje polje--zamka" aria-hidden="true">
+              <label for="web">Web stranica (ostavite prazno)</label>
+              <input type="text" id="web" name="web" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="polje polje--privola">
+              <input type="checkbox" id="privola" name="privola" value="da" aria-required="true" aria-describedby="greska-privola">
+              <label for="privola">Pristajem da udruga Vis Solis koristi ove podatke kako bi mi odgovorila na upit. <a href="privatnost.html">Pravila privatnosti</a></label>
+              <p class="polje__greska" id="greska-privola" data-greska="privola" hidden></p>
+            </div>
+            <button class="gumb" type="submit">Pošaljite upit</button>
+            <div class="obrazac__poruka" data-obrazac-poruka role="alert" hidden></div>
+            <noscript><p class="obrazac__poruka">Obrazac treba JavaScript. Nazovite nas na <a href="tel:+385955554789">+385 95 555 4789</a>.</p></noscript>
+          </form>
+          <div class="obrazac__uspjeh" data-obrazac-uspjeh tabindex="-1" hidden>
+            <h3>Hvala, upit je stigao.</h3>
+            <p>Javit ćemo vam se čim prije. Ako je hitno, nazovite nas na <a href="tel:+385955554789">+385 95 555 4789</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="podnozje">
+    <div class="spremnik">
+      <div class="podnozje__mreza">
+        <p class="podnozje__naziv">Vis Solis – udruga za terapiju i aktivnosti pomoću konja</p>
+        <div>
+          <h3>Gdje smo</h3>
+          <address>
+            Aktivnosti: Bolnička ulica 21, Gornja Bistra<br>
+            Sjedište: Krapinska ulica 2, Donja Bistra
+          </address>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <ul class="podnozje__popis">
+            <li><a href="tel:+385955554789">+385 95 555 4789</a></li>
+            <li><a href="https://www.instagram.com/udruga_vis_solis/" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/p/Vis-Solis-udruga-za-terapije-i-aktivnosti-pomo%C4%87u-konja-61556972145488/" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="podnozje__dno">
+        <span>© 2026 Udruga VS</span>
+        <a href="privatnost.html">Pravila privatnosti</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
