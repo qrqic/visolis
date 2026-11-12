@@ -18,11 +18,17 @@ Statična stranica udruge Vis Solis. Čisti HTML, CSS i JavaScript, bez alata za
 
 ## Pregled na vlastitom računalu
 
-```
-npm start
-```
+Treba samo [Node.js](https://nodejs.org) (inačica 18 ili novija).
 
-Zatim otvoriti http://localhost:8080. Stranica se ne može pregledati dvoklikom na `index.html`, jer preglednik tako ne učitava JavaScript module.
+1. Otvoriti terminal u ovoj mapi (onoj u kojoj je `package.json`).
+   - Windows: otvoriti mapu u Exploreru, u adresnu traku upisati `cmd` i pritisnuti Enter.
+   - macOS: desni klik na mapu u Finderu, zatim "New Terminal at Folder".
+2. Upisati `npm start` i pritisnuti Enter.
+3. U pregledniku otvoriti http://localhost:8080.
+
+Zaustavljanje: Ctrl + C u terminalu.
+
+Stranica se ne može pregledati dvoklikom na `index.html`, jer preglednik tako ne učitava JavaScript module.
 
 ## Česte izmjene
 
