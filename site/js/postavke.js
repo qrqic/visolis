@@ -17,8 +17,8 @@ export const postavke = {
   },
 
   hero: {
-    // Uključiti tek kad sličice postoje u assets/frames/.
-    ukljuceno: false,
+    // Isključiti (false) ako sličica u assets/frames/ nema; hero tada prikazuje statičnu sliku.
+    ukljuceno: true,
     brojSlicica: 120,
     putanja: (redniBroj) => `assets/frames/konj-${String(redniBroj).padStart(3, '0')}.jpg`,
     // Koliko se sličica učita prije nego se uvodni zaslon skloni.

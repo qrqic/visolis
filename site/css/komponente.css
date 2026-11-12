@@ -310,7 +310,8 @@
   gap: 1rem;
 }
 
-.galerija .fotografija:first-child {
+.galerija .fotografija:first-child,
+.galerija .fotografija:last-child {
   grid-column: 1 / -1;
 }
 

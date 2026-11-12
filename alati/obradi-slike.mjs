@@ -23,7 +23,7 @@ const FOTOGRAFIJA = { sirine: [640, 1024, 1600], jpg: 1280 };
 
 /** izrez: { left, top, width, height } u pikselima izvorne slike (izborno). */
 const slike = [
-  { izvor: 'DSC0112.jpg', ime: 'hero-konj', ...FOTOGRAFIJA },
+  { izvor: 'DSC0112.jpg', ime: 'o-nama-kas', ...FOTOGRAFIJA },
   { izvor: 'DSC3065.jpg', ime: 'o-nama-portret', ...FOTOGRAFIJA },
   { izvor: 'DSC0124.jpg', ime: 'o-nama-sivi', ...FOTOGRAFIJA },
   { izvor: 'DSC2220.jpg', ime: 'o-nama-crni', ...FOTOGRAFIJA },

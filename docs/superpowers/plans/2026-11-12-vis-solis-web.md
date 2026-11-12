@@ -153,11 +153,11 @@ Slučajevi:
 
 ### Zadatak 7: Hero sličice (uz potvrdu troška)
 
-- [ ] Provjeriti cijenu čiste slike konja i videa hoda; prikazati naručitelju.
-- [ ] Nakon potvrde: slika, potvrda sličnosti, dvije inačice videa, izbor.
-- [ ] Rezanje u 120 sličica širine 1600 px, bijela pozadina, do 150 KB po sličici.
-- [ ] `postavke.hero.ukljuceno = true`; ponoviti provjeru heroja iz zadatka 6 s pravim sličicama.
-- [ ] Commit.
+- [x] Provjeriti cijenu čiste slike konja i videa hoda; prikazati naručitelju.
+- [x] Nakon potvrde: slika, potvrda sličnosti, dvije inačice videa, izbor.
+- [x] Rezanje u 120 sličica širine 1600 px, bijela pozadina, do 150 KB po sličici.
+- [x] `postavke.hero.ukljuceno = true`; ponoviti provjeru heroja iz zadatka 6 s pravim sličicama.
+- [x] Commit.
 
 ### Zadatak 8: Objava (uz naručitelja)
 

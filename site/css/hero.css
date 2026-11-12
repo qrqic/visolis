@@ -35,11 +35,11 @@
   margin-top: 2.25rem;
 }
 
+/* Statična slika konja ima bijelu pozadinu, kao i sličice animacije:
+   množenjem s podlogom stranice bijela nestaje. */
 .hero__slika img {
   width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  border-radius: var(--zaobljenje);
+  mix-blend-mode: multiply;
 }
 
 .hero__platno {

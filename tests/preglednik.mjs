@@ -214,8 +214,37 @@ for (const [opis, tijelo, ocekivano] of slucajevi) {
   await zatvori();
 }
 
-// === 5. Hero animacija s ispitnim sličicama ===
+// === 5. Hero animacija ===
 console.log('\nHero animacija');
+{
+  // Ako je animacija uključena u postavkama, sve sličice moraju postojati na disku.
+  const { postavke } = await import(new URL('../site/js/postavke.js', import.meta.url));
+  if (postavke.hero.ukljuceno) {
+    const nedostaju = [];
+    for (let broj = 1; broj <= postavke.hero.brojSlicica; broj++) {
+      const odgovor = await fetch(`${OSNOVA}/${postavke.hero.putanja(broj)}`);
+      if (!odgovor.ok || !(odgovor.headers.get('content-type') || '').startsWith('image/')) nedostaju.push(broj);
+    }
+    provjeri(nedostaju.length === 0, `svih ${postavke.hero.brojSlicica} sličica postoji${nedostaju.length ? ' — nedostaju: ' + nedostaju.join(', ') : ''}`);
+    const { stranica, problemi, zatvori } = await otvori('index.html');
+    await stranica.waitForSelector('.hero--animiran');
+    await stranica.waitForFunction(() => document.querySelector('[data-uvod]').hidden);
+    provjeri(problemi.length === 0, `prave sličice: hero se pokreće bez grešaka${problemi.length ? ' — ' + problemi.join('; ') : ''}`);
+    await stranica.waitForTimeout(800);
+    await snimi(stranica, 'hero-pravi-0.png', false);
+    for (const [udio, ime] of [[0.5, 'hero-pravi-50.png'], [0.95, 'hero-pravi-95.png']]) {
+      await stranica.evaluate((u) => {
+        const sekcija = document.querySelector('[data-hero]');
+        window.scrollTo({ top: sekcija.offsetTop + u * (sekcija.offsetHeight - window.innerHeight), behavior: 'instant' });
+      }, udio);
+      await stranica.waitForTimeout(900);
+      await snimi(stranica, ime, false);
+    }
+    await zatvori();
+  } else {
+    console.log('  (animacija je isključena u postavkama; prave sličice se ne provjeravaju)');
+  }
+}
 if (!sharp) {
   console.log('  (preskočeno: nema paketa sharp za izradu ispitnih sličica)');
 } else {
@@ -228,7 +257,7 @@ if (!sharp) {
   );
   const zatrazene = new Set();
   const priprema = async (s) => {
-    await sPostavkama(s, (izvor) => izvor.replace('ukljuceno: false', 'ukljuceno: true'));
+    await sPostavkama(s, (izvor) => izvor.replace(/ukljuceno: (true|false)/, 'ukljuceno: true'));
     await s.route('**/assets/frames/konj-*.jpg', (ruta) => {
       const broj = Number(/konj-(\d+)\.jpg/.exec(ruta.request().url())[1]);
       zatrazene.add(broj);
@@ -304,7 +333,7 @@ if (!sharp) {
     // Nijedna sličica se ne učita: hero ostaje statičan, a uvodni zaslon se sklanja.
     const { stranica, zatvori } = await otvori('index.html', {
       priprema: async (s) => {
-        await sPostavkama(s, (izvor) => izvor.replace('ukljuceno: false', 'ukljuceno: true'));
+        await sPostavkama(s, (izvor) => izvor.replace(/ukljuceno: (true|false)/, 'ukljuceno: true'));
         await s.route('**/assets/frames/konj-*.jpg', (ruta) => ruta.abort());
       },
     });

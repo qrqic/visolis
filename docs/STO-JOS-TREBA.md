@@ -36,8 +36,9 @@ Slobodno ih mijenjajte; nijedan nije preuzet iz materijala udruge.
 
 ## Tehnički
 
-- [ ] **Hero animacija.** Sličice još ne postoje, pa je `hero.ukljuceno` u `site/js/postavke.js` isključen i hero prikazuje fotografiju. Ovisi o Higgsfield kreditima.
-- [ ] **Slika za mobitel u heroju.** Kad nastane čista slika konja bez jahačice, zamjenjuje sadašnju fotografiju.
+- [x] **Hero animacija.** 120 sličica iz videa hoda je u `site/assets/frames/`, animacija je uključena.
+- [ ] **Oštrina animacije.** Video je 1276 × 720 (Kling 3.0, standardni način). Na običnim ekranima je oštar; na ekranima visoke gustoće (Retina) konj je blago mekši jer se sličica povećava. Oštrija inačica traži Higgsfield plan Plus (Kling pro ili Seedance 1080p). Nakon novog videa dovoljno je ponovno pokrenuti `alati/izrezi-slicice.mjs`.
+- [ ] **Statična slika konja** (mobitel, smanjeno kretanje) izrezana je iz prve sličice videa, 960 × 720. Izvorna slika s Higgsfielda je veće rezolucije; ako je priložite, statična slika može biti oštrija.
 - [ ] **Usluga za obrasce.** Odabrati uslugu, upisati adresu u `postavke.obrazac.adresaSlanja` i naziv usluge u pravila privatnosti. Do tada obrazac ne šalje nego upućuje na telefon.
 - [ ] **Font naslova.** Privremeno Lora; specifikacija predviđa Fraunces, koji treba preuzeti i staviti u `site/assets/fonts/`.
 - [ ] **Fontovi u WOFF2.** Sada su WOFF, koji je nešto veći.

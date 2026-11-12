@@ -52,6 +52,8 @@ Obavezni su `naslov` i `prikazuj_do`. Nakon dana `prikazuj_do` najava se sama sk
 
 **Nova fotografija.** Staviti izvornik u `izvori/`, dodati red u popis u `alati/obradi-slike.mjs` i pokrenuti `node alati/obradi-slike.mjs` (treba paket `sharp`).
 
+**Nove sličice hero animacije.** Novi video hoda staviti u `izvori/higgsfield/` i pokrenuti `node alati/izrezi-slicice.mjs izvori/higgsfield/<video>.mp4` (trebaju ffmpeg i paket `sharp`). Ako sličica nema, u `postavke.js` postaviti `hero.ukljuceno` na `false`.
+
 ## Testovi
 
 ```
