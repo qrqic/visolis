@@ -6,6 +6,8 @@
 
 > **Izmjena 12. 11. 2026.:** nakon pregleda na stranici naručitelj je odustao od hero animacije. Hero je sada jedna velika fotografija konja preko cijelog ekrana, s tekstom preko nje (na uskim ekranima fotografija je iznad teksta). Poglavlje 6, redak "Hero" u poglavlju 3, moduli `hero.js` i `ucitavanje.js` u poglavlju 8, mapa `assets/frames/` te točke 10.3 i 10.4 o videu više ne vrijede. Sve ostalo vrijedi.
 
+> **Izmjena 13. 11. 2026. (povratna informacija udruge):** glavna boja je bordo `#7A1F2B`, zaštitna boja udruge, umjesto jantara; blijedožuta iz loga ostaje za isticanje. Hero je bordo ploha s naslovom i fotografijom ponija Anabele u šesterokutu sa žutim rubom. Težište sadržaja je na hipoterapiji i aktivnostima pomoću konja: početna ima sekcije Hipoterapija, Aktivnosti pomoću konja, Kako početi, Naše krdo, O nama i Kontakt. Fizikalna, okupacijska i logopedska terapija spominju se u sekciji Hipoterapija i zadržavaju podstranice. Time se mijenjaju poglavlja 3, 4.2, 4.3 i 5.1.
+
 ## 1. Cilj i publika
 
 Udruga nema web stranicu. Stranica treba napraviti dvije stvari:

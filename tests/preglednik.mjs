@@ -201,7 +201,7 @@ for (const [opis, tijelo, ocekivano] of slucajevi) {
     priprema: (s) => s.route('**/data/aktualno.json', (ruta) => ruta.fulfill({ status: 404, body: '' })),
   });
   provjeri(await stranica.locator('[data-aktualno]').isHidden(), 'datoteka nedostaje: najava se ne prikazuje');
-  provjeri(await stranica.locator('.kartica').first().isVisible(), 'datoteka nedostaje: ostatak stranice radi');
+  provjeri(await stranica.locator('#hipoterapija h2').isVisible(), 'datoteka nedostaje: ostatak stranice radi');
   // Preglednik sam ispisuje poruku o neuspjelom zahtjevu; ona se ovdje očekuje.
   provjeri(problemi.filter((p) => !p.includes('aktualno.json') && !p.includes('Failed to load resource')).length === 0, 'datoteka nedostaje: nema drugih grešaka');
   await zatvori();
@@ -209,7 +209,7 @@ for (const [opis, tijelo, ocekivano] of slucajevi) {
 
 // === 5. Hero ===
 console.log('\nHero');
-for (const [sirina, visina] of [[375, 760], [768, 1024], [1024, 768], [1440, 900], [1920, 1080]]) {
+for (const [sirina, visina] of [[375, 650], [390, 760], [768, 1024], [1024, 768], [1440, 900], [1920, 1080]]) {
   const { stranica, zatvori } = await otvori('index.html', { sirina, visina });
   const stanje = await stranica.evaluate(() => {
     const slika = document.querySelector('.hero__slika img');
@@ -230,6 +230,8 @@ for (const [sirina, visina] of [[375, 760], [768, 1024], [1024, 768], [1440, 900
   provjeri(stanje.naslovURubu && stanje.prelomljenihRedova === 0, `hero @${sirina}: svaki red naslova stane u jedan redak`);
   provjeri(stanje.gumbDno <= stanje.visina, `hero @${sirina}: gumb "Dogovorite termin" vidljiv je bez skrolanja (dno na ${stanje.gumbDno} od ${stanje.visina} px)`);
   await snimi(stranica, `hero-${sirina}.png`, false);
+  const okvir = await stranica.evaluate(() => { const o = document.querySelector('.hero__slika img').getBoundingClientRect(); return Math.round(o.width); });
+  provjeri(okvir <= 560, `hero @${sirina}: fotografija se ne prikazuje veća od izvorne (${okvir} od 560 px)`);
   await zatvori();
 }
 
@@ -269,8 +271,8 @@ console.log('\nOstalo');
   const maleMete = await stranica.evaluate(() =>
     [...document.querySelectorAll('a, button, input:not([type=hidden]), select, textarea')]
       .filter((e) => e.offsetParent && !e.closest('.polje--zamka') && !e.closest('p, label, address'))
-      // Kartica je cijela poveznica, a kućica privole dijeli površinu sa svojom oznakom.
-      .map((e) => e.closest('.kartica') || (e.type === 'checkbox' && e.labels[0]) || e)
+      // Kućica privole dijeli površinu sa svojom oznakom.
+      .map((e) => (e.type === 'checkbox' && e.labels[0]) || e)
       .filter((e) => e.getBoundingClientRect().height < 43.5)
       .map((e) => `${e.tagName.toLowerCase()} "${(e.innerText || e.name || '').trim().slice(0, 24)}" ${Math.round(e.getBoundingClientRect().height)}px`),
   );
@@ -293,7 +295,7 @@ console.log('\nOstalo');
 }
 {
   const { stranica, zatvori } = await otvori('index.html', { kontekst: { javaScriptEnabled: false } });
-  provjeri(await stranica.locator('.kartica').first().isVisible(), 'bez JavaScripta: programi su vidljivi');
+  provjeri(await stranica.locator('#hipoterapija h2').isVisible() && await stranica.locator('#aktivnosti h2').isVisible(), 'bez JavaScripta: sadržaj je vidljiv');
   provjeri(await stranica.locator('.izbornik__popis a').first().isVisible(), 'bez JavaScripta: izbornik je vidljiv');
   provjeri(await stranica.locator('.kontakt__telefon').isVisible(), 'bez JavaScripta: telefon je vidljiv');
   provjeri(await stranica.locator('noscript').count() > 0, 'bez JavaScripta: obrazac upućuje na telefon');

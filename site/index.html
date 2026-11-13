@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vis Solis — terapija i aktivnosti pomoću konja, Bistra</title>
-  <meta name="description" content="Udruga Vis Solis iz Bistre provodi hipoterapiju te fizikalnu, okupacijsku i logopedsku terapiju uz pomoć konja. Dogovorite termin.">
+  <title>Vis Solis — hipoterapija i aktivnosti pomoću konja, Bistra</title>
+  <meta name="description" content="Udruga Vis Solis iz Gornje Bistre kraj Zagreba: hipoterapija, jahanje, šetnje i druženja s konjima. Dogovorite termin.">
   <meta name="theme-color" content="#f7f2e8">
-  <meta property="og:title" content="Vis Solis — terapija i aktivnosti pomoću konja, Bistra">
-  <meta property="og:description" content="Udruga Vis Solis iz Bistre provodi hipoterapiju te fizikalnu, okupacijsku i logopedsku terapiju uz pomoć konja. Dogovorite termin.">
+  <meta property="og:title" content="Vis Solis — hipoterapija i aktivnosti pomoću konja, Bistra">
+  <meta property="og:description" content="Udruga Vis Solis iz Gornje Bistre kraj Zagreba: hipoterapija, jahanje, šetnje i druženja s konjima. Dogovorite termin.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="hr_HR">
   <link rel="icon" href="assets/img/znak.svg" type="image/svg+xml">
@@ -36,7 +36,8 @@
       </button>
       <nav class="izbornik" id="izbornik" data-izbornik aria-label="Glavni izbornik">
         <ul class="izbornik__popis">
-          <li><a href="#programi">Programi</a></li>
+          <li><a href="#hipoterapija">Hipoterapija</a></li>
+          <li><a href="#aktivnosti">Aktivnosti</a></li>
           <li><a href="#krdo">Krdo</a></li>
           <li><a href="#o-nama">O nama</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
@@ -48,28 +49,33 @@
 
   <main id="sadrzaj">
 
-    <!-- HERO: velika fotografija preko cijelog ekrana, tekst preko nje.
-         Za zamjenu fotografije promijeniti nazive datoteka ovdje i, po potrebi,
-         stranu teksta (klasa hero--tekst-lijevo ili hero--tekst-desno) i žarište u hero.css. -->
-    <section class="hero hero--tekst-desno" id="vrh" aria-labelledby="hero-naslov">
-      <picture class="hero__slika">
-        <source type="image/webp" srcset="assets/img/hero-glava-768.webp 768w, assets/img/hero-glava-1280.webp 1280w, assets/img/hero-glava-1920.webp 1920w, assets/img/hero-glava-2560.webp 2560w" sizes="100vw">
-        <img src="assets/img/hero-glava-1920.jpg" width="1920" height="1280" alt="Smeđi konj s crnom grivom i svijetlim ularom, glava izbliza, u hladu drveća" fetchpriority="high">
-      </picture>
+    <!-- HERO: bordo ploha, naslov i Anabela u šesterokutu. -->
+    <section class="hero" id="vrh" aria-labelledby="hero-naslov">
       <div class="spremnik hero__sadrzaj">
         <div class="hero__tekst">
-          <span class="oznaka">Udruga za terapiju i aktivnosti pomoću konja · Bistra</span>
+          <span class="oznaka">Udruga Vis Solis · Gornja Bistra</span>
           <h1 id="hero-naslov">
-            <span class="hero__red">Terapija uz konje.</span>
-            <span class="hero__red">Korak po korak.</span>
-            <span class="hero__red">U vašem ritmu.</span>
+            <span class="hero__red">Hipoterapija</span>
+            <span class="hero__red">i aktivnosti</span>
+            <span class="hero__red">pomoću konja.</span>
           </h1>
-          <p class="uvodni">Vis Solis provodi hipoterapiju te fizikalnu, okupacijsku i logopedsku terapiju uz pomoć konja, za djecu i odrasle, u Gornjoj Bistri kraj Zagreba.</p>
+          <p class="uvodni">Vis Solis je udruga iz Gornje Bistre kraj Zagreba. Provodimo hipoterapiju i organiziramo jahanje, šetnje i druženja s konjima, za djecu i odrasle.</p>
           <div class="hero__radnje">
-            <a class="gumb" href="#kontakt">Dogovorite termin</a>
-            <a class="strelica" href="#programi">Pogledajte programe</a>
+            <a class="gumb gumb--svijetli" href="#kontakt">Dogovorite termin</a>
+            <a class="strelica" href="#hipoterapija">Što je hipoterapija</a>
           </div>
         </div>
+        <figure class="hero__slika">
+          <div class="hero__okvir">
+            <div class="sesterokut">
+              <picture>
+                <source type="image/webp" srcset="assets/img/anabela-360.webp 360w, assets/img/anabela-560.webp 560w" sizes="(min-width: 64rem) 31rem, 16rem">
+                <img src="assets/img/anabela-560.jpg" width="560" height="647" alt="Anabela, smeđe-bijeli poni s grivom raznesenom vjetrom, hoda kroz visoku travu s vlatima u ustima" fetchpriority="high">
+              </picture>
+            </div>
+          </div>
+          <figcaption>Anabela, naš šareni poni <span>Foto: ViEdo</span></figcaption>
+        </figure>
       </div>
     </section>
 
@@ -86,48 +92,55 @@
       </div>
     </section>
 
-    <!-- 01 PROGRAMI -->
-    <section class="sekcija sekcija--pijesak" id="programi" aria-labelledby="programi-naslov">
-      <div class="spremnik">
-        <div class="sekcija__glava" data-pojavi>
-          <span class="oznaka">01 — Programi</span>
-          <h2 id="programi-naslov">Četiri terapije, jedan <em>suradnik</em> na četiri noge.</h2>
-          <p class="uvodni">U svakom programu konj je dio terapijskog rada. Odaberite program i pogledajte što obuhvaća.</p>
+    <!-- 01 HIPOTERAPIJA -->
+    <section class="sekcija sekcija--pijesak" id="hipoterapija" aria-labelledby="hipoterapija-naslov">
+      <div class="spremnik dva-stupca dva-stupca--obrnuto">
+        <div class="tekst-blok" data-pojavi>
+          <span class="oznaka">01 — Hipoterapija</span>
+          <h2 id="hipoterapija-naslov">Terapija koja počinje <em>korakom</em> konja.</h2>
+          <p class="uvodni">Hipoterapija je oblik terapije u kojem terapeut koristi kretanje konja u hodu. Ritmično kretanje konjskih leđa prenosi se na tijelo korisnika koji na konju sjedi.</p>
+          <a class="strelica" href="hipoterapija.html">Više o hipoterapiji</a>
+          <p class="ostale-terapije">Uz hipoterapiju provodimo i <a href="fizikalna-terapija.html">fizikalnu</a>, <a href="okupacijska-terapija.html">okupacijsku</a> i <a href="logopedska-terapija.html">logopedsku</a> terapiju uz pomoć konja.</p>
         </div>
-        <ul class="programi">
-          <li class="kartica" data-pojavi>
-            <span class="kartica__broj">01</span>
-            <h3><a href="hipoterapija.html">Hipoterapija</a></h3>
-            <p>Terapija u kojoj kretanje konja u hodu postaje dio terapijskog rada.</p>
-            <span class="kartica__vise" aria-hidden="true">Više o programu</span>
-          </li>
-          <li class="kartica" data-pojavi>
-            <span class="kartica__broj">02</span>
-            <h3><a href="fizikalna-terapija.html">Fizikalna terapija uz pomoć konja</a></h3>
-            <p>Fizioterapijski rad koji se dijelom odvija na konju i uz njega.</p>
-            <span class="kartica__vise" aria-hidden="true">Više o programu</span>
-          </li>
-          <li class="kartica" data-pojavi>
-            <span class="kartica__broj">03</span>
-            <h3><a href="okupacijska-terapija.html">Okupacijska terapija uz pomoć konja</a></h3>
-            <p>Svakodnevne vještine vježbaju se kroz brigu o konju i aktivnosti uz njega.</p>
-            <span class="kartica__vise" aria-hidden="true">Više o programu</span>
-          </li>
-          <li class="kartica" data-pojavi>
-            <span class="kartica__broj">04</span>
-            <h3><a href="logopedska-terapija.html">Logopedska terapija uz pomoć konja</a></h3>
-            <p>Rad na govoru i komunikaciji u poticajnom okruženju, uz konja.</p>
-            <span class="kartica__vise" aria-hidden="true">Više o programu</span>
-          </li>
-        </ul>
+        <picture class="fotografija" data-pojavi="slika">
+          <source type="image/webp" srcset="assets/img/hipoterapija-kas-640.webp 640w, assets/img/hipoterapija-kas-1024.webp 1024w, assets/img/hipoterapija-kas-1600.webp 1600w" sizes="(min-width: 64rem) 50vw, 100vw">
+          <img src="assets/img/hipoterapija-kas-1280.jpg" width="1280" height="853" alt="Svijetlosmeđi konj u pokretu preko cvjetne livade, s članicom tima u sedlu" loading="lazy" decoding="async">
+        </picture>
       </div>
     </section>
 
-    <!-- 02 KAKO POČETI -->
-    <section class="sekcija" id="kako-poceti" aria-labelledby="kako-naslov">
+    <!-- 02 AKTIVNOSTI POMOĆU KONJA -->
+    <section class="sekcija" id="aktivnosti" aria-labelledby="aktivnosti-naslov">
+      <div class="spremnik dva-stupca">
+        <picture class="fotografija" data-pojavi="slika">
+            <source type="image/webp" srcset="assets/img/aktivnosti-galop-640.webp 640w, assets/img/aktivnosti-galop-1024.webp 1024w, assets/img/aktivnosti-galop-1600.webp 1600w" sizes="(min-width: 64rem) 50vw, 100vw">
+            <img src="assets/img/aktivnosti-galop-1280.jpg" width="1280" height="853" alt="Bijeli konj u galopu preko livade, s jahačicom s kacigom" loading="lazy" decoding="async">
+          </picture>
+        <div class="tekst-blok" data-pojavi>
+          <span class="oznaka">02 — Aktivnosti pomoću konja</span>
+          <h2 id="aktivnosti-naslov">Ne mora sve biti terapija.</h2>
+          <p class="uvodni">Uz terapiju organiziramo jahanje, šetnje i druženja s krdom, tijekom cijele godine.</p>
+          <ul class="popis-crtice">
+            <li>Rekreativno jahanje</li>
+            <li>Šetnje na konjima</li>
+            <li>Dječji ljetni kampovi</li>
+            <li>Obiteljski dani i dani otvorenih vrata</li>
+            <li>Advent na konjima</li>
+          </ul>
+          <p>Termine i najave događanja objavljujemo na društvenim mrežama.</p>
+          <div class="mreze">
+            <a class="strelica" href="https://www.instagram.com/udruga_vis_solis/" rel="noopener">Instagram</a>
+            <a class="strelica" href="https://www.facebook.com/p/Vis-Solis-udruga-za-terapije-i-aktivnosti-pomo%C4%87u-konja-61556972145488/" rel="noopener">Facebook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 KAKO POČETI -->
+    <section class="sekcija sekcija--pijesak" id="kako-poceti" aria-labelledby="kako-naslov">
       <div class="spremnik">
         <div class="sekcija__glava" data-pojavi>
-          <span class="oznaka">02 — Kako početi</span>
+          <span class="oznaka">03 — Kako početi</span>
           <h2 id="kako-naslov">Od prvog upita do prvog termina.</h2>
         </div>
         <ol class="koraci">
@@ -145,33 +158,6 @@
           </li>
         </ol>
         <p class="ceka">Terapeuti trebaju potvrditi ove korake: je li potrebna liječnička dokumentacija ili uputnica, kako izgleda početna procjena i koliko traje.</p>
-      </div>
-    </section>
-
-    <!-- 03 DRUŽENJE S KONJIMA -->
-    <section class="sekcija sekcija--pijesak" id="druzenje" aria-labelledby="druzenje-naslov">
-      <div class="spremnik dva-stupca">
-        <picture class="fotografija" data-pojavi="slika">
-            <source type="image/webp" srcset="assets/img/druzenje-galop-640.webp 640w, assets/img/druzenje-galop-1024.webp 1024w, assets/img/druzenje-galop-1600.webp 1600w" sizes="(min-width: 64rem) 50vw, 100vw">
-            <img src="assets/img/druzenje-galop-1280.jpg" width="1280" height="853" alt="Bijeli konj u galopu preko livade, s jahačicom s kacigom" loading="lazy" decoding="async">
-          </picture>
-        <div class="tekst-blok" data-pojavi>
-          <span class="oznaka">03 — Druženje s konjima</span>
-          <h2 id="druzenje-naslov">Ne mora sve biti terapija.</h2>
-          <p class="uvodni">Uz terapijske programe organiziramo i rekreaciju te druženja s krdom tijekom cijele godine.</p>
-          <ul class="popis-crtice">
-            <li>Rekreativno jahanje</li>
-            <li>Šetnje na konjima</li>
-            <li>Dječji ljetni kampovi</li>
-            <li>Obiteljski dani i dani otvorenih vrata</li>
-            <li>Advent na konjima</li>
-          </ul>
-          <p>Termine i najave događanja objavljujemo na društvenim mrežama.</p>
-          <div class="mreze">
-            <a class="strelica" href="https://www.instagram.com/udruga_vis_solis/" rel="noopener">Instagram</a>
-            <a class="strelica" href="https://www.facebook.com/p/Vis-Solis-udruga-za-terapije-i-aktivnosti-pomo%C4%87u-konja-61556972145488/" rel="noopener">Facebook</a>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -239,10 +225,6 @@
             <source type="image/webp" srcset="assets/img/o-nama-crni-640.webp 640w, assets/img/o-nama-crni-1024.webp 1024w, assets/img/o-nama-crni-1600.webp 1600w" sizes="(min-width: 64rem) 25vw, 50vw">
             <img src="assets/img/o-nama-crni-1280.jpg" width="1280" height="852" alt="Članica tima na crnom konju među poljskim cvijećem" loading="lazy" decoding="async">
           </picture>
-          <picture class="fotografija" data-pojavi="slika">
-            <source type="image/webp" srcset="assets/img/o-nama-kas-640.webp 640w, assets/img/o-nama-kas-1024.webp 1024w, assets/img/o-nama-kas-1600.webp 1600w" sizes="(min-width: 64rem) 50vw, 100vw">
-            <img src="assets/img/o-nama-kas-1280.jpg" width="1280" height="853" alt="Članica tima jaše svijetlosmeđeg konja u kasu preko cvjetne livade" loading="lazy" decoding="async">
-          </picture>
         </div>
       </div>
     </section>
@@ -286,11 +268,11 @@
               <label for="program">Što vas zanima <span class="polje__napomena">(nije obavezno)</span></label>
               <select id="program" name="program">
                 <option value="">Još ne znam</option>
-              <option>Hipoterapija</option>
-              <option>Fizikalna terapija uz pomoć konja</option>
-              <option>Okupacijska terapija uz pomoć konja</option>
-              <option>Logopedska terapija uz pomoć konja</option>
-                <option>Rekreativno jahanje</option>
+                <option>Hipoterapija</option>
+                <option>Aktivnosti pomoću konja (jahanje, šetnje, kampovi)</option>
+                <option>Fizikalna terapija uz pomoć konja</option>
+                <option>Okupacijska terapija uz pomoć konja</option>
+                <option>Logopedska terapija uz pomoć konja</option>
                 <option>Nešto drugo</option>
               </select>
             </div>

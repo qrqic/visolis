@@ -20,18 +20,17 @@ const IZLAZ = path.join(korijen, 'site', 'assets', 'img');
 // Omjer šesterokuta s vrhom gore: širina je 0,866 visine.
 const SESTEROKUT = { omjer: 0.866, sirine: [480, 800], jpg: 800 };
 const FOTOGRAFIJA = { sirine: [640, 1024, 1600], jpg: 1280 };
-// Hero je preko cijelog ekrana, pa treba i veće širine.
-const HERO = { sirine: [768, 1280, 1920, 2560], jpg: 1920 };
 
 /** izrez: { left, top, width, height } u pikselima izvorne slike (izborno). */
 const slike = [
-  { izvor: '0U8A8968.JPG', ime: 'hero-glava', ...HERO },
-  { izvor: 'DSC0124.jpg', ime: 'hero-sivi', ...HERO },
-  { izvor: 'DSC0112.jpg', ime: 'o-nama-kas', ...FOTOGRAFIJA },
+  // Anabela: izrez bez djeteta nastaje skriptom alati/retus-anabela.py iz izvorne fotografije (1377 px),
+  // pa veće inačice od 560 px nema smisla raditi.
+  { izvor: 'anabela-izrez.png', ime: 'anabela', omjer: 0.866, sirine: [360, 560], jpg: 560 },
+  { izvor: 'DSC0112.jpg', ime: 'hipoterapija-kas', ...FOTOGRAFIJA },
   { izvor: 'DSC3065.jpg', ime: 'o-nama-portret', ...FOTOGRAFIJA },
   { izvor: 'DSC0124.jpg', ime: 'o-nama-sivi', ...FOTOGRAFIJA },
   { izvor: 'DSC2220.jpg', ime: 'o-nama-crni', ...FOTOGRAFIJA },
-  { izvor: 'DSC0002.jpg', ime: 'druzenje-galop', ...FOTOGRAFIJA },
+  { izvor: 'DSC0002.jpg', ime: 'aktivnosti-galop', ...FOTOGRAFIJA },
   { izvor: 'DSC3065.jpg', ime: 'krdo-svijetlosmedi', ...SESTEROKUT, izrez: { left: 690, top: 0, width: 1484, height: 1714 } },
   { izvor: '0U8A8968.JPG', ime: 'krdo-smedi', ...SESTEROKUT, izrez: { left: 250, top: 0, width: 1487, height: 1717 } },
   { izvor: '0U8A8685.JPG', ime: 'krdo-sivi', ...SESTEROKUT, izrez: { left: 200, top: 420, width: 1300, height: 1501 } },

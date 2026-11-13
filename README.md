@@ -58,7 +58,7 @@ Obavezni su `naslov` i `prikazuj_do`. Nakon dana `prikazuj_do` najava se sama sk
 
 **Nova fotografija.** Staviti izvornik u `izvori/`, dodati red u popis u `alati/obradi-slike.mjs` i pokrenuti `node alati/obradi-slike.mjs` (treba paket `sharp`).
 
-**Fotografija u heroju.** Nazivi datoteka su u `site/index.html` (sekcija HERO), a strana teksta i žarište u `site/css/hero.css`.
+**Fotografija u heroju.** Anabela u šesterokutu: datoteke `site/assets/img/anabela-*`, raspored u `site/css/hero.css`. Izrez nastaje skriptom `alati/retus-anabela.py` (treba Python s paketima opencv-python i numpy), a zatim `alati/obradi-slike.mjs`.
 
 ## Testovi
 

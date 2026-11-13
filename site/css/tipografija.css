@@ -72,18 +72,18 @@ h3 {
 em {
   font-family: var(--font-naslov);
   font-style: italic;
-  color: var(--jantar-tamni);
+  color: var(--bordo);
 }
 
 a {
   color: inherit;
-  text-decoration-color: var(--jantar);
+  text-decoration-color: var(--bordo);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.2em;
 }
 
 a:hover {
-  text-decoration-color: var(--jantar-tamni);
+  text-decoration-color: var(--bordo-tamni);
 }
 
 p {
@@ -98,7 +98,7 @@ p {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--jantar-tamni);
+  color: var(--bordo);
 }
 
 .uvodni {

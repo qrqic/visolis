@@ -172,7 +172,7 @@ html:not(.js) .izbornik {
     font-family: var(--font-tekst);
     font-size: 0.9375rem;
     border: 0;
-    background: linear-gradient(var(--jantar), var(--jantar)) left calc(100% - 0.55rem) / 0 2px no-repeat;
+    background: linear-gradient(var(--bordo), var(--bordo)) left calc(100% - 0.55rem) / 0 2px no-repeat;
     transition: background-size 0.35s var(--krivulja);
   }
 
@@ -240,7 +240,7 @@ html:not(.js) .izbornik {
 
 .podnozje {
   padding-block: clamp(3.5rem, 8vw, 6rem) 2rem;
-  background: var(--tekst);
+  background: var(--bordo-tamni);
   color: var(--krem);
   font-size: 0.9375rem;
 }
@@ -264,7 +264,7 @@ html:not(.js) .izbornik {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--jantar);
+  color: var(--zuta);
 }
 
 .podnozje address {
@@ -272,6 +272,7 @@ html:not(.js) .izbornik {
 }
 
 .podnozje a {
+  text-decoration-color: rgba(247, 242, 232, 0.55);
   display: inline-flex;
   align-items: center;
   min-height: 2.75rem;
@@ -292,4 +293,12 @@ html:not(.js) .izbornik {
   .podnozje__mreza {
     grid-template-columns: 2fr 1fr 1fr;
   }
+}
+
+.podnozje a:hover {
+  text-decoration-color: var(--zuta);
+}
+
+.podnozje :focus-visible {
+  outline-color: var(--zuta);
 }
