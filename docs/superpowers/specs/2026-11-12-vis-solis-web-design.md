@@ -1,5 +1,7 @@
 # Vis Solis — web stranica: specifikacija dizajna
 
+> **Izmjena 14. 11. 2026. (proba):** na grani `krdo-u-trku` postoji probna stranica `site/proba-krdo.html`: jedan crtani konj (i poni) koji trči, obojen za svakog od 12 konja iz `site/data/krdo.json`. Konji trče samo dok se red pomiče lijevo-desno; okomito skrolanje se ničim ne zadržava. Klik otvara fotografiju, ime i rečenicu. Početna stranica nije mijenjana dok udruga ne potvrdi.
+
 - **Datum:** 12. 11. 2026.
 - **Status:** čeka pregled naručitelja
 - **Naručitelj:** Vis Solis – udruga za terapiju i aktivnosti pomoću konja (Udruga VS), Bistra

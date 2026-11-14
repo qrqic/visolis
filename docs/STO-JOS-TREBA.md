@@ -46,3 +46,12 @@ Slobodno ih mijenjajte; nijedan nije preuzet iz materijala udruge.
 ## Ideje za kasnije
 
 - Anabeline oči prate pokazivač miša (prijedlog naručitelja, 13. 11. 2026.).
+
+## Proba: krdo u trku (14. 11. 2026.)
+
+Probna stranica `site/proba-krdo.html` — nije povezana u izbornik i ne mijenja početnu stranicu.
+
+- [ ] Odluka: ugrađujemo li red s konjima u sekciju "Naše krdo" na početnoj?
+- [ ] Za svakog od 12 konja u `site/data/krdo.json`: ime, jedna rečenica, oblik (`konj` ili `poni`), boja dlake i grive.
+- [ ] Fotografija svakog konja (bez djece). Zasad ih imaju Anabela i tri konja; ostalima piše "Fotografija stiže".
+- [ ] Boje konja 7–12 su izmišljene kao primjer i treba ih zamijeniti stvarnima.

@@ -1,0 +1,265 @@
+/* Crtani konj (boje) i red s krdom. */
+
+.konj {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  --dlaka-tamna: color-mix(in srgb, var(--dlaka) 72%, #1a1310);
+  --noge-tamne: color-mix(in srgb, var(--noge, var(--dlaka)) 72%, #1a1310);
+}
+
+.konj__dlaka {
+  fill: var(--dlaka);
+}
+
+.konj__griva {
+  fill: var(--griva);
+}
+
+.konj--poni .konj__griva {
+  stroke: var(--griva);
+  stroke-width: 5;
+  stroke-linejoin: round;
+}
+
+.konj__mrlja {
+  fill: #f6f1e7;
+}
+
+.konj__oko {
+  fill: #1f1915;
+}
+
+.konj__noga {
+  fill: none;
+  stroke: var(--dlaka);
+  stroke-linecap: round;
+}
+
+.konj__noga--donja {
+  stroke: var(--noge, var(--dlaka));
+}
+
+.konj__noga--daleka {
+  stroke: var(--dlaka-tamna);
+}
+
+.konj__noga--donja.konj__noga--daleka {
+  stroke: var(--noge-tamne);
+}
+
+.konj__kopito {
+  fill: none;
+  stroke: #2f2622;
+}
+
+/* Red s krdom */
+
+.trk {
+  --razmak: clamp(0.5rem, 2vw, 2rem);
+  position: relative;
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+  /* Tamnija pješčana traka, da se vide i bijeli i crni konji. */
+  background: #e4d9c3;
+}
+
+.trk__staza {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.trk__staza::-webkit-scrollbar {
+  display: none;
+}
+
+.trk--povlacenje .trk__staza {
+  cursor: grabbing;
+}
+
+.trk__red {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--razmak);
+  width: max-content;
+  margin: 0;
+  padding: 3.75rem var(--rub) 0;
+  list-style: none;
+}
+
+.trk__konj {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  width: clamp(8.5rem, 20vw, 14rem);
+  padding: 0 0 1.1rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: inherit;
+}
+
+.trk__crtez {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+}
+
+/* Tlo: crta u visini kopita, spojena preko razmaka između konja. */
+.trk__crtez::after {
+  content: '';
+  position: absolute;
+  left: calc(var(--razmak) / -2);
+  right: calc(var(--razmak) / -2);
+  bottom: 0;
+  /* 12/240 širine crteža: postotak margine računa se od širine, pa crta ostaje u visini kopita. */
+  margin-bottom: 5%;
+  height: 1px;
+  background: rgba(43, 36, 32, 0.28);
+}
+
+.trk__konj:hover .trk__ime {
+  color: var(--bordo);
+}
+
+.trk__konj:focus-visible {
+  outline: 2px solid var(--bordo);
+  outline-offset: -4px;
+  border-radius: 0.5rem;
+}
+
+/* Crtež gleda udesno; konji u redu u početku gledaju ulijevo, kamo red kreće. */
+.trk .konj {
+  transform: scaleX(-1);
+  transition: transform 0.25s var(--krivulja);
+}
+
+.trk--udesno .konj {
+  transform: none;
+}
+
+.trk .konj--poni {
+  width: 80%;
+  /* Manji crtež ima tlo niže; podiže se da kopita stanu na istu crtu. */
+  margin-bottom: 1%;
+}
+
+.trk__ime {
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
+  font-family: var(--font-naslov);
+  font-size: 1.125rem;
+}
+
+.trk__konj[aria-pressed='true'] .trk__ime {
+  border-bottom-color: var(--bordo);
+  color: var(--bordo);
+}
+
+.trk__tipke {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.25rem var(--rub) 1.25rem;
+}
+
+.trk__uputa {
+  font-size: 0.875rem;
+  color: var(--prigusen);
+}
+
+.trk__strelice {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.trk__strelica {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1.5px solid var(--bordo);
+  border-radius: 50%;
+  background: none;
+  color: var(--bordo);
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+
+.trk__strelica:hover:not([disabled]) {
+  background: var(--bordo);
+  color: var(--krem);
+}
+
+.trk__strelica[disabled] {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* Kartica odabranog konja */
+
+.konj-kartica {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.konj-kartica__slika {
+  width: min(60%, 13rem);
+}
+
+.konj-kartica__bez-slike {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--prigusen);
+}
+
+.konj-kartica h3 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.konj-kartica__opis {
+  margin-top: 0.75rem;
+  max-width: 34em;
+  font-size: 1.125rem;
+  color: var(--prigusen);
+}
+
+.konj-kartica__napomena {
+  display: none;
+  margin-top: 1rem;
+  max-width: 34em;
+}
+
+.konj-kartica--ceka .konj-kartica__napomena {
+  display: block;
+}
+
+@media (min-width: 48rem) {
+  .konj-kartica {
+    grid-template-columns: 13rem 1fr;
+    gap: 3rem;
+  }
+
+  .konj-kartica__slika {
+    width: 100%;
+  }
+}

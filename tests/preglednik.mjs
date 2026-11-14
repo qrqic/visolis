@@ -16,7 +16,7 @@ const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'site');
 const SNIMKE = process.env.SNIMKE || null;
-const STRANICE = ['index.html', 'hipoterapija.html', 'fizikalna-terapija.html', 'okupacijska-terapija.html', 'logopedska-terapija.html', 'privatnost.html'];
+const STRANICE = ['index.html', 'hipoterapija.html', 'fizikalna-terapija.html', 'okupacijska-terapija.html', 'logopedska-terapija.html', 'privatnost.html', 'proba-krdo.html'];
 const SIRINE = [375, 768, 1024, 1440];
 const VRSTE = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.woff': 'font/woff' };
 
@@ -310,6 +310,107 @@ console.log('\nOstalo');
   provjeri(await stranica.locator('.izbornik__popis a').first().isVisible(), 'bez JavaScripta: izbornik je vidljiv');
   provjeri(await stranica.locator('.kontakt__telefon').isVisible(), 'bez JavaScripta: telefon je vidljiv');
   provjeri(await stranica.locator('noscript').count() > 0, 'bez JavaScripta: obrazac upućuje na telefon');
+  await zatvori();
+}
+
+// === 7. Krdo u trku (proba) ===
+console.log('\nKrdo u trku');
+{
+  const nogeKonja = (s) =>
+    s.evaluate(() => [...document.querySelectorAll('.trk__konj')].slice(0, 3).map((gumb) => [...gumb.querySelectorAll('.konj__noga')].map((crta) => crta.getAttribute('x2') + ',' + crta.getAttribute('y2')).join(' ')).join(' | '));
+  const pomakniRed = (s, pomak) =>
+    s.evaluate(async (p) => {
+      const staza = document.querySelector('[data-krdo-staza]');
+      // U malim koracima, kao kod povlačenja.
+      for (let i = 0; i < 12; i++) {
+        staza.scrollLeft += p / 12;
+        await new Promise((r) => requestAnimationFrame(r));
+      }
+    }, pomak);
+
+  const { stranica, problemi, zatvori } = await otvori('proba-krdo.html');
+  await stranica.waitForSelector('.trk__konj');
+  const broj = await stranica.locator('.trk__konj').count();
+  provjeri(broj === 12, `u redu je dvanaest konja (ima ih ${broj})`);
+  provjeri(await stranica.evaluate(() => { const s = document.querySelector('[data-krdo-staza]'); return s.scrollWidth > s.clientWidth; }), 'red je širi od ekrana i može se pomicati');
+
+  const mirno = await nogeKonja(stranica);
+  await pomakniRed(stranica, 360);
+  const uTrku = await nogeKonja(stranica);
+  provjeri(uTrku !== mirno, 'dok se red pomiče, noge se miču');
+  provjeri(!(await stranica.locator('.trk--udesno').count()), 'pri pomaku naprijed konji gledaju ulijevo');
+  await stranica.waitForTimeout(1600);
+  provjeri((await nogeKonja(stranica)) === mirno, 'kad red stane, konji se vrate u stajanje');
+  await pomakniRed(stranica, -200);
+  provjeri((await stranica.locator('.trk--udesno').count()) === 1, 'pri pomaku natrag konji se okrenu udesno');
+  await stranica.waitForTimeout(1600);
+
+  // Okomito skrolanje preko reda mora pomicati stranicu, a ne red.
+  await stranica.setViewportSize({ width: 1440, height: 500 });
+  const okvirReda = await stranica.locator('[data-krdo-staza]').boundingBox();
+  await stranica.mouse.move(okvirReda.x + 400, okvirReda.y + 60);
+  const prije = await stranica.evaluate(() => ({ y: window.scrollY, x: document.querySelector('[data-krdo-staza]').scrollLeft }));
+  await stranica.mouse.wheel(0, 240);
+  await stranica.waitForTimeout(300);
+  const poslije = await stranica.evaluate(() => ({ y: window.scrollY, x: document.querySelector('[data-krdo-staza]').scrollLeft }));
+  provjeri(poslije.y > prije.y && poslije.x === prije.x, `kotačić miša preko reda pomiče stranicu, a ne red (stranica ${prije.y} → ${poslije.y} px)`);
+  await stranica.setViewportSize({ width: 1440, height: 900 });
+
+  // Strelice i odabir konja.
+  await stranica.evaluate(() => window.scrollTo(0, 0));
+  await stranica.evaluate(() => (document.querySelector('[data-krdo-staza]').scrollLeft = 0));
+  await stranica.waitForTimeout(300);
+  provjeri(await stranica.locator('[data-krdo-natrag]').isDisabled(), 'na početku reda strelica natrag je isključena');
+  await stranica.click('[data-krdo-naprijed]');
+  await stranica.waitForTimeout(900);
+  provjeri(await stranica.evaluate(() => document.querySelector('[data-krdo-staza]').scrollLeft > 200), 'strelica naprijed pomiče red');
+  provjeri((await stranica.locator('[data-krdo-ime]').innerText()) === 'Anabela', 'kartica na početku prikazuje prvog konja');
+  await stranica.evaluate(() => (document.querySelector('[data-krdo-staza]').scrollLeft = 0));
+  await stranica.waitForTimeout(1500);
+  await stranica.locator('.trk__konj').nth(2).click();
+  provjeri((await stranica.locator('[data-krdo-ime]').innerText()) === 'Ime konja 3', 'klik na konja otvara njegovu karticu');
+  provjeri((await stranica.locator('.trk__konj[aria-pressed="true"]').count()) === 1, 'označen je samo odabrani konj');
+  provjeri(await stranica.locator('[data-krdo-slika]').evaluate((slika) => slika.complete && slika.naturalWidth > 0), 'fotografija odabranog konja je učitana');
+
+  // Povlačenje mišem pomiče red i ne odabire konja.
+  const peti = await stranica.locator('.trk__konj').nth(4).boundingBox();
+  await stranica.mouse.move(peti.x + peti.width / 2, peti.y + peti.height / 2);
+  await stranica.mouse.down();
+  await stranica.mouse.move(peti.x + peti.width / 2 - 260, peti.y + peti.height / 2, { steps: 12 });
+  await snimi(stranica, 'krdo-u-trku.png', false);
+  await stranica.mouse.up();
+  await stranica.waitForTimeout(100);
+  provjeri(await stranica.evaluate(() => document.querySelector('[data-krdo-staza]').scrollLeft > 200), 'povlačenje mišem pomiče red');
+  provjeri((await stranica.locator('[data-krdo-ime]').innerText()) === 'Ime konja 3', 'povlačenje ne mijenja odabranog konja');
+  provjeri(problemi.length === 0, `krdo radi bez grešaka${problemi.length ? ' — ' + problemi.join('; ') : ''}`);
+  await stranica.waitForTimeout(1500);
+  await snimi(stranica, 'krdo-stoji.png', false);
+  await zatvori();
+}
+{
+  const { stranica, zatvori } = await otvori('proba-krdo.html', { kontekst: { reducedMotion: 'reduce' } });
+  await stranica.waitForSelector('.trk__konj');
+  const noge = () => stranica.evaluate(() => [...document.querySelectorAll('.trk__konj .konj__noga')].map((crta) => crta.getAttribute('x2') + crta.getAttribute('y2')).join(''));
+  const prije = await noge();
+  await stranica.evaluate(() => (document.querySelector('[data-krdo-staza]').scrollLeft = 400));
+  await stranica.waitForTimeout(300);
+  provjeri((await noge()) === prije, 'smanjeno kretanje: konji ostaju mirni dok se red pomiče');
+  provjeri(await stranica.evaluate(() => document.querySelector('[data-krdo-staza]').scrollLeft === 400), 'smanjeno kretanje: red se i dalje može pomicati');
+  await zatvori();
+}
+{
+  const { stranica, zatvori } = await otvori('proba-krdo.html', { sirina: 390, visina: 760, kontekst: { hasTouch: true, isMobile: true } });
+  await stranica.waitForSelector('.trk__konj');
+  await stranica.evaluate(async () => {
+    const staza = document.querySelector('[data-krdo-staza]');
+    for (let i = 0; i < 10; i++) {
+      staza.scrollLeft += 22;
+      await new Promise((r) => requestAnimationFrame(r));
+    }
+  });
+  await snimi(stranica, 'krdo-mobitel.png', false);
+  const vidljivih = await stranica.evaluate(() => [...document.querySelectorAll('.trk__konj')].filter((g) => { const o = g.getBoundingClientRect(); return o.right > 0 && o.left < window.innerWidth; }).length);
+  provjeri(vidljivih >= 2 && vidljivih <= 4, `mobitel: na ekranu su dva do četiri konja odjednom (${vidljivih})`);
   await zatvori();
 }
 
