@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/raspored.css">
   <link rel="stylesheet" href="css/komponente.css">
   <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/krdo.css">
   <script src="js/rano.js"></script>
   <script type="module" src="js/glavni.js"></script>
 </head>
@@ -163,10 +164,40 @@
         <div class="sekcija__glava" data-pojavi>
           <span class="oznaka">04 — Naše krdo</span>
           <h2 id="krdo-naslov">Dvanaestak konja, svaki sa svojom naravi.</h2>
-          <p class="uvodni">Upoznajte konje s kojima radimo.</p>
+          <p class="uvodni">Povucite red ulijevo ili udesno i konji će potrčati. Kliknite konja da ga upoznate.</p>
         </div>
+      </div>
+
+      <div class="trk" data-krdo hidden>
+        <div class="trk__staza" data-krdo-staza>
+          <ul class="trk__red" data-krdo-red aria-label="Konji u krdu"></ul>
+        </div>
+        <div class="trk__tipke">
+          <span class="trk__uputa">Povucite red ili koristite strelice.</span>
+          <div class="trk__strelice">
+            <button class="trk__strelica" type="button" data-krdo-natrag aria-label="Prethodni konji">←</button>
+            <button class="trk__strelica" type="button" data-krdo-naprijed aria-label="Sljedeći konji">→</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="spremnik">
+        <article class="konj-kartica" data-krdo-kartica aria-live="polite" hidden>
+          <div class="konj-kartica__slika">
+            <div class="sesterokut">
+              <img data-krdo-slika alt="" width="480" height="554" hidden>
+              <span class="konj-kartica__bez-slike" data-krdo-bez-slike hidden>Fotografija stiže</span>
+            </div>
+          </div>
+          <div>
+            <h3 data-krdo-ime></h3>
+            <p class="konj-kartica__opis" data-krdo-opis></p>
+            <p class="ceka konj-kartica__napomena">Ime, opis i fotografija ovog konja još nisu upisani. Podaci su u datoteci data/krdo.json.</p>
+          </div>
+        </article>
+        <noscript>
         <div class="krdo">
-          <figure data-pojavi>
+          <figure>
             <div class="sesterokut">
               <picture>
                 <source type="image/webp" srcset="assets/img/krdo-svijetlosmedi-480.webp 480w, assets/img/krdo-svijetlosmedi-800.webp 800w" sizes="(min-width: 48rem) 30vw, 45vw">
@@ -175,7 +206,7 @@
             </div>
             <figcaption><strong>Ime konja</strong><span>Svijetlosmeđi konj</span></figcaption>
           </figure>
-          <figure data-pojavi>
+          <figure>
             <div class="sesterokut">
               <picture>
                 <source type="image/webp" srcset="assets/img/krdo-smedi-480.webp 480w, assets/img/krdo-smedi-800.webp 800w" sizes="(min-width: 48rem) 30vw, 45vw">
@@ -184,7 +215,7 @@
             </div>
             <figcaption><strong>Ime konja</strong><span>Smeđi konj</span></figcaption>
           </figure>
-          <figure data-pojavi>
+          <figure>
             <div class="sesterokut">
               <picture>
                 <source type="image/webp" srcset="assets/img/krdo-sivi-480.webp 480w, assets/img/krdo-sivi-800.webp 800w" sizes="(min-width: 48rem) 30vw, 45vw">
@@ -194,7 +225,7 @@
             <figcaption><strong>Ime konja</strong><span>Sivi konj</span></figcaption>
           </figure>
         </div>
-        <p class="ceka">Trebaju imena konja i po jedna rečenica o svakome, te fotografije ostalih konja iz krda.</p>
+        </noscript>
       </div>
     </section>
 

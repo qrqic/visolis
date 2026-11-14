@@ -16,7 +16,7 @@ const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'site');
 const SNIMKE = process.env.SNIMKE || null;
-const STRANICE = ['index.html', 'hipoterapija.html', 'fizikalna-terapija.html', 'okupacijska-terapija.html', 'logopedska-terapija.html', 'privatnost.html', 'proba-krdo.html'];
+const STRANICE = ['index.html', 'hipoterapija.html', 'fizikalna-terapija.html', 'okupacijska-terapija.html', 'logopedska-terapija.html', 'privatnost.html'];
 const SIRINE = [375, 768, 1024, 1440];
 const VRSTE = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.woff': 'font/woff' };
 
@@ -313,7 +313,7 @@ console.log('\nOstalo');
   await zatvori();
 }
 
-// === 7. Krdo u trku (proba) ===
+// === 7. Krdo u trku (sekcija Naše krdo na početnoj) ===
 console.log('\nKrdo u trku');
 {
   const nogeKonja = (s) =>
@@ -328,8 +328,9 @@ console.log('\nKrdo u trku');
       }
     }, pomak);
 
-  const { stranica, problemi, zatvori } = await otvori('proba-krdo.html');
+  const { stranica, problemi, zatvori } = await otvori('index.html');
   await stranica.waitForSelector('.trk__konj');
+  await stranica.locator('[data-krdo-staza]').scrollIntoViewIfNeeded();
   const broj = await stranica.locator('.trk__konj').count();
   provjeri(broj === 12, `u redu je dvanaest konja (ima ih ${broj})`);
   provjeri(await stranica.evaluate(() => { const s = document.querySelector('[data-krdo-staza]'); return s.scrollWidth > s.clientWidth; }), 'red je širi od ekrana i može se pomicati');
@@ -347,6 +348,7 @@ console.log('\nKrdo u trku');
 
   // Okomito skrolanje preko reda mora pomicati stranicu, a ne red.
   await stranica.setViewportSize({ width: 1440, height: 500 });
+  await stranica.locator('[data-krdo-staza]').scrollIntoViewIfNeeded();
   const okvirReda = await stranica.locator('[data-krdo-staza]').boundingBox();
   await stranica.mouse.move(okvirReda.x + 400, okvirReda.y + 60);
   const prije = await stranica.evaluate(() => ({ y: window.scrollY, x: document.querySelector('[data-krdo-staza]').scrollLeft }));
@@ -388,8 +390,9 @@ console.log('\nKrdo u trku');
   await zatvori();
 }
 {
-  const { stranica, zatvori } = await otvori('proba-krdo.html', { kontekst: { reducedMotion: 'reduce' } });
+  const { stranica, zatvori } = await otvori('index.html', { kontekst: { reducedMotion: 'reduce' } });
   await stranica.waitForSelector('.trk__konj');
+  await stranica.locator('[data-krdo-staza]').scrollIntoViewIfNeeded();
   const noge = () => stranica.evaluate(() => [...document.querySelectorAll('.trk__konj .konj__noga')].map((crta) => crta.getAttribute('x2') + crta.getAttribute('y2')).join(''));
   const prije = await noge();
   await stranica.evaluate(() => (document.querySelector('[data-krdo-staza]').scrollLeft = 400));
@@ -399,8 +402,9 @@ console.log('\nKrdo u trku');
   await zatvori();
 }
 {
-  const { stranica, zatvori } = await otvori('proba-krdo.html', { sirina: 390, visina: 760, kontekst: { hasTouch: true, isMobile: true } });
+  const { stranica, zatvori } = await otvori('index.html', { sirina: 390, visina: 760, kontekst: { hasTouch: true, isMobile: true } });
   await stranica.waitForSelector('.trk__konj');
+  await stranica.locator('[data-krdo-staza]').scrollIntoViewIfNeeded();
   await stranica.evaluate(async () => {
     const staza = document.querySelector('[data-krdo-staza]');
     for (let i = 0; i < 10; i++) {
