@@ -209,7 +209,7 @@ for (const [opis, tijelo, ocekivano] of slucajevi) {
 
 // === 5. Hero ===
 console.log('\nHero');
-for (const [sirina, visina] of [[375, 650], [390, 760], [768, 1024], [1024, 768], [1440, 900], [1920, 1080]]) {
+for (const [sirina, visina] of [[375, 650], [390, 760], [768, 1024], [1024, 768], [1440, 900], [1920, 1080], [2560, 1080]]) {
   const { stranica, zatvori } = await otvori('index.html', { sirina, visina });
   const stanje = await stranica.evaluate(() => {
     const slika = document.querySelector('.hero__slika img');
@@ -230,8 +230,19 @@ for (const [sirina, visina] of [[375, 650], [390, 760], [768, 1024], [1024, 768]
   provjeri(stanje.naslovURubu && stanje.prelomljenihRedova === 0, `hero @${sirina}: svaki red naslova stane u jedan redak`);
   provjeri(stanje.gumbDno <= stanje.visina, `hero @${sirina}: gumb "Dogovorite termin" vidljiv je bez skrolanja (dno na ${stanje.gumbDno} od ${stanje.visina} px)`);
   await snimi(stranica, `hero-${sirina}.png`, false);
-  const okvir = await stranica.evaluate(() => { const o = document.querySelector('.hero__slika img').getBoundingClientRect(); return Math.round(o.width); });
-  provjeri(okvir <= 560, `hero @${sirina}: fotografija se ne prikazuje veća od izvorne (${okvir} od 560 px)`);
+  const ostrina = await stranica.evaluate(async () => {
+    const slika = document.querySelector('.hero__slika img');
+    const prikaz = slika.getBoundingClientRect();
+    // Stvarna veličina odabrane datoteke (naturalWidth slike sa srcset-om nije u pikselima datoteke).
+    const datoteka = await new Promise((gotovo) => {
+      const proba = new Image();
+      proba.onload = () => gotovo({ sirina: proba.naturalWidth, visina: proba.naturalHeight });
+      proba.src = slika.currentSrc;
+    });
+    // Kod "object-fit: cover" slika se crta u mjerilu veće od dvije stranice.
+    return Math.round(Math.max(prikaz.width / datoteka.sirina, prikaz.height / datoteka.visina) * 100);
+  });
+  provjeri(ostrina <= 105, `hero @${sirina}: slika se ne povećava iznad izvorne veličine (mjerilo ${ostrina} %)`);
   await zatvori();
 }
 

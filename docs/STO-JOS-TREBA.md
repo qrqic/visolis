@@ -6,8 +6,8 @@ Na stranici je svako ovakvo mjesto označeno žutim blokom "Čeka sadržaj". Pri
 
 - [ ] **E-mail adresa za upite.** Sada stoji `upiti@example.com` (`index.html`, sekcija Kontakt). Ista adresa treba i u pravilima privatnosti.
 - [ ] **Imena konja** i po jedna rečenica o svakome (`index.html`, sekcija Naše krdo). Sada piše "Ime konja".
-- [ ] **Fotografije ostalih konja** iz krda. Sada su tri. Treba i druga fotografija Anabele za sekciju krda (u heroju je već jedna).
-- [ ] **Fotografija Anabele u punoj rezoluciji.** Sadašnja je široka 1377 px i nosi vodeni žig ViEdo; izrez za hero je samo 560 px, pa je na ekranima visoke gustoće mekan. Od ViEda zatražiti izvornu datoteku bez žiga i potvrdu da se smije koristiti na webu. Ispod fotografije sada piše "Foto: ViEdo"; potvrditi žele li to.
+- [ ] **Fotografije ostalih konja** iz krda. Sada su tri. Anabela nije u sekciji krda: izrez njezine prave fotografije bez djeteta postoji (`izvori/anabela-izrez.png`), ali je malen.
+- [ ] **Slika u heroju je generirana**, nije fotografija (vidi `docs/higgsfield.md`). Raspored mrlja i ular mogu se razlikovati od prave Anabele; potvrditi da je udruzi to u redu. Za pravu fotografiju preko cijelog ekrana treba izvorna datoteka u punoj rezoluciji (sadašnja je široka 1377 px i nosi vodeni žig ViEdo).
 - [ ] **Odluka o ostale tri terapije.** Fizikalna, okupacijska i logopedska terapija više nisu istaknute: spominju se jednom rečenicom u sekciji Hipoterapija i imaju svoje podstranice. Ako ih udruga ne želi na stranici, podstranice i rečenica se brišu.
 - [ ] **Priča udruge** u nekoliko rečenica te imena i zvanja članova tima (`index.html`, sekcija O nama).
 - [ ] **Potvrda** da se smiju navesti projekti „Siguran korak uz konja” i „Konj za svakoga” te suradnja sa Specijalnom bolnicom za kronične bolesti dječje dobi Gornja Bistra.
@@ -38,7 +38,6 @@ Slobodno ih mijenjajte; nijedan nije preuzet iz materijala udruge.
 
 ## Tehnički
 
-- [ ] **Retuš fotografije Anabele.** Dijete je izrezano, a ruka i uže koji su ulazili u kadar uklonjeni su ručnim retušem (`alati/retus-anabela.py`). Uz lijevi rub šesterokuta trava i dlaka su dopunjene, što se izbliza može primijetiti. Čišći rezultat daje dorada na Higgsfieldu (proširenje slike ulijevo, povećanje rezolucije) ili izvorna fotografija.
 - [ ] **Usluga za obrasce.** Odabrati uslugu, upisati adresu u `postavke.obrazac.adresaSlanja` i naziv usluge u pravila privatnosti. Do tada obrazac ne šalje nego upućuje na telefon.
 - [ ] **Font naslova.** Privremeno Lora; specifikacija predviđa Fraunces, koji treba preuzeti i staviti u `site/assets/fonts/`.
 - [ ] **Fontovi u WOFF2.** Sada su WOFF, koji je nešto veći.

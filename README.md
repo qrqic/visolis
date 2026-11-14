@@ -58,7 +58,7 @@ Obavezni su `naslov` i `prikazuj_do`. Nakon dana `prikazuj_do` najava se sama sk
 
 **Nova fotografija.** Staviti izvornik u `izvori/`, dodati red u popis u `alati/obradi-slike.mjs` i pokrenuti `node alati/obradi-slike.mjs` (treba paket `sharp`).
 
-**Fotografija u heroju.** Anabela u šesterokutu: datoteke `site/assets/img/anabela-*`, raspored u `site/css/hero.css`. Izrez nastaje skriptom `alati/retus-anabela.py` (treba Python s paketima opencv-python i numpy), a zatim `alati/obradi-slike.mjs`.
+**Slika u heroju.** Izvornik je `izvori/higgsfield/anabela-hero.png` (21:9). Nakon zamjene pokrenuti `node alati/obradi-slike.mjs`. Položaj ponija na ekranu određuje `--zariste` u `site/css/hero.css`.
 
 ## Testovi
 

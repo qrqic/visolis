@@ -20,3 +20,21 @@ Ukupno potrošeno: 14,5 kredita.
 ## Upit za video (početna sličica: odabrana slika)
 
 > Locked-off static camera, strict side view. Starting from this exact frame, the horse walks calmly in place at a slow, steady, natural four-beat walk, as if on an invisible treadmill: it stays at exactly the same position and the same size in the frame the whole time while its legs step in a correct, realistic walking gait with clear footfalls. Its head nods gently with each stride, the flaxen mane and tail sway softly. Pure seamless white background throughout, only a soft contact shadow under the hooves. No camera movement, no zoom, no pan, no cuts, no change of lighting or exposure. The horse stays bare the whole time: no rider, no saddle, no bridle, no people. Soft even daylight. Photorealistic, razor sharp, no text. The final frame returns to a pose close to the starting frame.
+
+## Slika Anabele za hero (14. 11. 2026.)
+
+Hero na početnoj je slika generirana na Higgsfieldu prema fotografiji ponija Anabele. Nije fotografija.
+
+| Što | Model i postavke | Krediti | Ishod |
+|---|---|---|---|
+| Anabela bez djeteta, poluprofil, 2 inačice | GPT Image 2.6, kvaliteta high, 2k, 8:9, predložak `izvori/anabela-predlozak.png` | 5,5 | Poslovi `7efdbbf7-aed0-4a55-9fca-329556b6f919` i `c18e6694-a11e-419b-a8f8-66e4aa0a5d11` |
+| Proširenje obje inačice na 21:9 | Outpaint | 4 | Odabrana druga (posao `4bd4298f-dc48-43b7-a6ec-a7cce4419349`), 3168 × 1344, spremljena kao `izvori/higgsfield/anabela-hero.png` |
+
+Predložak je izrez izvorne fotografije bez djeteta (`alati/retus-anabela.py`), da djetetova slika ne ode na Higgsfield.
+
+Upit za sliku:
+
+> Using the reference photo, show the exact same pony alone: the same small Shetland-type pony with the same chestnut-and-white pinto coat (chestnut head, neck and chest, large white patches on the shoulders and flanks), the same thick, long, wind-blown flaxen-orange mane and forelock, the same small white star on the forehead, and the same dark navy rope halter with a woven pink-and-turquoise noseband. No lead rope, no people, no hands, no rider, nothing attached to the halter. Change the angle slightly: a three-quarter view, the pony's body turned about 30 degrees to the side while its head and eyes look towards the camera, both eyes visible, ears pricked. The pony walks calmly through the same tall bright green spring meadow with a few blades of grass in its mouth, warm sunny backlight, softly blurred dark green forest in the background. Compose with the pony's head and chest centred and generous empty margin on all sides, nothing cut off at the frame edges. Photorealistic telephoto photograph, shallow depth of field, razor-sharp eyes and coat, natural true-to-life colours, no text, no watermark.
+
+Ukupno potrošeno do sada: 24 kredita.
+

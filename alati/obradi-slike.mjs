@@ -23,9 +23,8 @@ const FOTOGRAFIJA = { sirine: [640, 1024, 1600], jpg: 1280 };
 
 /** izrez: { left, top, width, height } u pikselima izvorne slike (izborno). */
 const slike = [
-  // Anabela: izrez bez djeteta nastaje skriptom alati/retus-anabela.py iz izvorne fotografije (1377 px),
-  // pa veće inačice od 560 px nema smisla raditi.
-  { izvor: 'anabela-izrez.png', ime: 'anabela', omjer: 0.866, sirine: [360, 560], jpg: 560 },
+  // Hero: široka slika Anabele (21:9) s Higgsfielda; vidi docs/higgsfield.md.
+  { izvor: 'higgsfield/anabela-hero.png', ime: 'anabela-hero', sirine: [960, 1600, 2400, 3168], jpg: 1920 },
   { izvor: 'DSC0112.jpg', ime: 'hipoterapija-kas', ...FOTOGRAFIJA },
   { izvor: 'DSC3065.jpg', ime: 'o-nama-portret', ...FOTOGRAFIJA },
   { izvor: 'DSC0124.jpg', ime: 'o-nama-sivi', ...FOTOGRAFIJA },

@@ -1,46 +1,57 @@
-/* Hero: bordo ploha, naslov i Anabela u šesterokutu sa žutim rubom, kao u logu udruge.
-   Na uskim ekranima fotografija je iznad naslova; od 64rem naviše tekst je lijevo, a fotografija desno. */
+/* Hero: slika Anabele preko cijelog ekrana.
+   Od 64rem naviše slika ispunjava ekran, a tekst stoji preko njezine zatamnjene lijeve strane.
+   Na uskim ekranima slika je gore i pretapa se u bordo plohu s tekstom. */
 
 .hero {
+  /* Vrlo tamna bordo: zatamnjenje ispod teksta i podloga dok se slika učitava. */
+  --sjena: 42, 10, 16;
+  /* Žarište: dio slike koji ostaje vidljiv kad se rubovi odrežu.
+     Poni je na slici u sredini, pa na uskim ekranima ostaje sredina. */
+  --zariste: 48% 50%;
+  position: relative;
   background: var(--bordo);
   color: var(--krem);
 }
 
-.hero__sadrzaj {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  padding-block: 1.25rem 3.5rem;
-}
-
-/* Fotografija */
+/* Slika */
 
 .hero__slika {
-  order: -1;
+  position: relative;
+  height: min(44svh, 21rem);
+  background: rgb(var(--sjena));
 }
 
-/* Žuti rub: žuti šesterokut ispod, fotografija uvučena u njega. */
-.hero__okvir {
-  width: min(66%, 17rem);
-  margin-inline: auto;
-  padding: 0.4rem;
-  background: var(--zuta);
-  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+.hero__slika img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--zariste);
 }
 
-.hero__slika figcaption {
-  margin-top: 0.6rem;
+/* Na uskim ekranima donji rub slike pretapa se u bordo plohu. */
+.hero__slika::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(122, 31, 43, 0) 70%, var(--bordo) 100%);
+}
+
+.hero__potpis {
+  position: absolute;
+  top: calc(min(44svh, 21rem) - 2.1rem);
+  right: var(--rub);
+  margin: 0;
   font-size: 0.8125rem;
-  text-align: center;
-  color: rgba(247, 242, 232, 0.85);
-}
-
-.hero__slika figcaption span {
-  margin-left: 0.5rem;
-  color: rgba(247, 242, 232, 0.6);
+  color: rgba(247, 242, 232, 0.92);
+  text-shadow: 0 1px 6px rgba(var(--sjena), 0.9);
 }
 
 /* Tekst */
+
+.hero__sadrzaj {
+  position: relative;
+  padding-block: 0.75rem 3.5rem;
+}
 
 .hero__tekst {
   display: flex;
@@ -82,7 +93,7 @@
 .hero .uvodni {
   order: 2;
   margin-top: 1.75rem;
-  color: rgba(247, 242, 232, 0.9);
+  color: rgba(247, 242, 232, 0.92);
 }
 
 .hero :focus-visible {
@@ -90,38 +101,43 @@
 }
 
 @media (min-width: 64rem) {
-  .hero__sadrzaj {
+  .hero {
+    /* Slika je šira od ekrana: prikazuje se njezin lijevi dio, pa poni iz sredine slike
+       dolazi na desnu stranu ekrana, dalje od teksta. */
+    --zariste: 0% 50%;
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
     align-items: center;
-    gap: 0;
     min-height: calc(100svh - var(--zaglavlje));
-    padding-block: clamp(2.5rem, 6vh, 5rem);
-  }
-
-  .hero__tekst {
-    grid-column: 1 / span 6;
-    grid-row: 1;
+    background: rgb(var(--sjena));
+    overflow: hidden;
   }
 
   .hero__slika {
-    order: 0;
-    grid-column: 8 / -1;
-    grid-row: 1;
-    width: 100%;
-    /* Fotografija je široka 560 px; veći prikaz bi je zamutio. */
-    max-width: 32rem;
-    justify-self: end;
+    position: absolute;
+    inset: 0;
+    height: auto;
   }
 
-  .hero__okvir {
-    width: 100%;
-    padding: 0.6rem;
+  /* Zatamnjenje ispod teksta: gotovo neprozirno uz lijevi rub, nestaje prije ponija. */
+  .hero__slika::after {
+    background:
+      linear-gradient(to top, rgba(var(--sjena), 0.55) 0%, rgba(var(--sjena), 0) 22%),
+      linear-gradient(
+        90deg,
+        rgba(var(--sjena), 0.94) 0%,
+        rgba(var(--sjena), 0.86) 26%,
+        rgba(var(--sjena), 0.55) 42%,
+        rgba(var(--sjena), 0.18) 56%,
+        rgba(var(--sjena), 0) 68%
+      );
   }
 
-  .hero__slika figcaption {
-    margin-top: 1rem;
-    font-size: 0.875rem;
+  .hero__sadrzaj {
+    padding-block: clamp(3rem, 8vh, 6rem);
+  }
+
+  .hero__tekst {
+    width: min(46%, 38rem);
   }
 
   .hero .oznaka {
@@ -129,7 +145,7 @@
   }
 
   .hero h1 {
-    font-size: clamp(2.75rem, 5.2vw, 5.25rem);
+    font-size: clamp(2.75rem, 4.6vw, 4.75rem);
   }
 
   .hero .uvodni {
@@ -139,5 +155,24 @@
   .hero__radnje {
     order: 0;
     margin-top: 2.25rem;
+  }
+
+  .hero__potpis {
+    top: auto;
+    bottom: 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Na vrlo širokim ekranima vidjela bi se cijela slika, s ponijem u sredini, ispod teksta.
+   Zato je slika ondje šira od ekrana i poravnata lijevo, što ponija pomiče udesno. */
+@media (min-width: 64rem) and (min-aspect-ratio: 19 / 10) {
+  .hero__slika {
+    right: -18%;
+    max-width: none;
+  }
+
+  .hero__tekst {
+    width: min(38%, 33rem);
   }
 }

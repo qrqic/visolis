@@ -49,8 +49,14 @@
 
   <main id="sadrzaj">
 
-    <!-- HERO: bordo ploha, naslov i Anabela u šesterokutu. -->
+    <!-- HERO: slika Anabele preko cijelog ekrana, tekst preko zatamnjene lijeve strane.
+         Žarište slike (dio koji ostaje vidljiv kad se rubovi odrežu) je u css/hero.css. -->
     <section class="hero" id="vrh" aria-labelledby="hero-naslov">
+      <picture class="hero__slika">
+        <!-- "sizes" opisuje koliko je slika široka na ekranu: zbog "object-fit: cover" šira je od samog ekrana. -->
+        <source type="image/webp" srcset="assets/img/anabela-hero-960.webp 960w, assets/img/anabela-hero-1600.webp 1600w, assets/img/anabela-hero-2400.webp 2400w, assets/img/anabela-hero-3168.webp 3168w" sizes="(min-width: 64rem) and (min-aspect-ratio: 19/10) 120vw, (min-width: 64rem) and (min-aspect-ratio: 16/9) 125vw, (min-width: 64rem) and (min-aspect-ratio: 16/10) 135vw, (min-width: 64rem) 160vw, 200vw">
+        <img src="assets/img/anabela-hero-1920.jpg" width="1920" height="815" alt="Anabela, smeđe-bijeli poni s grivom raznesenom vjetrom, hoda preko sunčane livade s vlatima trave u ustima" fetchpriority="high">
+      </picture>
       <div class="spremnik hero__sadrzaj">
         <div class="hero__tekst">
           <span class="oznaka">Udruga Vis Solis · Gornja Bistra</span>
@@ -65,18 +71,8 @@
             <a class="strelica" href="#hipoterapija">Što je hipoterapija</a>
           </div>
         </div>
-        <figure class="hero__slika">
-          <div class="hero__okvir">
-            <div class="sesterokut">
-              <picture>
-                <source type="image/webp" srcset="assets/img/anabela-360.webp 360w, assets/img/anabela-560.webp 560w" sizes="(min-width: 64rem) 31rem, 16rem">
-                <img src="assets/img/anabela-560.jpg" width="560" height="647" alt="Anabela, smeđe-bijeli poni s grivom raznesenom vjetrom, hoda kroz visoku travu s vlatima u ustima" fetchpriority="high">
-              </picture>
-            </div>
-          </div>
-          <figcaption>Anabela, naš šareni poni <span>Foto: ViEdo</span></figcaption>
-        </figure>
       </div>
+      <p class="hero__potpis">Anabela, naš šareni poni</p>
     </section>
 
     <!-- AKTUALNO: puni se iz data/aktualno.json; skriveno dok nema važeće najave. -->
