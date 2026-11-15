@@ -1,0 +1,34 @@
+# Objava stranice na GitHub Pages.
+# Nakon svakog slanja na granu main objavljuje se sadržaj mape site/.
+# U postavkama repozitorija mora biti: Settings -> Pages -> Source: GitHub Actions.
+
+name: Objava na GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  objava:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.objava.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: objava
+        uses: actions/deploy-pages@v4

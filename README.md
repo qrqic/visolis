@@ -72,3 +72,12 @@ node tests/preglednik.mjs   # provjera u Chromiumu (treba paket playwright)
 Cloudflare Pages, povezan s GitHub repozitorijem. Naredba za izgradnju ostaje prazna, a izlazna mapa je `site`.
 
 Prije objave nijedan blok s oznakom "Čeka sadržaj" ne smije ostati na stranici. Popis je u `docs/STO-JOS-TREBA.md`.
+
+## Objava (GitHub Pages)
+
+Stranica se objavljuje sama nakon svakog slanja na granu `main`: postupak u `.github/workflows/pages.yml` objavljuje sadržaj mape `site/`.
+
+- Adresa: https://qrqic.github.io/visolis/
+- Jednokratno u postavkama repozitorija: Settings → Pages → Source: **GitHub Actions**.
+- Tijek objave vidi se na kartici Actions; traje oko minute.
+- Vlastita domena upisuje se kasnije pod Settings → Pages → Custom domain.
