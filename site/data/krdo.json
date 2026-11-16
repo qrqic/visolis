@@ -11,112 +11,106 @@
     "opisFotografije": "Anabela, smeđe-bijeli poni s grivom raznesenom vjetrom"
   },
   {
-    "ime": "Ime konja 2",
+    "ime": "Atlas",
     "oblik": "konj",
     "dlaka": "#c98a4b",
     "griva": "#ecd9a8",
     "lisa": true,
-    "opis": "Svijetlosmeđi konj sa svijetlom grivom. Čekamo ime i rečenicu o njemu.",
-    "fotografija": "krdo-svijetlosmedi",
-    "opisFotografije": "Svijetlosmeđi konj sa svijetlom grivom i pletenicom",
+    "opis": "Boja na crtežu je primjer. Čekamo opis i fotografiju.",
     "ceka": true
   },
   {
-    "ime": "Ime konja 3",
+    "ime": "Flora",
     "oblik": "konj",
     "dlaka": "#7a4526",
     "griva": "#1f1a17",
     "noge": "#2a211d",
-    "opis": "Smeđi konj s crnom grivom. Čekamo ime i rečenicu o njemu.",
-    "fotografija": "krdo-smedi",
-    "opisFotografije": "Smeđi konj s crnom grivom, glava iz profila",
+    "opis": "Boja na crtežu je primjer. Čekamo opis i fotografiju.",
     "ceka": true
   },
   {
-    "ime": "Ime konja 4",
+    "ime": "Vihor",
     "oblik": "konj",
     "dlaka": "#b9b4ac",
     "griva": "#6a655e",
-    "opis": "Sivi konj. Čekamo ime i rečenicu o njemu.",
-    "fotografija": "krdo-sivi",
-    "opisFotografije": "Sivi konj prilazi kameri preko pašnjaka",
+    "opis": "Boja na crtežu je primjer. Čekamo opis i fotografiju.",
     "ceka": true
   },
   {
-    "ime": "Ime konja 5",
+    "ime": "Nera",
     "oblik": "konj",
     "dlaka": "#2e2724",
     "griva": "#171311",
-    "opis": "Crni konj. Čekamo ime, rečenicu o njemu i fotografiju.",
+    "opis": "Boja na crtežu je primjer. Čekamo opis i fotografiju.",
     "ceka": true
   },
   {
-    "ime": "Ime konja 6",
+    "ime": "Jade",
     "oblik": "konj",
     "dlaka": "#ece7dc",
     "griva": "#f4ead0",
-    "opis": "Bijeli konj. Čekamo ime, rečenicu o njemu i fotografiju.",
+    "opis": "Boja na crtežu je primjer. Čekamo opis i fotografiju.",
     "ceka": true
   },
   {
-    "ime": "Ime konja 7",
+    "ime": "Epona",
     "oblik": "konj",
     "dlaka": "#5a3520",
     "griva": "#1c1613",
     "noge": "#241c18",
     "lisa": true,
-    "opis": "Primjer: boja je izmišljena. Čekamo ime, boju, rečenicu i fotografiju.",
+    "opis": "Boja na crtežu je primjer. Čekamo opis i fotografiju.",
     "ceka": true
   },
   {
-    "ime": "Ime konja 8",
+    "ime": "Dakota",
     "oblik": "poni",
     "dlaka": "#3a2f2a",
     "griva": "#1a1513",
-    "opis": "Primjer: boja je izmišljena. Čekamo ime, boju, rečenicu i fotografiju.",
+    "opis": "Boja na crtežu je primjer. Čekamo opis i fotografiju.",
     "ceka": true
   },
   {
-    "ime": "Ime konja 9",
+    "ime": "Cezar",
     "oblik": "konj",
     "dlaka": "#9a4f25",
     "griva": "#8a4420",
     "lisa": true,
-    "opis": "Primjer: boja je izmišljena. Čekamo ime, boju, rečenicu i fotografiju.",
+    "opis": "Boja na crtežu je primjer. Čekamo opis i fotografiju.",
     "ceka": true
   },
   {
-    "ime": "Ime konja 10",
+    "ime": "Ruby",
     "oblik": "konj",
     "dlaka": "#d9a95a",
     "griva": "#f3e6c0",
-    "opis": "Primjer: boja je izmišljena. Čekamo ime, boju, rečenicu i fotografiju.",
+    "opis": "Boja na crtežu je primjer. Čekamo opis i fotografiju.",
     "ceka": true
   },
   {
-    "ime": "Ime konja 11",
+    "ime": "Poppy",
     "oblik": "poni",
     "dlaka": "#b8946a",
     "griva": "#3a2d24",
     "noge": "#3a2d24",
-    "opis": "Primjer: boja je izmišljena. Čekamo ime, boju, rečenicu i fotografiju.",
+    "opis": "Boja na crtežu je primjer. Čekamo opis i fotografiju.",
     "ceka": true
   },
   {
-    "ime": "Ime konja 12",
+    "ime": "Indy",
     "oblik": "konj",
     "dlaka": "#8f8a85",
     "griva": "#d8d4cc",
     "mrlje": true,
-    "opis": "Primjer: boja je izmišljena. Čekamo ime, boju, rečenicu i fotografiju.",
+    "opis": "Boja na crtežu je primjer. Čekamo opis i fotografiju.",
     "ceka": true
   },
   {
-    "ime": "Ime ponija 2",
+    "ime": "Trinaesti",
     "oblik": "poni",
     "dlaka": "#5a3a26",
     "griva": "#2b211c",
-    "opis": "Primjer: boja je izmišljena. Čekamo ime, boju, rečenicu i fotografiju.",
+    "opis": "Čekamo ime, boju, opis i fotografiju.",
     "ceka": true
   }
 ]

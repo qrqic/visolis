@@ -370,9 +370,12 @@ console.log('\nKrdo u trku');
   await stranica.evaluate(() => (document.querySelector('[data-krdo-staza]').scrollLeft = 0));
   await stranica.waitForTimeout(1500);
   await stranica.locator('.trk__konj').nth(2).click();
-  provjeri((await stranica.locator('[data-krdo-ime]').innerText()) === 'Ime konja 3', 'klik na konja otvara njegovu karticu');
+  provjeri((await stranica.locator('[data-krdo-ime]').innerText()) === 'Flora', 'klik na konja otvara njegovu karticu');
   provjeri((await stranica.locator('.trk__konj[aria-pressed="true"]').count()) === 1, 'označen je samo odabrani konj');
-  provjeri(await stranica.locator('[data-krdo-slika]').evaluate((slika) => slika.complete && slika.naturalWidth > 0), 'fotografija odabranog konja je učitana');
+  provjeri(await stranica.locator('[data-krdo-bez-slike]').isVisible(), 'konj bez fotografije ima oznaku da fotografija stiže');
+  await stranica.locator('.trk__konj').first().click();
+  provjeri(await stranica.locator('[data-krdo-slika]').evaluate((slika) => slika.complete && slika.naturalWidth > 0), 'fotografija Anabele je učitana');
+  await stranica.locator('.trk__konj').nth(2).click();
 
   // Povlačenje mišem pomiče red i ne odabire konja.
   const peti = await stranica.locator('.trk__konj').nth(4).boundingBox();
@@ -383,7 +386,7 @@ console.log('\nKrdo u trku');
   await stranica.mouse.up();
   await stranica.waitForTimeout(100);
   provjeri(await stranica.evaluate(() => document.querySelector('[data-krdo-staza]').scrollLeft > 200), 'povlačenje mišem pomiče red');
-  provjeri((await stranica.locator('[data-krdo-ime]').innerText()) === 'Ime konja 3', 'povlačenje ne mijenja odabranog konja');
+  provjeri((await stranica.locator('[data-krdo-ime]').innerText()) === 'Flora', 'povlačenje ne mijenja odabranog konja');
   provjeri(problemi.length === 0, `krdo radi bez grešaka${problemi.length ? ' — ' + problemi.join('; ') : ''}`);
   await stranica.waitForTimeout(1500);
   await snimi(stranica, 'krdo-stoji.png', false);
