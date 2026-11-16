@@ -16,6 +16,7 @@ Prije konačne objave nijedan ne smije ostati.
 - [ ] Hipoterapija u tijeku: terapeut, vodič i konj (`hipoterapija.html`).
 - [ ] Aktivnosti pomoću konja: rad s tla ili poligon (`aktivnosti-pomocu-konja.html`).
 - [ ] Šetnja, kamp ili druženje s konjima (`index.html`, sekcija Ostalo u našoj ponudi).
+- [ ] Jahalište i dvorište dvorca Oršić (`aktivnosti-pomocu-konja.html`, Gdje se provode).
 - [ ] Izgradnja ranča u Donjoj Bistri (`o-nama.html`).
 - [ ] Po jedna fotografija svakog konja. Zasad ih imaju Anabela i tri konja.
 - [ ] Logo udruge u najboljoj kvaliteti; znak "VS" u zaglavlju je privremen.
@@ -43,7 +44,6 @@ Imena su upisana 16. 11. 2026.: Anabela, Atlas, Flora, Vihor, Nera, Jade, Epona,
 ## Tekstovi – treba dopuniti
 
 - [ ] Opis svake aktivnosti iz "Ostalo u našoj ponudi" (rekreativno jahanje, šetnje, kampovi, obiteljski dani, advent). Udruga ih šalje naknadno.
-- [ ] Sigurnosna oprema za aktivnosti pomoću konja: kacige, prsluk, rampa (`aktivnosti-pomocu-konja.html`).
 - [ ] Novosti o izgradnji ranča: što je napravljeno i što slijedi (`o-nama.html`).
 - [ ] Kako doći: parking, autobus, prilaz za invalidska kolica.
 - [ ] Projekti i suradnje koje se smiju navesti („Siguran korak uz konja”, „Konj za svakoga”, drugi partneri).
