@@ -111,14 +111,6 @@
   }
 }
 
-/* Hipoterapija: napomena o ostalim terapijama */
-
-.ostale-terapije {
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--linija);
-  color: var(--prigusen);
-}
-
 .tekst-blok > .strelica {
   margin-top: 1.5rem;
 }
@@ -412,4 +404,173 @@
 
 .aktualno time::before {
   content: '· ';
+}
+
+/* Mjesto za fotografiju koja još nije stigla. Prije objave zamijeniti pravom slikom. */
+
+.mjesto-slike {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 0.5rem;
+  aspect-ratio: 3 / 2;
+  padding: 1.5rem;
+  border: 1.5px dashed var(--ceka);
+  border-radius: var(--zaobljenje);
+  background: rgba(251, 242, 154, 0.25);
+  text-align: center;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--prigusen);
+}
+
+.mjesto-slike::before {
+  content: 'Mjesto za fotografiju';
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ceka);
+}
+
+.mjesto-slike--siroko {
+  aspect-ratio: 21 / 9;
+}
+
+/* Tim */
+
+.tim-blok {
+  margin-top: clamp(3.5rem, 8vw, 6rem);
+}
+
+.tim-blok__naslov {
+  margin-bottom: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--linija);
+  font-size: clamp(1.625rem, 3.2vw, 2.375rem);
+}
+
+.tim {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  gap: 3rem 2rem;
+}
+
+.tim__slika {
+  display: grid;
+  place-items: center;
+  width: 7.5rem;
+  margin-bottom: 1.5rem;
+  background: rgba(251, 242, 154, 0.55);
+}
+
+.tim__bez-slike {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--ceka);
+}
+
+.tim__clan h3 {
+  font-size: 1.625rem;
+}
+
+.tim__uloga {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--bordo);
+}
+
+.tim__clan p:not(.tim__uloga) {
+  margin-top: 0.9rem;
+  font-size: 0.9375rem;
+  color: var(--prigusen);
+}
+
+/* Kontakt: tko se javlja na koji broj */
+
+.kontakt__podaci dd + dd {
+  margin-top: 0.5rem;
+}
+
+.kontakt__tko {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--prigusen);
+}
+
+/* Česta pitanja: pitanje se otvara klikom */
+
+.pitanja {
+  border-top: 1px solid var(--linija);
+}
+
+.pitanja details {
+  border-bottom: 1px solid var(--linija);
+}
+
+.pitanja summary {
+  position: relative;
+  padding: 1.1rem 2.75rem 1.1rem 0;
+  font-family: var(--font-naslov);
+  font-size: 1.1875rem;
+  line-height: 1.35;
+  list-style: none;
+  cursor: pointer;
+}
+
+.pitanja summary::-webkit-details-marker {
+  display: none;
+}
+
+.pitanja summary::after {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  right: 0.35rem;
+  transform: translateY(-50%);
+  font-family: var(--font-tekst, inherit);
+  font-size: 1.5rem;
+  color: var(--bordo);
+}
+
+.pitanja details[open] summary::after {
+  content: '–';
+}
+
+.pitanja details p {
+  padding-bottom: 1.35rem;
+  color: var(--prigusen);
+}
+
+/* Istaknuta zanimljivost u tekstu */
+
+.zanimljivost {
+  padding: 1.1rem 1.35rem;
+  border-left: 3px solid var(--bordo);
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: var(--pijesak);
+}
+
+.zanimljivost strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--bordo);
+}
+
+/* Poveznice u podacima za kontakt: dovoljno visoke za dodir prstom. */
+.kontakt__podaci dd a:not(.kontakt__telefon):not(.strelica) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: var(--bordo);
 }

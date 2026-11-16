@@ -36,6 +36,7 @@ export function pokreniObrazac() {
   const uspjeh = document.querySelector('[data-obrazac-uspjeh]');
   const gumb = obrazac.querySelector('[type="submit"]');
   const telefon = `<a href="tel:${postavke.telefon}">${postavke.telefonPrikaz}</a>`;
+  const email = `<a href="mailto:${postavke.email}">${postavke.email}</a>`;
 
   const prikaziPoruku = (html) => {
     poruka.innerHTML = html; // Sadržaj su samo stalni tekstovi iz ove datoteke.
@@ -88,7 +89,7 @@ export function pokreniObrazac() {
 
     const { adresaSlanja, dodatnaPolja } = postavke.obrazac;
     if (!adresaSlanja) {
-      prikaziPoruku(`Obrazac još nije povezan s našim sandučićem. Nazovite nas na ${telefon} i rado ćemo se dogovoriti.`);
+      prikaziPoruku(`Obrazac još nije povezan s našim sandučićem. Nazovite nas na ${telefon} ili pišite na ${email} i rado ćemo se dogovoriti.`);
       return;
     }
 

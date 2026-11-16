@@ -73,6 +73,18 @@ Cloudflare Pages, povezan s GitHub repozitorijem. Naredba za izgradnju ostaje pr
 
 Prije objave nijedan blok s oznakom "Čeka sadržaj" ne smije ostati na stranici. Popis je u `docs/STO-JOS-TREBA.md`.
 
+## Stranice
+
+- `index.html` – početna: hero, hipoterapija, aktivnosti pomoću konja, ostalo u ponudi, kako početi, krdo, o nama s timom, kontakt.
+- `hipoterapija.html` – sve o hipoterapiji: indikacije, učinci, kontraindikacije, termin, česta pitanja.
+- `aktivnosti-pomocu-konja.html` – sve o aktivnostima pomoću konja, istim redom.
+- `o-nama.html` – priča udruge, tim, edukacije, izgradnja ranča, volontiranje.
+- `privatnost.html` – pravila privatnosti.
+
+Zaglavlje i podnožje ponavljaju se u svakoj datoteci; izmjena u njima radi se na svih pet mjesta.
+
+Dok fotografija ne stigne, na njezinu mjestu stoji `<div class="mjesto-slike">opis slike</div>`. Kad stigne, taj se element zamjenjuje elementom `<picture class="fotografija">`, kao kod postojećih slika.
+
 ## Objava (GitHub Pages)
 
 Stranica se objavljuje sama nakon svakog slanja na granu `main`: postupak u `.github/workflows/pages.yml` objavljuje sadržaj mape `site/`.

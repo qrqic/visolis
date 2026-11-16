@@ -1,56 +1,71 @@
 # Što još treba
 
-Na stranici je svako ovakvo mjesto označeno žutim blokom "Čeka sadržaj". Prije objave nijedan ne smije ostati.
+Stanje nakon odgovora udruge od 16. 11. 2026.
 
-## Od udruge
+Na stranici su otvorena mjesta označena na dva načina:
 
-- [ ] **E-mail adresa za upite.** Sada stoji `upiti@example.com` (`index.html`, sekcija Kontakt). Ista adresa treba i u pravilima privatnosti.
-- [ ] **Imena konja** i po jedna rečenica o svakome (`index.html`, sekcija Naše krdo). Sada piše "Ime konja".
-- [ ] **Fotografije ostalih konja** iz krda. Sada su tri. Anabela nije u sekciji krda: izrez njezine prave fotografije bez djeteta postoji (`izvori/anabela-izrez.png`), ali je malen.
-- [ ] **Slika u heroju je generirana**, nije fotografija (vidi `docs/higgsfield.md`). Raspored mrlja i ular mogu se razlikovati od prave Anabele; potvrditi da je udruzi to u redu. Za pravu fotografiju preko cijelog ekrana treba izvorna datoteka u punoj rezoluciji (sadašnja je široka 1377 px i nosi vodeni žig ViEdo).
-- [ ] **Odluka o ostale tri terapije.** Fizikalna, okupacijska i logopedska terapija više nisu istaknute: spominju se jednom rečenicom u sekciji Hipoterapija i imaju svoje podstranice. Ako ih udruga ne želi na stranici, podstranice i rečenica se brišu.
-- [ ] **Priča udruge** u nekoliko rečenica te imena i zvanja članova tima (`index.html`, sekcija O nama).
-- [ ] **Potvrda** da se smiju navesti projekti „Siguran korak uz konja” i „Konj za svakoga” te suradnja sa Specijalnom bolnicom za kronične bolesti dječje dobi Gornja Bistra.
-- [ ] **Potvrda podataka:** osnivanje u kolovozu 2024., "dvanaestak konja", adrese, telefon, popis aktivnosti u sekciji Aktivnosti pomoću konja.
-- [ ] **Potvrda da su programi "za djecu i odrasle"** (rečenica ispod naslova na početnoj).
-- [ ] **Odobrenje znaka "VS"** u zaglavlju (`site/assets/img/znak.svg`). Privremeni je.
-- [ ] **Naziv domene.**
-- [ ] **Pregled pravila privatnosti** (`privatnost.html`): nacrt treba odobriti odgovorna osoba; nedostaje rok čuvanja upita.
+- žuti blok **"Čeka sadržaj"** – nedostaje tekst ili podatak;
+- žuti okvir **"Mjesto za fotografiju"** – nedostaje slika.
 
-## Od terapeuta
+Prije konačne objave nijedan ne smije ostati.
 
-- [ ] **Kako početi** (`index.html`): potvrditi tri koraka; treba li dokumentacija ili uputnica, kako izgleda početna procjena.
-- [ ] Za svaki od četiri programa (`hipoterapija.html`, `fizikalna-terapija.html`, `okupacijska-terapija.html`, `logopedska-terapija.html`):
-  - [ ] pregledati uvodnu rečenicu (napisana je kao nacrt; za hipoterapiju ista stoji i na početnoj);
-  - [ ] kome je program namijenjen i kada se ne preporučuje;
-  - [ ] kako izgleda termin: trajanje, što se radi, tko je prisutan, što ponijeti;
-  - [ ] tko vodi program: ime, zvanje, edukacija, po mogućnosti fotografija;
-  - [ ] tri do pet čestih pitanja s odgovorima (cijena, učestalost, dokumentacija, sigurnost).
+## Fotografije (sve bez djece)
 
-## Tekstovi koje je napisao izvođač kao nacrt
+- [ ] Portret svake članice tima: Viktorija, Sunčica, Gabrijela, Lorena, Josipa (`index.html` i `o-nama.html`, sekcija Tim).
+- [ ] Cijeli tim na okupu, s konjima (`o-nama.html`).
+- [ ] Hipoterapija u tijeku: terapeut, vodič i konj (`hipoterapija.html`).
+- [ ] Aktivnosti pomoću konja: rad s tla ili poligon (`aktivnosti-pomocu-konja.html`).
+- [ ] Šetnja, kamp ili druženje s konjima (`index.html`, sekcija Ostalo u našoj ponudi).
+- [ ] Izgradnja ranča u Donjoj Bistri (`o-nama.html`).
+- [ ] Po jedna fotografija svakog konja. Zasad ih imaju Anabela i tri konja.
+- [ ] Logo udruge u najboljoj kvaliteti; znak "VS" u zaglavlju je privremen.
 
-Slobodno ih mijenjajte; nijedan nije preuzet iz materijala udruge.
+Udruga je javila da autore fotografija ne treba navoditi i da sadašnje fotografije smiju ostati.
 
-- Naslov na početnoj: "Hipoterapija i aktivnosti pomoću konja." i rečenica ispod njega.
-- Naslovi sekcija: "Terapija koja počinje korakom konja.", "Od prvog upita do prvog termina.", "Ne mora sve biti terapija.", "Dvanaestak konja, svaki sa svojom naravi.", "Vis solis: snaga sunca."
-- Odlomak u O nama koji počinje "Okupili smo se oko jednostavne ideje".
-- Poruka nakon slanja obrasca: "Javit ćemo vam se čim prije." Ako postoji uobičajen rok odgovora, treba ga upisati.
+## Konji
+
+- [ ] Za 12 od 13 konja i ponija u `site/data/krdo.json`: ime, pasmina, godina, boja dlake i grive, narav, jedna rečenica. Upisana je samo Anabela.
+- [ ] Boje konja 7–12 i drugog ponija su izmišljene kao primjer.
+
+## Tim – treba potvrditi
+
+- [ ] **Tri ili četiri osnivačice?** U prvom tekstu osnivačice su Viktorija, Sunčica i Gabrijela, a u priči udruge i Lorena. Na stranici pišu četiri.
+- [ ] **Postoji li šesta članica?** Naručitelj je spomenuo šest članova, a opisano ih je pet.
+- [ ] Pišu li se samo imena ili i prezimena. Sada su samo imena.
+- [ ] Sunčica: osnovno zvanje, gdje i kada je završila edukaciju iz hipoterapije (`hipoterapija.html`, Tko vodi hipoterapiju).
+- [ ] Sudjeluje li u hipoterapiji i fizioterapeutkinja Josipa.
+- [ ] Naziv radionica: na stranici piše "Emmett", udruga je napisala "Emmet".
+
+## Tekstovi – treba dopuniti
+
+- [ ] Opis svake aktivnosti iz "Ostalo u našoj ponudi" (rekreativno jahanje, šetnje, kampovi, obiteljski dani, advent). Udruga ih šalje naknadno.
+- [ ] Sigurnosna oprema za aktivnosti pomoću konja: kacige, prsluk, rampa (`aktivnosti-pomocu-konja.html`).
+- [ ] Novosti o izgradnji ranča: što je napravljeno i što slijedi (`o-nama.html`).
+- [ ] Kako doći: parking, autobus, prilaz za invalidska kolica.
+- [ ] Projekti i suradnje koje se smiju navesti („Siguran korak uz konja”, „Konj za svakoga”, drugi partneri).
+- [ ] Želi li udruga podatke za donacije na stranici.
+- [ ] Želi li povremenu najavu "Aktualno" i tko javlja tekst.
+
+## Odluke koje su donesene bez izričite potvrde
+
+- **Tri terapije su uklonjene.** Na pitanje o fizikalnoj, okupacijskoj i logopedskoj terapiji udruga je odgovorila "ne, nego Ostalo u našoj ponudi", pa su podstranice i rečenica obrisane. Ako ih ipak provode, lako se vraćaju.
+- **Trajanje pripreme konja.** U jednom odgovoru piše "15–25 minuta priprema, preostalih 45 minuta rad", što zajedno nije 60. Na stranici piše "15 do 25 minuta priprema, ostatak rad s konjem".
+- **Obraćanje.** Tekst o volontiranju udruga je napisala na "ti"; na stranici je prebačen na "vi", kao ostatak stranice.
+- **Šala** "malo smo i lude" nije preuzeta; ostalo je "totalne smo zaljubljenice u konje".
+- **Cijene se ne objavljuju** (odluka udruge).
+
+## Hero
+
+- [ ] Slika u heroju je računalno izrađena prema Anabelinoj fotografiji (vidi `docs/higgsfield.md`). Udruga je potvrdila da je na tamnoj fotografiji ispred kamenog zida stvarno Anabela i da autora ne treba navoditi, pa se hero s pravom fotografijom može vratiti kad naručitelj odluči (grana `hero-fotografija-15-11`, nije na GitHubu).
 
 ## Tehnički
 
-- [ ] **Usluga za obrasce.** Odabrati uslugu, upisati adresu u `postavke.obrazac.adresaSlanja` i naziv usluge u pravila privatnosti. Do tada obrazac ne šalje nego upućuje na telefon.
-- [ ] **Font naslova.** Privremeno Lora; specifikacija predviđa Fraunces, koji treba preuzeti i staviti u `site/assets/fonts/`.
+- [ ] **Obrazac još ne šalje upite.** Treba odabrati uslugu za obrasce i upisati njezinu adresu u `postavke.obrazac.adresaSlanja`, a naziv usluge u pravila privatnosti. Do tada obrazac upućuje na telefon i e-mail.
+- [ ] **Pravila privatnosti:** nacrt treba pročitati predsjednica udruge; nedostaje rok čuvanja upita.
+- [ ] **Domena.** Stranica je zasad na https://qrqic.github.io/visolis/
+- [ ] **Font naslova.** Privremeno Lora; specifikacija predviđa Fraunces.
 - [ ] **Fontovi u WOFF2.** Sada su WOFF, koji je nešto veći.
-- [ ] **Objava:** GitHub, Cloudflare Pages, domena, zatim Lighthouse provjera.
 
 ## Ideje za kasnije
 
 - Anabeline oči prate pokazivač miša (prijedlog naručitelja, 13. 11. 2026.).
-
-## Krdo u trku (14. 11. 2026.)
-
-Red s konjima koji trče ugrađen je u sekciju "Naše krdo" na početnoj stranici.
-
-- [ ] Za svakog od 12 konja u `site/data/krdo.json`: ime, jedna rečenica, oblik (`konj` ili `poni`), boja dlake i grive.
-- [ ] Fotografija svakog konja (bez djece). Zasad ih imaju Anabela i tri konja; ostalima piše "Fotografija stiže".
-- [ ] Boje konja 7–12 su izmišljene kao primjer i treba ih zamijeniti stvarnima.

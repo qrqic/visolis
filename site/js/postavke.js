@@ -3,6 +3,7 @@
 export const postavke = {
   telefon: '+385955554789',
   telefonPrikaz: '+385 95 555 4789',
+  email: 'udrugavissolis@gmail.com',
 
   obrazac: {
     // Adresa usluge za obrasce na koju se šalje upit.

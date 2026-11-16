@@ -59,6 +59,35 @@
   display: grid;
   gap: 0.5rem;
   padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.pod-blok__tekst li::marker {
+  color: var(--bordo);
+}
+
+.pod-blok__tekst h3 {
+  margin-top: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.pod-blok__tekst a:not(.strelica) {
+  color: var(--bordo);
+}
+
+/* Dulji popisi (indikacije, kontraindikacije) na širim ekranima idu u dva stupca. */
+@media (min-width: 40rem) {
+  .pod-blok__tekst .popis--dva {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2.5rem;
+  }
+}
+
+/* Blok u kojem sadržaj ide preko cijele širine, ispod naslova i uvoda (tim). */
+.pod-blok--siroko > .tim,
+.pod-blok--siroko > .mjesto-slike {
+  grid-column: 1 / -1;
+  margin-top: 1.5rem;
 }
 
 @media (min-width: 64rem) {

@@ -1,5 +1,7 @@
 # Vis Solis — web stranica: specifikacija dizajna
 
+> **Izmjena 16. 11. 2026. (sadržaj udruge):** udruga je vratila ispunjen upitnik. Hipoterapija i aktivnosti pomoću konja imaju pune podstranice iste strukture (kome, kada ne, termin, prije prvog termina, tko vodi, česta pitanja). Rekreativne aktivnosti prešle su u novu sekciju "Ostalo u našoj ponudi". Fizikalna, okupacijska i logopedska terapija su uklonjene. Dodana je podstranica `o-nama.html` (priča, tim, edukacije, izgradnja ranča, volontiranje) i tim od pet članica na početnoj. Krdo ima 13 životinja (11 konja i 2 ponija). Fotografije koje nedostaju označene su elementom `.mjesto-slike`. Otvorena pitanja su u `docs/STO-JOS-TREBA.md`.
+
 > **Izmjena 14. 11. 2026. (krdo u trku):** sekcija "Naše krdo" na početnoj više nije galerija triju fotografija nego red od 12 crtanih konja (jedan crtež konja i jedan ponija, obojen prema `site/data/krdo.json`). Konji trče samo dok se red pomiče lijevo-desno; okomito skrolanje se ničim ne zadržava. Klik otvara fotografiju, ime i rečenicu. Bez JavaScripta prikazuju se tri fotografije kao prije.
 
 - **Datum:** 12. 11. 2026.

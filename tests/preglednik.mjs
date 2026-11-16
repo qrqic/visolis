@@ -16,7 +16,7 @@ const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'site');
 const SNIMKE = process.env.SNIMKE || null;
-const STRANICE = ['index.html', 'hipoterapija.html', 'fizikalna-terapija.html', 'okupacijska-terapija.html', 'logopedska-terapija.html', 'privatnost.html'];
+const STRANICE = ['index.html', 'hipoterapija.html', 'aktivnosti-pomocu-konja.html', 'o-nama.html', 'privatnost.html'];
 const SIRINE = [375, 768, 1024, 1440];
 const VRSTE = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.woff': 'font/woff' };
 
@@ -308,7 +308,7 @@ console.log('\nOstalo');
   const { stranica, zatvori } = await otvori('index.html', { kontekst: { javaScriptEnabled: false } });
   provjeri(await stranica.locator('#hipoterapija h2').isVisible() && await stranica.locator('#aktivnosti h2').isVisible(), 'bez JavaScripta: sadržaj je vidljiv');
   provjeri(await stranica.locator('.izbornik__popis a').first().isVisible(), 'bez JavaScripta: izbornik je vidljiv');
-  provjeri(await stranica.locator('.kontakt__telefon').isVisible(), 'bez JavaScripta: telefon je vidljiv');
+  provjeri(await stranica.locator('.kontakt__telefon').first().isVisible(), 'bez JavaScripta: telefon je vidljiv');
   provjeri(await stranica.locator('noscript').count() > 0, 'bez JavaScripta: obrazac upućuje na telefon');
   await zatvori();
 }
@@ -332,7 +332,7 @@ console.log('\nKrdo u trku');
   await stranica.waitForSelector('.trk__konj');
   await stranica.locator('[data-krdo-staza]').scrollIntoViewIfNeeded();
   const broj = await stranica.locator('.trk__konj').count();
-  provjeri(broj === 12, `u redu je dvanaest konja (ima ih ${broj})`);
+  provjeri(broj === 13, `u redu je trinaest konja i ponija (ima ih ${broj})`);
   provjeri(await stranica.evaluate(() => { const s = document.querySelector('[data-krdo-staza]'); return s.scrollWidth > s.clientWidth; }), 'red je širi od ekrana i može se pomicati');
 
   const mirno = await nogeKonja(stranica);
@@ -415,6 +415,49 @@ console.log('\nKrdo u trku');
   await snimi(stranica, 'krdo-mobitel.png', false);
   const vidljivih = await stranica.evaluate(() => [...document.querySelectorAll('.trk__konj')].filter((g) => { const o = g.getBoundingClientRect(); return o.right > 0 && o.left < window.innerWidth; }).length);
   provjeri(vidljivih >= 2 && vidljivih <= 4, `mobitel: na ekranu su dva do četiri konja odjednom (${vidljivih})`);
+  await zatvori();
+}
+
+// === 8. Sadržaj udruge: poveznice, tim, česta pitanja ===
+console.log('\nSadržaj');
+for (const staza of STRANICE) {
+  const { stranica, zatvori } = await otvori(staza);
+  // Svaka unutarnja poveznica mora voditi na postojeću stranicu i, ako ima sidro, na postojeći dio stranice.
+  const pokvarene = await stranica.evaluate(async () => {
+    const lose = [];
+    const dokumenti = new Map();
+    for (const veza of document.querySelectorAll('a[href]')) {
+      const href = veza.getAttribute('href');
+      if (/^(https?:|tel:|mailto:)/.test(href)) continue;
+      const cilj = new URL(href, location.href);
+      const adresa = cilj.origin + cilj.pathname;
+      if (!dokumenti.has(adresa)) {
+        const odgovor = await fetch(adresa);
+        dokumenti.set(adresa, odgovor.ok ? new DOMParser().parseFromString(await odgovor.text(), 'text/html') : null);
+      }
+      const dokument = dokumenti.get(adresa);
+      if (!dokument) lose.push(href);
+      else if (cilj.hash && !dokument.getElementById(decodeURIComponent(cilj.hash.slice(1)))) lose.push(href);
+    }
+    return [...new Set(lose)];
+  });
+  provjeri(pokvarene.length === 0, `${staza}: unutarnje poveznice vode na postojeće stranice i dijelove${pokvarene.length ? ' — ' + pokvarene.join(', ') : ''}`);
+  await zatvori();
+}
+{
+  const { stranica, zatvori } = await otvori('index.html');
+  provjeri((await stranica.locator('#o-nama .tim__clan').count()) === 5, 'početna: tim ima pet članica');
+  provjeri((await stranica.locator('#kontakt a[href="mailto:udrugavissolis@gmail.com"]').count()) === 1, 'početna: u kontaktu je prava e-mail adresa');
+  provjeri((await stranica.locator('#ponuda li').count()) === 5, 'početna: "Ostalo u našoj ponudi" ima pet aktivnosti');
+  provjeri(!(await stranica.content()).includes('example.com'), 'početna: nema izmišljene e-mail adrese');
+  await zatvori();
+}
+for (const staza of ['hipoterapija.html', 'aktivnosti-pomocu-konja.html']) {
+  const { stranica, zatvori } = await otvori(staza);
+  const prvo = stranica.locator('.pitanja details').first();
+  provjeri(!(await prvo.locator('p').isVisible()), `${staza}: odgovori na česta pitanja u početku su zatvoreni`);
+  await prvo.locator('summary').click();
+  provjeri(await prvo.locator('p').isVisible(), `${staza}: klik na pitanje otvara odgovor`);
   await zatvori();
 }
 
