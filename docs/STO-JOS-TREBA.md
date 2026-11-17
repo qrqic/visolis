@@ -25,12 +25,15 @@ Udruga je javila da autore fotografija ne treba navoditi i da sadašnje fotograf
 
 ## Konji
 
-Imena su upisana 16. 11. 2026.: Anabela, Atlas, Flora, Vihor, Nera, Jade, Epona, Dakota, Cezar, Ruby, Poppy, Indy.
+Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json` (pasmina, godina, spol, od kada su kod nas, narav, u čemu sudjeluju, priča). Boje crteža složene su prema opisu dlake.
 
-- [ ] **Trinaesto ime.** Udruga je navela 11 konja i 2 ponija, a stiglo je 12 imena. Na stranici je trinaesti zasad upisan kao "Trinaesti".
-- [ ] **Koji je drugi poni** (uz Anabelu)? Sada su svi imenovani osim Anabele nacrtani kao konji.
-- [ ] Za svakoga u `site/data/krdo.json`: pasmina, godina, prava boja dlake i grive, narav, jedna rečenica. Boje na crtežima su primjer.
-- [ ] **Koji je konj na kojoj fotografiji.** Tri postojeće fotografije (svijetlosmeđi, smeđi, sivi) više nisu vezane uz konje u redu, jer ne znamo čije su. Datoteke su u `site/assets/img/krdo-*`.
+- [ ] Fotografija svakog konja (bez djece). Zasad je ima samo Anabela.
+- [ ] Koji je konj na kojoj od tri postojeće fotografije (svijetlosmeđi, smeđi, sivi): `site/assets/img/krdo-*`.
+
+## Nove stranice (17. 11. 2026.)
+
+- [ ] **Dokumenti** (`dokumenti.html`): javni dokumenti udruge. Čeka dokumente (PDF).
+- [ ] **Novosti** (`novosti.html`): zasad samo poveznice na društvene mreže. Treba odlučiti kako će se novosti dodavati.
 
 ## Tim – treba potvrditi
 

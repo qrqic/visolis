@@ -263,3 +263,30 @@
     width: 100%;
   }
 }
+
+/* Podaci o konju na kartici: pasmina, godina, spol... */
+.konj-kartica__podaci {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+  gap: 0.9rem 2rem;
+  margin-top: 1.5rem;
+  max-width: 44rem;
+}
+
+.konj-kartica__podaci dt {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bordo);
+}
+
+.konj-kartica__podaci dd {
+  margin: 0.2rem 0 0;
+  font-size: 0.9375rem;
+}
+
+/* Tekstualni stupac kartice ne smije se širiti preko ekrana. */
+.konj-kartica > div {
+  min-width: 0;
+}

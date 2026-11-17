@@ -187,6 +187,22 @@ html:not(.js) .izbornik {
   }
 }
 
+/* Sedam poveznica i gumb: na manjim računalima izbornik je zbijeniji, da stane u jedan red. */
+@media (min-width: 64rem) and (max-width: 79.99rem) {
+  .izbornik,
+  html:not(.js) .izbornik {
+    gap: 1.5rem;
+  }
+
+  .izbornik__popis {
+    gap: 1.35rem;
+  }
+
+  .izbornik__popis a {
+    font-size: 0.875rem;
+  }
+}
+
 /* Sekcije */
 
 .sekcija {

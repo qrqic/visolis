@@ -76,6 +76,15 @@ export async function pokreniKrdo() {
   };
 
   // --- kartica odabranog konja ---
+  // Podaci koji se ispisuju ispod imena, redom; prazni se preskaču.
+  const PODACI = [
+    ['pasmina', 'Pasmina'],
+    ['godina', 'Godina rođenja'],
+    ['spol', 'Spol'],
+    ['kodNas', 'Kod nas'],
+    ['narav', 'Narav'],
+    ['sudjeluje', 'Sudjeluje u'],
+  ];
   const dio = (naziv) => kartica?.querySelector(`[data-krdo-${naziv}]`);
   function odaberi(redniBroj) {
     stanja.forEach((stanje, i) => stanje.gumb.setAttribute('aria-pressed', String(i === redniBroj)));
@@ -83,6 +92,21 @@ export async function pokreniKrdo() {
     const { konj } = stanja[redniBroj];
     dio('ime').textContent = konj.ime.trim();
     dio('opis').textContent = typeof konj.opis === 'string' ? konj.opis : '';
+    const podaci = dio('podaci');
+    if (podaci) {
+      podaci.replaceChildren();
+      for (const [kljuc, naziv] of PODACI) {
+        if (typeof konj[kljuc] !== 'string' || !konj[kljuc].trim()) continue;
+        const red = document.createElement('div');
+        const dt = document.createElement('dt');
+        const dd = document.createElement('dd');
+        dt.textContent = naziv;
+        dd.textContent = konj[kljuc].trim();
+        red.append(dt, dd);
+        podaci.append(red);
+      }
+      podaci.hidden = !podaci.children.length;
+    }
     const imaSliku = typeof konj.fotografija === 'string' && /^[a-z0-9-]+$/.test(konj.fotografija);
     dio('slika').hidden = !imaSliku;
     dio('bez-slike').hidden = imaSliku;

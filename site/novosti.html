@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Novosti — Vis Solis</title>
+  <meta name="description" content="Novosti Udruge Vis Solis: događanja, izgradnja ranča i život našeg krda.">
+  <meta name="theme-color" content="#f7f2e8">
+  <meta property="og:title" content="Novosti — Vis Solis">
+  <meta property="og:description" content="Novosti Udruge Vis Solis: događanja, izgradnja ranča i život našeg krda.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="hr_HR">
+  <link rel="icon" href="assets/img/znak.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/lora.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="css/osnova.css">
+  <link rel="stylesheet" href="css/tipografija.css">
+  <link rel="stylesheet" href="css/raspored.css">
+  <link rel="stylesheet" href="css/komponente.css">
+  <link rel="stylesheet" href="css/podstranica.css">
+  <script src="js/rano.js"></script>
+  <script type="module" src="js/podstranica.js"></script>
+</head>
+<body>
+  <a class="preskoci" href="#sadrzaj">Preskoči na sadržaj</a>
+
+  <header class="zaglavlje">
+    <div class="spremnik zaglavlje__red">
+      <a class="znak" href="index.html" aria-label="Vis Solis, početna stranica">
+        <img src="assets/img/znak.svg" width="34" height="38" alt="">
+        <span>Vis Solis</span>
+      </a>
+      <button class="izbornik-gumb" type="button" data-izbornik-gumb aria-expanded="false" aria-controls="izbornik">
+        <span>Izbornik</span>
+        <span class="izbornik-gumb__crte" aria-hidden="true"></span>
+      </button>
+      <nav class="izbornik" id="izbornik" data-izbornik aria-label="Glavni izbornik">
+        <ul class="izbornik__popis">
+          <li><a href="index.html#hipoterapija">Hipoterapija</a></li>
+          <li><a href="index.html#aktivnosti">Aktivnosti</a></li>
+          <li><a href="index.html#krdo">Krdo</a></li>
+          <li><a href="index.html#o-nama">O nama</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+          <li><a href="dokumenti.html">Dokumenti</a></li>
+          <li><a href="novosti.html">Novosti</a></li>
+        </ul>
+        <a class="gumb gumb--mali" href="index.html#kontakt">Dogovorite termin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="sadrzaj">
+    <section class="pod-uvod">
+      <div class="spremnik">
+        <a class="natrag" href="index.html">Natrag na početnu</a>
+        <span class="oznaka">Novosti</span>
+        <h1>Novosti</h1>
+        <p class="uvodni">Događanja, izgradnja ranča i život našeg krda.</p>
+      </div>
+    </section>
+
+    <div class="spremnik pod-sadrzaj">
+      <section class="pod-blok" data-pojavi>
+        <h2>Uskoro</h2>
+        <div class="pod-blok__tekst">
+          <p class="ceka">Prve novosti stižu uskoro. Ovdje će se objavljivati najave događanja i novosti o izgradnji ranča.</p>
+          <p>Do tada nas pratite na društvenim mrežama.</p>
+          <div class="mreze">
+            <a class="strelica" href="https://www.instagram.com/udruga_vis_solis/" rel="noopener">Instagram</a>
+            <a class="strelica" href="https://www.facebook.com/p/Vis-Solis-udruga-za-terapije-i-aktivnosti-pomo%C4%87u-konja-61556972145488/" rel="noopener">Facebook</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="podnozje">
+    <div class="spremnik">
+      <div class="podnozje__mreza">
+        <p class="podnozje__naziv">Vis Solis – udruga za terapiju i aktivnosti pomoću konja</p>
+        <div>
+          <h3>Gdje smo</h3>
+          <address>
+            Aktivnosti: Bolnička ulica 21, Gornja Bistra<br>
+            Sjedište: Krapinska ulica 2, Donja Bistra
+          </address>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <ul class="podnozje__popis">
+            <li><a href="tel:+385955554789">+385 95 555 4789</a></li>
+            <li><a href="mailto:udrugavissolis@gmail.com">udrugavissolis@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/udruga_vis_solis/" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/p/Vis-Solis-udruga-za-terapije-i-aktivnosti-pomo%C4%87u-konja-61556972145488/" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="podnozje__dno">
+        <span>© 2026 Udruga VS · OIB 16168638960</span>
+        <a href="privatnost.html">Pravila privatnosti</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
