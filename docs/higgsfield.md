@@ -38,3 +38,15 @@ Upit za sliku:
 
 Ukupno potrošeno do sada: 24 kredita.
 
+
+## Portreti tima (17. 11. 2026.)
+
+Model `gpt_image_2_6`, 1:1, 0,25 kredita po slici. Predlošci: grupna fotografija (media `52107905-a252-4467-9f6a-c131d021457a`) i Josipina fotografija (media `97cb0a1d-e03a-4f65-9d24-2fee012216f4`). Upute: ista cura, sama, do struka, ista crvena majica s logom, pozadina s rascvjetanim drvećem kao na grupnoj fotografiji, bez mijenjanja lica.
+
+| Cura | Posao |
+| --- | --- |
+| Viktorija | `5e0de0a2-ffa3-4524-b24a-862a92d5e293` |
+| Sunčica | `ca81b9ff-8fd2-4e8f-8104-ab7cb697ff24` |
+| Gabrijela | `a62d5ae0-4ddd-4195-abf3-291a4998a762` |
+| Lorena | `282ae16f-7da0-4947-81e0-7f99a89097a4` |
+| Josipa | `cfadde47-75f4-419c-9aa8-bb4d0a016e24` |
