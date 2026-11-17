@@ -742,3 +742,92 @@ html:not(.js) .tim6__podaci {
 .tim-ledja {
   margin-top: 3rem;
 }
+
+/* Tim, primjer B: bez šesterokuta.
+   Mobitel: kartice jedna ispod druge, okrugla fotografija lijevo, tekst desno.
+   Tablet i računalo: mreža na sredini stranice, fotografija iznad teksta. */
+
+.tim-primjer {
+  margin-top: clamp(3.5rem, 8vw, 5.5rem);
+}
+
+.tim-primjer > .ceka {
+  max-width: 40rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.tim-kartice {
+  display: grid;
+  gap: 2rem;
+  max-width: 66rem;
+  margin-inline: auto;
+}
+
+.tim-kartica {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  align-content: start;
+}
+
+.tim-kartica__slika {
+  display: block;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  /* Krem razmak i bordo prsten, kao crte na logu. */
+  box-shadow:
+    0 0 0 3px var(--krem),
+    0 0 0 5px var(--bordo);
+}
+
+.tim-kartica__slika img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tim-kartica h3 {
+  font-size: 1.5rem;
+}
+
+.tim-kartica .tim__uloga {
+  margin-top: 0.35rem;
+}
+
+.tim-kartica__tekst p:not(.tim__uloga) {
+  margin-top: 0.6rem;
+  font-size: 0.9375rem;
+  color: var(--prigusen);
+}
+
+@media (min-width: 40rem) {
+  .tim-kartice {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3.5rem 2.5rem;
+  }
+
+  .tim-kartica {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .tim-kartica__slika {
+    width: 9.5rem;
+  }
+
+  .tim-kartica__tekst p:not(.tim__uloga) {
+    max-width: 22rem;
+    margin-inline: auto;
+  }
+}
+
+@media (min-width: 64rem) {
+  .tim-kartice {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

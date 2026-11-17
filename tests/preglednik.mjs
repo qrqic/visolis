@@ -464,6 +464,12 @@ for (const staza of STRANICE) {
   provjeri(!(await stranica.content()).includes('example.com'), 'početna: nema izmišljene e-mail adrese');
   await zatvori();
 }
+{
+  const { stranica, zatvori } = await otvori('o-nama.html');
+  provjeri((await stranica.locator('.tim-kartica').count()) === 6, 'o nama: primjer B ima šest članica');
+  provjeri((await stranica.locator('.tim-kartica img').evaluateAll((slike) => slike.filter((s) => s.getAttribute('src').includes('tim-krug-')).length)) === 6, 'o nama: primjer B ima okrugle portrete svih šest članica');
+  await zatvori();
+}
 for (const staza of ['hipoterapija.html', 'aktivnosti-pomocu-konja.html']) {
   const { stranica, zatvori } = await otvori(staza);
   const prvo = stranica.locator('.pitanja details').first();
