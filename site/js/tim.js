@@ -23,3 +23,22 @@ export function pokreniTim() {
     for (const gumb of gumbi) gumb.addEventListener('click', () => odaberi(gumb.dataset.timGumb));
   }
 }
+
+// Primjer C: stupci. Klik zadrži stupac proširenim i prikaže podatke na slici; drugi klik ih skriva.
+export function pokreniStupce() {
+  for (const korijen of document.querySelectorAll('[data-stupci]')) {
+    const stupci = [...korijen.querySelectorAll('.stupac')];
+    for (const stupac of stupci) {
+      const gumb = stupac.querySelector('button');
+      gumb.addEventListener('click', () => {
+        const otvori = !stupac.classList.contains('stupac--odabran');
+        for (const drugi of stupci) {
+          const odabran = otvori && drugi === stupac;
+          drugi.classList.toggle('stupac--odabran', odabran);
+          drugi.querySelector('button').setAttribute('aria-pressed', String(odabran));
+        }
+        korijen.classList.toggle('stupci--odabrano', otvori);
+      });
+    }
+  }
+}

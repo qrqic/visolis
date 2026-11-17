@@ -831,3 +831,209 @@ html:not(.js) .tim6__podaci {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* Tim, primjer C: šest kosih stupaca.
+   Svaki stupac je paralelogram (clip-path); susjedni se preklapaju za --pomak, pa kosi rubovi idu jedan uz drugi.
+   Slike nisu iskrivljene, samo izrezane.
+   Prijelaz mišem ili fokus: stupac se proširi, ostali potamne.
+   Klik (klasa stupac--odabran): stupac ostaje proširen i na donjem dijelu slike pojave se podaci. */
+
+.stupci {
+  --pomak: 3.25rem;
+  --razmak: 0.4rem;
+  --uzak: 1;
+  --sirok: 4.2;
+  display: flex;
+  height: clamp(28rem, 60vw, 32rem);
+  max-width: 72rem;
+  margin-inline: auto;
+  border-radius: var(--zaobljenje);
+  overflow: hidden;
+}
+
+.stupac {
+  position: relative;
+  flex: var(--uzak) 1 0;
+  min-width: 0;
+  min-height: 0;
+  margin-right: calc(var(--pomak) * -1 + var(--razmak));
+  clip-path: polygon(var(--pomak) 0, 100% 0, calc(100% - var(--pomak)) 100%, 0 100%);
+  transition:
+    flex-grow 0.55s var(--krivulja),
+    filter 0.45s var(--krivulja);
+}
+
+/* Krajevi trake su ravni. */
+.stupac:first-child {
+  clip-path: polygon(0 0, 100% 0, calc(100% - var(--pomak)) 100%, 0 100%);
+}
+
+.stupac:last-child {
+  margin-right: 0;
+  clip-path: polygon(var(--pomak) 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.stupac__gumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: var(--pijesak);
+  cursor: pointer;
+}
+
+.stupac__gumb picture,
+.stupac__gumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.stupac__gumb img {
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
+/* Proširen stupac: odabran ili u fokusu tipkovnice. */
+.stupac:has(.stupac__gumb:focus-visible),
+.stupac--odabran {
+  flex-grow: var(--sirok);
+}
+
+/* Ostali stupci potamne. */
+.stupci--odabrano .stupac:not(.stupac--odabran) {
+  filter: brightness(0.5) saturate(0.7);
+}
+
+/* Prijelaz mišem samo na uređajima s mišem (na dodirnom ekranu "hover" zna ostati zapeti). */
+@media (hover: hover) and (pointer: fine) {
+  .stupac:hover {
+    flex-grow: var(--sirok);
+  }
+
+  /* Dok je miš na jednom stupcu, odabrani se privremeno sužava, a svi ostali potamne. */
+  .stupci:has(.stupac:hover) .stupac--odabran:not(:hover) {
+    flex-grow: var(--uzak);
+  }
+
+  .stupci:has(.stupac:hover) .stupac:not(:hover) {
+    filter: brightness(0.5) saturate(0.7);
+  }
+
+  .stupci--odabrano:has(.stupac:hover) .stupac:hover {
+    filter: none;
+  }
+
+  .stupci:has(.stupac:hover) .stupac--odabran:not(:hover) .stupac__tekst {
+    opacity: 0;
+    visibility: hidden;
+    transition: none;
+  }
+}
+
+/* Podaci na donjem dijelu slike. */
+.stupac__tekst {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 4.5rem calc(var(--pomak) + 1.25rem) 1.75rem 1.75rem;
+  background: linear-gradient(to top, rgba(42, 10, 16, 0.92) 0%, rgba(42, 10, 16, 0.75) 55%, rgba(42, 10, 16, 0) 100%);
+  color: var(--krem);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.35s ease,
+    visibility 0s linear 0.35s;
+}
+
+.stupac:last-child .stupac__tekst {
+  padding-right: 1.75rem;
+}
+
+.stupac--odabran .stupac__tekst {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.35s ease 0.25s,
+    visibility 0s;
+}
+
+.stupac__tekst h3 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  color: var(--krem);
+}
+
+.stupac__uloga {
+  margin-top: 0.35rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: var(--zuta);
+}
+
+.stupac__tekst p:not(.stupac__uloga) {
+  margin-top: 0.6rem;
+  max-width: 26rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(247, 242, 232, 0.92);
+}
+
+/* Bez JavaScripta podaci se vide na prijelaz mišem. */
+html:not(.js) .stupac:hover .stupac__tekst {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobitel: stupci postaju kose vodoravne trake jedna ispod druge; odabrana se otvori i prikaže podatke. */
+@media (max-width: 39.99rem) {
+  .stupci {
+    --pomak: 1.25rem;
+    --razmak: 0.3rem;
+    --sirok: 6;
+    flex-direction: column;
+    height: 46rem;
+  }
+
+  .stupac {
+    margin-right: 0;
+    margin-bottom: calc(var(--pomak) * -1 + var(--razmak));
+    clip-path: polygon(0 var(--pomak), 100% 0, 100% calc(100% - var(--pomak)), 0 100%);
+  }
+
+  .stupac:first-child {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--pomak)), 0 100%);
+  }
+
+  .stupac:last-child {
+    margin-bottom: 0;
+    clip-path: polygon(0 var(--pomak), 100% 0, 100% 100%, 0 100%);
+  }
+
+  .stupac__gumb img {
+    object-position: 50% 45%;
+  }
+
+  .stupac__tekst,
+  .stupac:last-child .stupac__tekst {
+    padding: 3rem 1.25rem calc(var(--pomak) + 1rem);
+  }
+
+  .stupac__tekst p:not(.stupac__uloga) {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.875rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stupac,
+  .stupac__tekst {
+    transition: none;
+  }
+}
