@@ -50,3 +50,6 @@ Model `gpt_image_2_6`, 1:1, 0,25 kredita po slici. Predlošci: grupna fotografij
 | Gabrijela | `a62d5ae0-4ddd-4195-abf3-291a4998a762` |
 | Lorena | `282ae16f-7da0-4947-81e0-7f99a89097a4` |
 | Josipa | `cfadde47-75f4-419c-9aa8-bb4d0a016e24` |
+| Mia (dvije inačice) | `63d64514-745a-4344-b42d-54d70db6a8b7`, `9232219d-b5b4-44a5-9882-4e3020427fe7` |
+
+Mijin predložak (media `38a9d3a7-ee62-400e-8eaf-57c1143d03db`) je izrezak bez djeteta (`izvori/tim/mia-izrez.jpg`); izvorna fotografija s djetetom nije poslana na Higgsfield.
