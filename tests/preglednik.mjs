@@ -467,16 +467,6 @@ for (const staza of STRANICE) {
 {
   const { stranica, zatvori } = await otvori('o-nama.html');
   provjeri((await stranica.locator('.tim-kartica').count()) === 6, 'o nama: primjer B ima šest članica');
-  provjeri((await stranica.locator('.stupac').count()) === 6, 'o nama: primjer C ima šest stupaca');
-  const stupac = stranica.locator('.stupac').nth(3);
-  await stupac.scrollIntoViewIfNeeded();
-  const uzak = (await stupac.boundingBox()).width;
-  provjeri(!(await stupac.locator('.stupac__tekst').evaluate((t) => getComputedStyle(t).opacity === '1')), 'primjer C: tekst se u početku ne vidi');
-  await stupac.locator('button').click();
-  await stranica.mouse.move(5, 5);
-  await stranica.waitForTimeout(700);
-  provjeri((await stupac.boundingBox()).width > uzak * 1.8, 'primjer C: kliknuti stupac se proširi');
-  provjeri(await stupac.locator('.stupac__tekst').evaluate((t) => getComputedStyle(t).opacity === '1'), 'primjer C: na kliknutom stupcu vidi se tekst');
   provjeri((await stranica.locator('.tim-kartica img').evaluateAll((slike) => slike.filter((s) => s.getAttribute('src').includes('tim-krug-')).length)) === 6, 'o nama: primjer B ima okrugle portrete svih šest članica');
   await zatvori();
 }

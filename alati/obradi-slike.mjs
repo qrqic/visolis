@@ -52,13 +52,6 @@ const slike = [
   { izvor: 'tim/hf-gabrijela.png', ime: 'tim-krug-gabrijela', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 320, top: 150, width: 400, height: 400 } },
   { izvor: 'tim/hf-lorena.png', ime: 'tim-krug-lorena', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 295, top: 150, width: 400, height: 400 } },
   { izvor: 'tim/hf-mia.png', ime: 'tim-krug-mia', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 305, top: 90, width: 400, height: 400 } },
-  // Tim, primjer C: široka traka lica (logo na majici ostaje ispod kadra).
-  { izvor: 'tim/hf-viktorija.png', ime: 'tim-stupac-viktorija', sirine: [1024], jpg: 1024, izrez: { left: 0, top: 0, width: 1024, height: 500 } },
-  { izvor: 'tim/hf-gabrijela.png', ime: 'tim-stupac-gabrijela', sirine: [1024], jpg: 1024, izrez: { left: 0, top: 0, width: 1024, height: 540 } },
-  { izvor: 'tim/hf-suncica.png', ime: 'tim-stupac-suncica', sirine: [1024], jpg: 1024, izrez: { left: 0, top: 0, width: 1024, height: 465 } },
-  { izvor: 'tim/hf-lorena.png', ime: 'tim-stupac-lorena', sirine: [1024], jpg: 1024, izrez: { left: 0, top: 0, width: 1024, height: 530 } },
-  { izvor: 'tim/hf-josipa.png', ime: 'tim-stupac-josipa', sirine: [1024], jpg: 1024, izrez: { left: 0, top: 0, width: 1024, height: 520 } },
-  { izvor: 'tim/hf-mia.png', ime: 'tim-stupac-mia', sirine: [1024], jpg: 1024, izrez: { left: 0, top: 0, width: 1024, height: 520 } },
   // Prava grupna fotografija tima s konjem (O nama).
   { izvor: 'tim/grupa-izvornik.jpg', ime: 'tim-skupa', ...FOTOGRAFIJA },
   { izvor: '463275769_1228874608150361_1008652529814843723_n.jpg', ime: 'logo', sirine: [540], jpg: 540 },
