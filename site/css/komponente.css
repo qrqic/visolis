@@ -722,9 +722,11 @@ html:not(.js) .tim6__podaci {
   gap: 2rem;
 }
 
+/* Šesterokut i podaci kao jedna cjelina, na sredini stranice. */
 @media (min-width: 64rem) {
   .tim6 {
-    grid-template-columns: minmax(0, 36rem) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 34rem) minmax(0, 26rem);
+    justify-content: center;
     gap: 4rem;
   }
 }
