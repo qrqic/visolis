@@ -18,7 +18,8 @@ Prije konačne objave nijedan ne smije ostati.
 - [ ] Jahalište i dvorište dvorca Oršić (`aktivnosti-pomocu-konja.html`, Gdje se provode).
 - [ ] Izgradnja ranča u Donjoj Bistri (`o-nama.html`).
 - [ ] Po jedna fotografija svakog konja. Zasad ih imaju Anabela i tri konja.
-- [ ] Logo udruge u najboljoj kvaliteti; znak "VS" u zaglavlju je privremen.
+- [x] Logo udruge stigao je 17. 11. 2026. (PDF, vektorski; `izvori/logo/`). Puni logo je u podnožju (`site/assets/img/logo-udruge.svg`).
+- [ ] Znak "VS" u zaglavlju je i dalje privremen. Za zaglavlje se može iskoristiti mali logo iz istog PDF-a (`izvori/logo/logo-mali.svg`).
 
 Udruga je javila da autore fotografija ne treba navoditi i da sadašnje fotografije smiju ostati.
 

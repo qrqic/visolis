@@ -273,6 +273,15 @@ html:not(.js) .izbornik {
   max-width: 14em;
 }
 
+/* Logo udruge ispod naziva (svijetle crte na bordo podlozi). */
+.podnozje__logo {
+  display: block;
+  width: clamp(9rem, 22vw, 12.5rem);
+  height: auto;
+  margin-top: 1.75rem;
+  opacity: 0.92;
+}
+
 .podnozje h3 {
   margin-bottom: 0.75rem;
   font-family: var(--font-tekst);
