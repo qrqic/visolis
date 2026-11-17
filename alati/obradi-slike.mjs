@@ -43,6 +43,8 @@ const slike = [
   { izvor: 'tim/hf-gabrijela.png', ime: 'tim-gabrijela', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 220, top: 5, width: 600, height: 520 } },
   { izvor: 'tim/hf-lorena.png', ime: 'tim-lorena', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 195, top: 5, width: 600, height: 520 } },
   { izvor: 'tim/hf-mia.png', ime: 'tim-mia', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 205, top: 0, width: 600, height: 520 } },
+  // Tim s leđa, s logom udruge na majicama (ispod šesterokuta).
+  { izvor: 'tim/ledja-izvornik.jpg', ime: 'tim-ledja', sirine: [640, 1024, 1600, 2400], jpg: 1600 },
   // Prava grupna fotografija tima s konjem (O nama).
   { izvor: 'tim/grupa-izvornik.jpg', ime: 'tim-skupa', ...FOTOGRAFIJA },
   { izvor: '463275769_1228874608150361_1008652529814843723_n.jpg', ime: 'logo', sirine: [540], jpg: 540 },

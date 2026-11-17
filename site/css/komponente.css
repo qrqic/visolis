@@ -738,6 +738,7 @@ html:not(.js) .tim6__podaci {
   }
 }
 
-.tim-skupa {
+.tim-skupa,
+.tim-ledja {
   margin-top: 3rem;
 }
