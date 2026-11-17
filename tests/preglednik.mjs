@@ -451,7 +451,7 @@ for (const staza of STRANICE) {
 }
 {
   const { stranica, zatvori } = await otvori('index.html');
-  provjeri((await stranica.locator('#o-nama .tim__clan').count()) === 5, 'početna: tim ima pet članica');
+  provjeri((await stranica.locator('#o-nama .tim__clan').count()) === 6, 'početna: tim ima šest članica');
   provjeri((await stranica.locator('#kontakt a[href="mailto:udrugavissolis@gmail.com"]').count()) === 1, 'početna: u kontaktu je prava e-mail adresa');
   provjeri((await stranica.locator('#ponuda li').count()) === 5, 'početna: "Ostalo u našoj ponudi" ima pet aktivnosti');
   provjeri(!(await stranica.content()).includes('example.com'), 'početna: nema izmišljene e-mail adrese');
