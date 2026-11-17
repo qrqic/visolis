@@ -574,3 +574,168 @@
   min-height: 2.75rem;
   color: var(--bordo);
 }
+
+/* Tim u šesterokutu
+   Šesterokut (ravna gornja i donja stranica) podijeljen je na šest trokuta iz središta.
+   Svaki trokut je gumb izrezan s clip-path, pa prima klik samo na svom području.
+   Brojevi dijelova idu u smjeru kazaljke na satu, od gornjeg trokuta. */
+
+.tim6 {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.tim6__sesterokut {
+  position: relative;
+  /* Malo uži od stupca, da povećani trokut ne izađe preko ruba ekrana. */
+  width: min(100% - 1.75rem, 36rem);
+  aspect-ratio: 1000 / 866;
+  margin-inline: auto;
+}
+
+.tim6__dijelovi {
+  position: absolute;
+  inset: 0;
+}
+
+.tim6__dio {
+  --origin: 50% 33.3%;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transform-origin: var(--origin);
+  transition:
+    transform 0.4s var(--krivulja),
+    filter 0.4s var(--krivulja);
+  pointer-events: none;
+}
+
+.tim6__dio--1 { left: 25%; top: 0; --oblik: polygon(0 0, 100% 0, 50% 100%); }
+.tim6__dio--2 { left: 50%; top: 0; --oblik: polygon(50% 0, 100% 100%, 0 100%); --origin: 50% 66.7%; }
+.tim6__dio--3 { left: 50%; top: 50%; --oblik: polygon(0 0, 100% 0, 50% 100%); }
+.tim6__dio--4 { left: 25%; top: 50%; --oblik: polygon(50% 0, 100% 100%, 0 100%); --origin: 50% 66.7%; }
+.tim6__dio--5 { left: 0; top: 50%; --oblik: polygon(0 0, 100% 0, 50% 100%); }
+.tim6__dio--6 { left: 0; top: 0; --oblik: polygon(50% 0, 100% 100%, 0 100%); --origin: 50% 66.7%; }
+
+.tim6__gumb {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: var(--pijesak);
+  clip-path: var(--oblik);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.tim6__gumb picture,
+.tim6__gumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.tim6__gumb img {
+  object-fit: cover;
+  transition: filter 0.4s var(--krivulja);
+}
+
+.tim6__bez-slike {
+  display: grid;
+  place-items: end center;
+  height: 100%;
+  padding-bottom: 18%;
+  background: rgba(251, 242, 154, 0.55);
+  font-size: 0.8125rem;
+  color: var(--ceka);
+}
+
+/* Crte šesterokuta preko slika. */
+.tim6__crte {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  fill: none;
+  stroke: var(--krem);
+  stroke-width: 7;
+  stroke-linejoin: round;
+}
+
+/* Prijelaz mišem ili fokus tipkovnicom: trokut se poveća i izdigne iznad ostalih. */
+.tim6__dio:hover,
+.tim6__dio:has(.tim6__gumb:focus-visible) {
+  z-index: 3;
+  transform: scale(1.14);
+  filter: drop-shadow(0 0.6rem 1.2rem rgba(43, 36, 32, 0.35));
+}
+
+.tim6__dio--odabran {
+  z-index: 2;
+  transform: scale(1.07);
+  filter: drop-shadow(0 0.4rem 0.8rem rgba(43, 36, 32, 0.28));
+}
+
+/* Kad je netko odabran, ostali su malo prigušeni. */
+.tim6--odabrano .tim6__dio:not(.tim6__dio--odabran):not(:hover) img {
+  filter: saturate(0.55) brightness(0.92);
+}
+
+.tim6__podaci {
+  min-height: 9rem;
+}
+
+.tim6__uputa {
+  font-family: var(--font-naslov);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--prigusen);
+}
+
+.tim6__clan h3 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.tim6__clan .tim__uloga {
+  margin-top: 0.6rem;
+}
+
+.tim6__clan p:not(.tim__uloga) {
+  margin-top: 1rem;
+  max-width: 32em;
+  font-size: 1.0625rem;
+  color: var(--prigusen);
+}
+
+/* Bez JavaScripta: podaci o svim članicama kao popis ispod šesterokuta. */
+html:not(.js) .tim6__uputa {
+  display: none;
+}
+
+html:not(.js) .tim6__podaci {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 64rem) {
+  .tim6 {
+    grid-template-columns: minmax(0, 36rem) minmax(0, 1fr);
+    gap: 4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tim6__dio,
+  .tim6__gumb img {
+    transition: none;
+  }
+}
+
+.tim-skupa {
+  margin-top: 3rem;
+}

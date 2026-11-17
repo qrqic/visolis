@@ -11,8 +11,7 @@ Prije konačne objave nijedan ne smije ostati.
 
 ## Fotografije (sve bez djece)
 
-- [ ] Portret svake članice tima: Viktorija, Sunčica, Gabrijela, Lorena, Josipa, Mia (`index.html` i `o-nama.html`, sekcija Tim).
-- [ ] Cijeli tim na okupu, s konjima (`o-nama.html`).
+- [ ] Mijina fotografija za šesterokut tima. Ostale portrete izradio je Higgsfield prema pravim fotografijama (vidi `docs/higgsfield.md`); naručitelj ih je odobrio 17. 11. 2026. Slike su u `izvori/tim/`, izrezi u `alati/obradi-slike.mjs`.
 - [ ] Hipoterapija u tijeku: terapeut, vodič i konj (`hipoterapija.html`).
 - [ ] Aktivnosti pomoću konja: rad s tla ili poligon (`aktivnosti-pomocu-konja.html`).
 - [ ] Šetnja, kamp ili druženje s konjima (`index.html`, sekcija Ostalo u našoj ponudi).
