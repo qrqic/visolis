@@ -25,6 +25,8 @@ const FOTOGRAFIJA = { sirine: [640, 1024, 1600], jpg: 1280 };
 const slike = [
   // Hero: široka slika Anabele (21:9) s Higgsfielda; vidi docs/higgsfield.md.
   { izvor: 'higgsfield/anabela-hero.png', ime: 'anabela-hero', sirine: [960, 1600, 2400, 3168], jpg: 1920 },
+  // Hipoterapija, podstranica (Kako izgleda termin): terapeutkinja pridržava dječaka na konju. Lice se smije vidjeti (potvrda naručitelja, 18. 11. 2026.).
+  { izvor: 'slike/hipoterapija-termin2.jpg', ime: 'hipoterapija-podstranica', sirine: [640, 1200], jpg: 1200 },
   // Hipoterapija u tijeku (početna); lice dječaka zamućeno alatom alati/obiteljski-dan.py.
   { izvor: 'slike/hipoterapija-anonimno.jpg', ime: 'hipoterapija-termin', sirine: [640, 1080], jpg: 1080 },
   { izvor: 'DSC0002.jpg', ime: 'aktivnosti-galop', ...FOTOGRAFIJA },
