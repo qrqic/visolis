@@ -21,6 +21,10 @@ Prije konačne objave nijedan ne smije ostati.
 
 Udruga je javila da autore fotografija ne treba navoditi i da sadašnje fotografije smiju ostati.
 
+## Obiteljski dan (18. 11. 2026.)
+
+Četiri fotografije u sekciji "Ostalo u našoj ponudi". Lica djece i posjetitelja nisu u kadru ili su zamućena (`alati/obiteljski-dan.py`); vide se samo cura sa psom i cura koja vodi ponija, uz potvrdu naručitelja. Izvorne fotografije su u `izvori/obiteljski-dan/` i ne idu u git.
+
 ## Konji
 
 Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json` (pasmina, godina, spol, od kada su kod nas, narav, u čemu sudjeluju, priča). Boje crteža složene su prema opisu dlake.

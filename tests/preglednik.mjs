@@ -474,7 +474,8 @@ for (const staza of STRANICE) {
   const vrhLorene = await stranica.locator('#o-nama [data-tim-gumb="viktorija"]').evaluate((g) => { const o = g.getBoundingClientRect(); return document.elementFromPoint(o.left + o.width / 2, o.top + 4)?.closest('[data-tim-gumb]')?.dataset.timGumb; });
   provjeri(vrhLorene === 'viktorija', 'tim: gornji trokut prima klik na svom području');
   provjeri((await stranica.locator('#kontakt a[href="mailto:udrugavissolis@gmail.com"]').count()) === 1, 'početna: u kontaktu je prava e-mail adresa');
-  provjeri((await stranica.locator('#ponuda li').count()) === 5, 'početna: "Ostalo u našoj ponudi" ima pet aktivnosti');
+  provjeri((await stranica.locator('#ponuda .popis-crtice li').count()) === 5, 'početna: "Ostalo u našoj ponudi" ima pet aktivnosti');
+  provjeri((await stranica.locator('#ponuda .ponuda-dan img').count()) === 4, 'početna: uz ponudu su četiri fotografije s obiteljskog dana');
   provjeri(!(await stranica.content()).includes('example.com'), 'početna: nema izmišljene e-mail adrese');
   await zatvori();
 }
