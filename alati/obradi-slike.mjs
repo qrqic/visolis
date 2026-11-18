@@ -70,8 +70,8 @@ const slike = [
   { izvor: 'obiteljski-dan/vodenje-anonimno.jpg', ime: 'dan-konj', sirine: [480, 800], jpg: 800 },
   { izvor: 'obiteljski-dan/pas.jpg', ime: 'dan-pas', sirine: [480, 800], jpg: 800 },
   { izvor: 'obiteljski-dan/poni-anonimno.jpg', ime: 'dan-poni', sirine: [480, 800], jpg: 800 },
-  // Prava grupna fotografija tima s konjem (O nama).
-  { izvor: 'tim/grupa-izvornik.jpg', ime: 'tim-skupa', ...FOTOGRAFIJA },
+  // Tim na klupi s kaubojskim šeširima: glavna fotografija u O nama na početnoj. Izvornik je malen (426 x 640).
+  { izvor: 'slike/tim-sesir.jpg', ime: 'o-nama-tim', sirine: [426], jpg: 426, izrez: { left: 0, top: 60, width: 426, height: 500 } },
   { izvor: '463275769_1228874608150361_1008652529814843723_n.jpg', ime: 'logo', sirine: [540], jpg: 540 },
 ];
 
