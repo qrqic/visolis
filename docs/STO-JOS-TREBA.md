@@ -16,7 +16,7 @@ Prije konačne objave nijedan ne smije ostati.
 - [ ] Aktivnosti pomoću konja: rad s tla ili poligon (`aktivnosti-pomocu-konja.html`).
 - [ ] Po jedna fotografija svakog konja. Zasad ih imaju Anabela i tri konja.
 - [x] Logo udruge stigao je 17. 11. 2026. (PDF, vektorski; `izvori/logo/`). Puni logo je u podnožju (`site/assets/img/logo-udruge.svg`).
-- [ ] Znak "VS" u zaglavlju je i dalje privremen. Za zaglavlje se može iskoristiti mali logo iz istog PDF-a (`izvori/logo/logo-mali.svg`).
+- [x] U zaglavlju je mali logo udruge (`site/assets/img/logo-znak.svg`).
 
 Udruga je javila da autore fotografija ne treba navoditi i da sadašnje fotografije smiju ostati.
 
