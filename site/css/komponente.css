@@ -831,3 +831,17 @@ html:not(.js) .tim6__podaci {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* Mobitel: široka fotografija tima s leđa bila bi preniska, pa se prikazuje njezin srednji dio. */
+@media (max-width: 39.99rem) {
+  .tim-ledja img {
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 55% 50%;
+  }
+
+  /* Ispod šesterokuta manje praznog mjesta prije prvog klika. */
+  .tim6__podaci {
+    min-height: 5rem;
+  }
+}

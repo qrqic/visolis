@@ -327,3 +327,12 @@ html:not(.js) .izbornik {
 .podnozje :focus-visible {
   outline-color: var(--zuta);
 }
+
+/* Mobitel i tablet: u sekcijama s tekstom i slikom tekst je uvijek prvi, a slika ispod njega,
+   da se ne spoje slika jedne i slika sljedeće sekcije. */
+@media (max-width: 63.99rem) {
+  .dva-stupca > picture:first-child,
+  .dva-stupca > .mjesto-slike:first-child {
+    order: 1;
+  }
+}

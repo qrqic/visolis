@@ -423,6 +423,18 @@ console.log('\nKrdo u trku');
   await zatvori();
 }
 
+// === Mobitel: u svakoj sekciji s tekstom i slikom tekst je iznad slike ===
+{
+  const { stranica, zatvori } = await otvori('index.html', { sirina: 390, visina: 844 });
+  const redoslijed = await stranica.evaluate(() => [...document.querySelectorAll('.dva-stupca')].map((s) => {
+    const slika = s.querySelector(':scope > picture, :scope > .mjesto-slike');
+    const tekst = s.querySelector(':scope > :not(picture):not(.mjesto-slike)');
+    return !slika || !tekst || tekst.getBoundingClientRect().top < slika.getBoundingClientRect().top;
+  }));
+  provjeri(redoslijed.every(Boolean), `mobitel: u sekcijama s tekstom i slikom tekst je uvijek iznad slike (${redoslijed.filter(Boolean).length}/${redoslijed.length})`);
+  await zatvori();
+}
+
 // === 8. Sadržaj udruge: poveznice, tim, česta pitanja ===
 console.log('\nSadržaj');
 for (const staza of STRANICE) {
