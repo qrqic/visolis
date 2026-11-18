@@ -26,9 +26,6 @@ const slike = [
   // Hero: široka slika Anabele (21:9) s Higgsfielda; vidi docs/higgsfield.md.
   { izvor: 'higgsfield/anabela-hero.png', ime: 'anabela-hero', sirine: [960, 1600, 2400, 3168], jpg: 1920 },
   { izvor: 'DSC0112.jpg', ime: 'hipoterapija-kas', ...FOTOGRAFIJA },
-  { izvor: 'DSC3065.jpg', ime: 'o-nama-portret', ...FOTOGRAFIJA },
-  { izvor: 'DSC0124.jpg', ime: 'o-nama-sivi', ...FOTOGRAFIJA },
-  { izvor: 'DSC2220.jpg', ime: 'o-nama-crni', ...FOTOGRAFIJA },
   { izvor: 'DSC0002.jpg', ime: 'aktivnosti-galop', ...FOTOGRAFIJA },
   // Anabela: fotografija ispred kamenog zida.
   { izvor: 'slike/anabela.jpg', ime: 'krdo-anabela', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 644, top: 39, width: 900, height: 1039 } },
@@ -70,8 +67,11 @@ const slike = [
   { izvor: 'obiteljski-dan/vodenje-anonimno.jpg', ime: 'dan-konj', sirine: [480, 800], jpg: 800 },
   { izvor: 'obiteljski-dan/pas.jpg', ime: 'dan-pas', sirine: [480, 800], jpg: 800 },
   { izvor: 'obiteljski-dan/poni-anonimno.jpg', ime: 'dan-poni', sirine: [480, 800], jpg: 800 },
-  // Tim na klupi s kaubojskim šeširima: glavna fotografija u O nama na početnoj. Izvornik je malen (426 x 640).
-  { izvor: 'slike/tim-sesir.jpg', ime: 'o-nama-tim', sirine: [426], jpg: 426, izrez: { left: 0, top: 60, width: 426, height: 500 } },
+  // O nama na početnoj: samo grupne fotografije tima (odluka naručitelja, 18. 11. 2026.).
+  { izvor: 'slike/tim-sesir-veca.jpg', ime: 'o-nama-sesiri', sirine: [640, 1024], jpg: 1024, izrez: { left: 0, top: 300, width: 1366, height: 1350 } },
+  { izvor: 'slike/tim-livada.jpg', ime: 'o-nama-livada', sirine: [640, 1024, 1600], jpg: 1280 },
+  // Ograda: desni rub odrezan, da prolaznik (dijete) nije u kadru.
+  { izvor: 'slike/tim-ograda.jpg', ime: 'o-nama-ograda', sirine: [640, 1024, 1600], jpg: 1280, izrez: { left: 0, top: 316, width: 1830, height: 1220 } },
   { izvor: '463275769_1228874608150361_1008652529814843723_n.jpg', ime: 'logo', sirine: [540], jpg: 540 },
 ];
 
