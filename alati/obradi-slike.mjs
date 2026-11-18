@@ -63,6 +63,7 @@ const slike = [
   { izvor: 'slike/nera.jpg', ime: 'krdo-nera', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 64, top: 580, width: 1288, height: 1488 } },
   { izvor: 'slike/dakota.jpg', ime: 'krdo-dakota', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 0, top: 623, width: 1046, height: 1208 } },
   { izvor: 'slike/simba.jpg', ime: 'krdo-simba', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 200, top: 800, width: 700, height: 808 } },
+  { izvor: 'slike/flora.jpg', ime: 'krdo-flora', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 290, top: 420, width: 960, height: 1109 } },
   { izvor: 'slike/epona.jpg', ime: 'krdo-epona', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 652, top: 243, width: 1000, height: 1155 } },
   // Članice udruge na konjima: Ostalo u našoj ponudi (početna).
   { izvor: 'slike/jahanje-skupina.jpg', ime: 'ponuda-jahanje', ...FOTOGRAFIJA },

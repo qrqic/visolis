@@ -29,7 +29,7 @@ Udruga je javila da autore fotografija ne treba navoditi i da sadašnje fotograf
 
 Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json` (pasmina, godina, spol, od kada su kod nas, narav, u čemu sudjeluju, priča). Boje crteža složene su prema opisu dlake.
 
-- [ ] Fotografija svakog konja. Imaju je Anabela, Vihor, Atlas, Jade, Cezar i Epona (18. 11. 2026.); nedostaju Flora, Nera, Dakota, Indy, Simba, Rubi i Poppy.
+- [x] Fotografije svih 13 konja i ponija (18. 11. 2026.).
 - [ ] Koji je konj na kojoj od tri postojeće fotografije (svijetlosmeđi, smeđi, sivi): `site/assets/img/krdo-*`.
 
 ## Nove stranice (17. 11. 2026.)
