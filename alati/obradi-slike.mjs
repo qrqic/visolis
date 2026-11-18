@@ -62,6 +62,8 @@ const slike = [
   { izvor: 'slike/epona.jpg', ime: 'krdo-epona', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 652, top: 243, width: 1000, height: 1155 } },
   // Članice udruge na konjima: Ostalo u našoj ponudi (početna).
   { izvor: 'slike/jahanje-skupina.jpg', ime: 'ponuda-jahanje', ...FOTOGRAFIJA },
+  // Rad s tla: Aktivnosti, Kako izgleda termin (fotografiju dodao naručitelj, 18. 11. 2026.).
+  { izvor: 'slike/rad-s-tla.jpg', ime: 'aktivnosti-rad-s-tla', ...FOTOGRAFIJA },
   // Dvorište dvorca Oršić i jahalište: Gdje se provode (aktivnosti).
   { izvor: 'slike/dvorac-izvornik.jpg', ime: 'aktivnosti-dvorac', ...FOTOGRAFIJA },
   // Obiteljski dan (Ostalo u našoj ponudi): cijele fotografije. Lica djece i posjetiteljice zamućena su

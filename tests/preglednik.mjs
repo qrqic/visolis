@@ -464,18 +464,23 @@ for (const staza of STRANICE) {
 }
 {
   const { stranica, zatvori } = await otvori('index.html');
-  provjeri((await stranica.locator('#o-nama .tim6__gumb').count()) === 6, 'početna: šesterokut tima ima šest trokuta');
-  provjeri(await stranica.locator('#o-nama [data-tim-uputa]').isVisible(), 'tim: prije klika vidi se uputa');
-  await stranica.locator('#o-nama [data-tim-gumb="lorena"]').scrollIntoViewIfNeeded();
-  await stranica.locator('#o-nama [data-tim-gumb="lorena"]').click();
-  provjeri((await stranica.locator('#o-nama .tim6__clan:visible').count()) === 1 && (await stranica.locator('#o-nama .tim6__clan:visible h3').innerText()) === 'Lorena', 'tim: klik na trokut prikazuje podatke te članice');
-  provjeri((await stranica.locator('#o-nama [aria-pressed="true"]').getAttribute('data-tim-gumb')) === 'lorena', 'tim: odabrani trokut je označen');
-  const vrhLorene = await stranica.locator('#o-nama [data-tim-gumb="viktorija"]').evaluate((g) => { const o = g.getBoundingClientRect(); return document.elementFromPoint(o.left + o.width / 2, o.top + 4)?.closest('[data-tim-gumb]')?.dataset.timGumb; });
-  provjeri(vrhLorene === 'viktorija', 'tim: gornji trokut prima klik na svom području');
+  provjeri((await stranica.locator('#o-nama a[href="o-nama.html#tim"]').count()) === 1, 'početna: O nama vodi na tim');
   provjeri((await stranica.locator('#kontakt a[href="mailto:udrugavissolis@gmail.com"]').count()) === 1, 'početna: u kontaktu je prava e-mail adresa');
   provjeri((await stranica.locator('#ponuda .popis-crtice li').count()) === 5, 'početna: "Ostalo u našoj ponudi" ima pet aktivnosti');
   provjeri((await stranica.locator('#ponuda .ponuda-dan img').count()) === 4, 'početna: uz ponudu su četiri fotografije s obiteljskog dana');
   provjeri(!(await stranica.content()).includes('example.com'), 'početna: nema izmišljene e-mail adrese');
+  await zatvori();
+}
+{
+  const { stranica, zatvori } = await otvori('o-nama.html');
+  provjeri((await stranica.locator('#tim .tim6__gumb').count()) === 6, 'o nama: šesterokut tima ima šest trokuta');
+  provjeri(await stranica.locator('#tim [data-tim-uputa]').isVisible(), 'tim: prije klika vidi se uputa');
+  await stranica.locator('#tim [data-tim-gumb="lorena"]').scrollIntoViewIfNeeded();
+  await stranica.locator('#tim [data-tim-gumb="lorena"]').click();
+  provjeri((await stranica.locator('#tim .tim6__clan:visible').count()) === 1 && (await stranica.locator('#tim .tim6__clan:visible h3').innerText()) === 'Lorena', 'tim: klik na trokut prikazuje podatke te članice');
+  provjeri((await stranica.locator('#tim [aria-pressed="true"]').getAttribute('data-tim-gumb')) === 'lorena', 'tim: odabrani trokut je označen');
+  const vrhLorene = await stranica.locator('#tim [data-tim-gumb="viktorija"]').evaluate((g) => { const o = g.getBoundingClientRect(); return document.elementFromPoint(o.left + o.width / 2, o.top + 4)?.closest('[data-tim-gumb]')?.dataset.timGumb; });
+  provjeri(vrhLorene === 'viktorija', 'tim: gornji trokut prima klik na svom području');
   await zatvori();
 }
 for (const staza of ['hipoterapija.html', 'aktivnosti-pomocu-konja.html']) {
