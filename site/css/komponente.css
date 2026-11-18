@@ -869,3 +869,23 @@ html:not(.js) .tim6__podaci {
   height: auto;
   border-radius: var(--zaobljenje);
 }
+
+/* Od tableta naviše sve četiri fotografije stanu u jedan niži red: iste su visine,
+   a širina svake ovisi o njezinu omjeru (--omjer), pa se i dalje vide cijele. */
+@media (min-width: 40rem) {
+  .ponuda-dan__mreza {
+    display: flex;
+    gap: 0.6rem;
+    columns: auto;
+  }
+
+  .ponuda-dan__mreza li {
+    flex: var(--omjer) 1 0;
+    min-width: 0;
+    margin-bottom: 0;
+  }
+
+  .ponuda-dan__mreza img {
+    border-radius: 0.75rem;
+  }
+}
