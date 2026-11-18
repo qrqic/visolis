@@ -40,18 +40,12 @@ const slike = [
   { izvor: 'tim/hf-viktorija.png', ime: 'tim-viktorija', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 187, top: 90, width: 646, height: 560 } },
   { izvor: 'tim/hf-suncica.png', ime: 'tim-suncica', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 192, top: 75, width: 646, height: 560 } },
   { izvor: 'tim/hf-josipa.png', ime: 'tim-josipa', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 207, top: 85, width: 646, height: 560 } },
-  { izvor: 'tim/hf-gabrijela.png', ime: 'tim-gabrijela', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 220, top: 5, width: 600, height: 520 } },
+  // Gabrijela: prava fotografija (18. 11. 2026.); dijete na konju ostaje izvan trokuta.
+  { izvor: 'tim/gabrijela-prava.jpg', ime: 'tim-gabrijela', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 150, top: 40, width: 1200, height: 1039 } },
   { izvor: 'tim/hf-lorena.png', ime: 'tim-lorena', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 195, top: 5, width: 600, height: 520 } },
   { izvor: 'tim/hf-mia.png', ime: 'tim-mia', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 205, top: 0, width: 600, height: 520 } },
   // Tim s leđa, s logom udruge na majicama (ispod šesterokuta).
   { izvor: 'tim/ledja-izvornik.jpg', ime: 'tim-ledja', sirine: [640, 1024, 1600, 2400], jpg: 1600 },
-  // Tim, primjer B: okrugli portreti (lice malo iznad sredine, logo na majici izvan kadra).
-  { izvor: 'tim/hf-viktorija.png', ime: 'tim-krug-viktorija', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 310, top: 95, width: 400, height: 400 } },
-  { izvor: 'tim/hf-suncica.png', ime: 'tim-krug-suncica', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 315, top: 80, width: 400, height: 400 } },
-  { izvor: 'tim/hf-josipa.png', ime: 'tim-krug-josipa', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 330, top: 90, width: 400, height: 400 } },
-  { izvor: 'tim/hf-gabrijela.png', ime: 'tim-krug-gabrijela', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 320, top: 150, width: 400, height: 400 } },
-  { izvor: 'tim/hf-lorena.png', ime: 'tim-krug-lorena', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 295, top: 150, width: 400, height: 400 } },
-  { izvor: 'tim/hf-mia.png', ime: 'tim-krug-mia', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 305, top: 90, width: 400, height: 400 } },
   // Krdo: konji iz grupne fotografije (s lijeva: Vihor, Atlas, Jade, Cezar) i Epona.
   { izvor: 'slike/vihor.jpg', ime: 'krdo-vihor', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 814, top: 591, width: 1118, height: 1291 } },
   { izvor: 'slike/jahanje-skupina.jpg', ime: 'krdo-atlas', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 820, top: 299, width: 480, height: 554 } },

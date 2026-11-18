@@ -85,7 +85,6 @@
 
 /* Blok u kojem sadržaj ide preko cijele širine, ispod naslova i uvoda (tim). */
 .pod-blok--siroko > .tim6,
-.pod-blok--siroko > .tim-primjer,
 .pod-blok--siroko > .fotografija,
 .pod-blok--siroko > .mjesto-slike {
   grid-column: 1 / -1;
