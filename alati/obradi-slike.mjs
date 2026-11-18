@@ -30,8 +30,8 @@ const slike = [
   { izvor: 'DSC0124.jpg', ime: 'o-nama-sivi', ...FOTOGRAFIJA },
   { izvor: 'DSC2220.jpg', ime: 'o-nama-crni', ...FOTOGRAFIJA },
   { izvor: 'DSC0002.jpg', ime: 'aktivnosti-galop', ...FOTOGRAFIJA },
-  // Anabela: izrez bez djeteta (alati/retus-anabela.py), širok samo 560 px.
-  { izvor: 'anabela-izrez.png', ime: 'krdo-anabela', omjer: 0.866, sirine: [480], jpg: 480 },
+  // Anabela: fotografija ispred kamenog zida.
+  { izvor: 'slike/anabela.jpg', ime: 'krdo-anabela', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 700, top: 90, width: 900, height: 1039 } },
   { izvor: 'DSC3065.jpg', ime: 'krdo-svijetlosmedi', ...SESTEROKUT, izrez: { left: 690, top: 0, width: 1484, height: 1714 } },
   { izvor: '0U8A8968.JPG', ime: 'krdo-smedi', ...SESTEROKUT, izrez: { left: 250, top: 0, width: 1487, height: 1717 } },
   { izvor: '0U8A8685.JPG', ime: 'krdo-sivi', ...SESTEROKUT, izrez: { left: 200, top: 420, width: 1300, height: 1501 } },
