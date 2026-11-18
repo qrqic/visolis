@@ -40,8 +40,8 @@ const slike = [
   { izvor: 'tim/hf-viktorija.png', ime: 'tim-viktorija', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 187, top: 90, width: 646, height: 560 } },
   { izvor: 'tim/hf-suncica.png', ime: 'tim-suncica', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 192, top: 75, width: 646, height: 560 } },
   { izvor: 'tim/hf-josipa.png', ime: 'tim-josipa', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 207, top: 85, width: 646, height: 560 } },
-  // Gabrijela: prava fotografija (18. 11. 2026.); dijete na konju ostaje izvan trokuta.
-  { izvor: 'tim/gabrijela-prava.jpg', ime: 'tim-gabrijela', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 150, top: 40, width: 1200, height: 1039 } },
+  // Gabrijela: prava fotografija, s Higgsfielda uklonjene osobe oko nje i zamućena pozadina (docs/higgsfield.md).
+  { izvor: 'tim/gabrijela-hf.png', ime: 'tim-gabrijela', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 97, top: 66, width: 700, height: 606 } },
   { izvor: 'tim/hf-lorena.png', ime: 'tim-lorena', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 195, top: 5, width: 600, height: 520 } },
   { izvor: 'tim/hf-mia.png', ime: 'tim-mia', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 205, top: 0, width: 600, height: 520 } },
   // Tim s leđa, s logom udruge na majicama (ispod šesterokuta).
