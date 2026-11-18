@@ -53,7 +53,7 @@ const slike = [
   { izvor: 'tim/hf-lorena.png', ime: 'tim-krug-lorena', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 295, top: 150, width: 400, height: 400 } },
   { izvor: 'tim/hf-mia.png', ime: 'tim-krug-mia', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 305, top: 90, width: 400, height: 400 } },
   // Krdo: konji iz grupne fotografije (s lijeva: Vihor, Atlas, Jade, Cezar) i Epona.
-  { izvor: 'slike/jahanje-skupina.jpg', ime: 'krdo-vihor', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 280, top: 440, width: 440, height: 508 } },
+  { izvor: 'slike/vihor.jpg', ime: 'krdo-vihor', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 652, top: 547, width: 1118, height: 1290 } },
   { izvor: 'slike/jahanje-skupina.jpg', ime: 'krdo-atlas', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 760, top: 300, width: 480, height: 554 } },
   { izvor: 'slike/jade.jpg', ime: 'krdo-jade', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 0, top: 0, width: 1932, height: 2231 } },
   { izvor: 'slike/cezar.jpg', ime: 'krdo-cezar', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 0, top: 190, width: 1717, height: 1983 } },
