@@ -62,10 +62,10 @@ const slike = [
   { izvor: 'slike/jahanje-skupina.jpg', ime: 'ponuda-jahanje', ...FOTOGRAFIJA },
   // Dvorište dvorca Oršić i jahalište: Gdje se provode (aktivnosti).
   { izvor: 'slike/dvorac-izvornik.jpg', ime: 'aktivnosti-dvorac', ...FOTOGRAFIJA },
-  // Obiteljski dan (Ostalo u našoj ponudi). Kvadratni izrezi u kojima se ne vide lica djece ni posjetitelja;
-  // na fotografiji s ponijem lica su zamućena (alati/obiteljski-dan.py). Vidjeti se smiju cura sa psom i cura koja vodi ponija.
-  { izvor: 'obiteljski-dan/oslikavanje.jpg', ime: 'dan-oslikavanje', omjer: 1, sirine: [400, 700], jpg: 700, izrez: { left: 1450, top: 600, width: 1100, height: 1100 } },
-  { izvor: 'obiteljski-dan/vodenje-konja.jpg', ime: 'dan-konj', omjer: 1, sirine: [400, 700], jpg: 700, izrez: { left: 330, top: 1100, width: 900, height: 900 } },
+  // Obiteljski dan (Ostalo u našoj ponudi), kvadratni izrezi. Kod vođenja konja izrezana je dječakova glava;
+  // na fotografiji s ponijem lica su zamućena (alati/obiteljski-dan.py). Odluke naručitelja od 18. 11. 2026.
+  { izvor: 'obiteljski-dan/oslikavanje.jpg', ime: 'dan-oslikavanje', omjer: 1, sirine: [400, 700], jpg: 700, izrez: { left: 620, top: 0, width: 1717, height: 1717 } },
+  { izvor: 'obiteljski-dan/vodenje-konja.jpg', ime: 'dan-konj', omjer: 1, sirine: [400, 700], jpg: 700, izrez: { left: 0, top: 820, width: 1717, height: 1717 } },
   { izvor: 'obiteljski-dan/pas.jpg', ime: 'dan-pas', omjer: 1, sirine: [400, 700], jpg: 700, izrez: { left: 280, top: 560, width: 1400, height: 1400 } },
   { izvor: 'obiteljski-dan/poni-anonimno.jpg', ime: 'dan-poni', omjer: 1, sirine: [400, 700], jpg: 700, izrez: { left: 750, top: 330, width: 1000, height: 1000 } },
   // Prava grupna fotografija tima s konjem (O nama).

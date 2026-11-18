@@ -23,7 +23,7 @@ Udruga je javila da autore fotografija ne treba navoditi i da sadašnje fotograf
 
 ## Obiteljski dan (18. 11. 2026.)
 
-Četiri fotografije u sekciji "Ostalo u našoj ponudi". Lica djece i posjetitelja nisu u kadru ili su zamućena (`alati/obiteljski-dan.py`); vide se samo cura sa psom i cura koja vodi ponija, uz potvrdu naručitelja. Izvorne fotografije su u `izvori/obiteljski-dan/` i ne idu u git.
+Četiri fotografije u sekciji "Ostalo u našoj ponudi". Prema odluci naručitelja (18. 11. 2026.): kod vođenja konja izrezana je dječakova glava, oslikavanje lica prikazuje se cijelo, a na fotografiji s ponijem lica djeteta i posjetiteljice su zamućena (`alati/obiteljski-dan.py`). Izvorne fotografije su u `izvori/obiteljski-dan/` i ne idu u git.
 
 ## Konji
 
