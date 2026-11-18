@@ -65,6 +65,9 @@ const slike = [
   { izvor: 'slike/jahanje-skupina.jpg', ime: 'ponuda-jahanje', ...FOTOGRAFIJA },
   // Rad s tla: Aktivnosti, Kako izgleda termin (fotografiju dodao naručitelj, 18. 11. 2026.).
   { izvor: 'slike/rad-s-tla.jpg', ime: 'aktivnosti-rad-s-tla', ...FOTOGRAFIJA },
+  // Izgradnja ranča u Donjoj Bistri (O nama); na nadstrešnici je zamućena registarska tablica.
+  { izvor: 'slike/ranc-nadstresnica-anonimno.jpg', ime: 'ranc-nadstresnica-v2', sirine: [480, 900], jpg: 900 },
+  { izvor: 'slike/ranc-teren.jpg', ime: 'ranc-teren', sirine: [480, 900], jpg: 900 },
   // Dvorište dvorca Oršić i jahalište: Gdje se provode (aktivnosti).
   { izvor: 'slike/dvorac-izvornik.jpg', ime: 'aktivnosti-dvorac', ...FOTOGRAFIJA },
   // Obiteljski dan (Ostalo u našoj ponudi): cijele fotografije. Lica djece i posjetiteljice zamućena su

@@ -24,16 +24,19 @@ POSLOVI = {
     "obiteljski-dan/vodenje-konja.jpg": ("obiteljski-dan/vodenje-anonimno.jpg", 14, [(1110, 738, 78, 84)]),
     # Hipoterapija (početna): lice dječaka na konju.
     "slike/hipoterapija.jpg": ("slike/hipoterapija-anonimno.jpg", 12, [(620, 466, 52, 60)]),
+    # Izgradnja ranča (O nama): registarska tablica vozila.
+    "slike/ranc-nadstresnica.jpg": ("slike/ranc-nadstresnica-anonimno.jpg", 24, [(446, 1475, 44, 34)], 6),
 }
 
-for ulaz, (izlaz, jacina, lica) in POSLOVI.items():
+for ulaz, (izlaz, jacina, lica, *rub) in POSLOVI.items():
     slika = cv2.imread(str(MAPA / ulaz))
     mutno = cv2.GaussianBlur(slika, (0, 0), jacina)
     maska = np.zeros(slika.shape[:2], dtype=np.float32)
     for x, y, rx, ry in lica:
         cv2.ellipse(maska, (x, y), (rx, ry), 0, 0, 360, 1.0, -1)
     # Mekani rub, da se zamućenje ne vidi kao mrlja.
-    maska = cv2.GaussianBlur(maska, (0, 0), jacina)[..., None]
+    # Mekoća ruba; zadano jednaka jačini zamućenja, a za male površine (tablica) zadaje se zasebno.
+    maska = cv2.GaussianBlur(maska, (0, 0), rub[0] if rub else jacina)[..., None]
     rezultat = (slika * (1 - maska) + mutno * maska).astype(np.uint8)
     cv2.imwrite(str(MAPA / izlaz), rezultat, [cv2.IMWRITE_JPEG_QUALITY, 94])
     print(izlaz)

@@ -14,7 +14,6 @@ Prije konačne objave nijedan ne smije ostati.
 - [x] Portreti svih šest članica u šesterokutu tima. Portrete izradio je Higgsfield prema pravim fotografijama (vidi `docs/higgsfield.md`); naručitelj ih je odobrio 17. 11. 2026. Slike su u `izvori/tim/`, izrezi u `alati/obradi-slike.mjs`.
 - [ ] Hipoterapija u tijeku: terapeut, vodič i konj (`hipoterapija.html`).
 - [ ] Aktivnosti pomoću konja: rad s tla ili poligon (`aktivnosti-pomocu-konja.html`).
-- [ ] Izgradnja ranča u Donjoj Bistri (`o-nama.html`).
 - [ ] Po jedna fotografija svakog konja. Zasad ih imaju Anabela i tri konja.
 - [x] Logo udruge stigao je 17. 11. 2026. (PDF, vektorski; `izvori/logo/`). Puni logo je u podnožju (`site/assets/img/logo-udruge.svg`).
 - [ ] Znak "VS" u zaglavlju je i dalje privremen. Za zaglavlje se može iskoristiti mali logo iz istog PDF-a (`izvori/logo/logo-mali.svg`).
