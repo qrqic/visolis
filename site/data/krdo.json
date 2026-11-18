@@ -170,7 +170,9 @@
     "narav": "izdržljiva, staložena i neizmjerno pouzdana",
     "sudjeluje": "umirovljena: uživa u zasluženom odmoru i mirnim danima na ranču",
     "opis": "Rubi je ponosna majka naše Poppy i osobni konj naše Viktorije. Zbog ozljeda nogu morali smo je prijevremeno umiroviti, ali danas na našem ranču živi svoju najljepšu mirovinu, okružena Viktorijinom pažnjom i bezuvjetnom ljubavlju.",
-    "lisa": true
+    "lisa": true,
+    "fotografija": "krdo-rubi",
+    "opisFotografije": "Rubi, zlatno-riđa kobila s bijelom lisom, i Viktorija koja je gleda"
   },
   {
     "ime": "Poppy",
