@@ -53,3 +53,7 @@ Model `gpt_image_2_6`, 1:1, 0,25 kredita po slici. Predlošci: grupna fotografij
 | Mia (dvije inačice) | `63d64514-745a-4344-b42d-54d70db6a8b7`, `9232219d-b5b4-44a5-9882-4e3020427fe7` |
 
 Mijin predložak (media `38a9d3a7-ee62-400e-8eaf-57c1143d03db`) je izrezak bez djeteta (`izvori/tim/mia-izrez.jpg`); izvorna fotografija s djetetom nije poslana na Higgsfield.
+
+## Gabrijela, prava fotografija (18. 11. 2026.)
+
+Predložak: grupna fotografija u crvenim polo majicama (media `496bcb77-d30a-4479-a072-56c8d9aefb8a`). Uputa: Gabrijela ostaje nepromijenjena, uklanjaju se cure lijevo i desno, pozadina se zamućuje. `gpt_image_2_6`, 3:4, dvije inačice: `f3eff3ea-e5f0-41d5-bb42-54d80eeb658d`, `1be44a02-3818-43c8-9fe5-e59313b8c3e5`.
