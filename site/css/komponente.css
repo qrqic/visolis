@@ -852,23 +852,20 @@ html:not(.js) .tim6__podaci {
   gap: 0.75rem;
 }
 
+/* Fotografije s obiteljskog dana prikazuju se cijele, u dva stupca (uspravne i položene se izmjenjuju). */
 .ponuda-dan__mreza {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
+  columns: 2;
+  column-gap: 0.75rem;
+}
+
+.ponuda-dan__mreza li {
+  break-inside: avoid;
+  margin-bottom: 0.75rem;
 }
 
 .ponuda-dan__mreza img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
   border-radius: var(--zaobljenje);
-}
-
-@media (min-width: 40rem) {
-  .ponuda-dan__mreza {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
 }

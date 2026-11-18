@@ -62,12 +62,12 @@ const slike = [
   { izvor: 'slike/jahanje-skupina.jpg', ime: 'ponuda-jahanje', ...FOTOGRAFIJA },
   // Dvorište dvorca Oršić i jahalište: Gdje se provode (aktivnosti).
   { izvor: 'slike/dvorac-izvornik.jpg', ime: 'aktivnosti-dvorac', ...FOTOGRAFIJA },
-  // Obiteljski dan (Ostalo u našoj ponudi), kvadratni izrezi. Kod vođenja konja izrezana je dječakova glava;
-  // na fotografiji s ponijem lica su zamućena (alati/obiteljski-dan.py). Odluke naručitelja od 18. 11. 2026.
-  { izvor: 'obiteljski-dan/oslikavanje.jpg', ime: 'dan-oslikavanje', omjer: 1, sirine: [400, 700], jpg: 700, izrez: { left: 620, top: 0, width: 1717, height: 1717 } },
-  { izvor: 'obiteljski-dan/vodenje-konja.jpg', ime: 'dan-konj', omjer: 1, sirine: [400, 700], jpg: 700, izrez: { left: 0, top: 820, width: 1717, height: 1717 } },
-  { izvor: 'obiteljski-dan/pas.jpg', ime: 'dan-pas', omjer: 1, sirine: [400, 700], jpg: 700, izrez: { left: 280, top: 560, width: 1400, height: 1400 } },
-  { izvor: 'obiteljski-dan/poni-anonimno.jpg', ime: 'dan-poni', omjer: 1, sirine: [400, 700], jpg: 700, izrez: { left: 750, top: 330, width: 1000, height: 1000 } },
+  // Obiteljski dan (Ostalo u našoj ponudi): cijele fotografije. Lica djece i posjetiteljice zamućena su
+  // alatom alati/obiteljski-dan.py. Odluke naručitelja od 18. 11. 2026.
+  { izvor: 'obiteljski-dan/oslikavanje.jpg', ime: 'dan-oslikavanje', sirine: [480, 800], jpg: 800 },
+  { izvor: 'obiteljski-dan/vodenje-anonimno.jpg', ime: 'dan-konj', sirine: [480, 800], jpg: 800 },
+  { izvor: 'obiteljski-dan/pas.jpg', ime: 'dan-pas', sirine: [480, 800], jpg: 800 },
+  { izvor: 'obiteljski-dan/poni-anonimno.jpg', ime: 'dan-poni', sirine: [480, 800], jpg: 800 },
   // Prava grupna fotografija tima s konjem (O nama).
   { izvor: 'tim/grupa-izvornik.jpg', ime: 'tim-skupa', ...FOTOGRAFIJA },
   { izvor: '463275769_1228874608150361_1008652529814843723_n.jpg', ime: 'logo', sirine: [540], jpg: 540 },
