@@ -14,8 +14,6 @@ Prije konačne objave nijedan ne smije ostati.
 - [x] Portreti svih šest članica u šesterokutu tima. Portrete izradio je Higgsfield prema pravim fotografijama (vidi `docs/higgsfield.md`); naručitelj ih je odobrio 17. 11. 2026. Slike su u `izvori/tim/`, izrezi u `alati/obradi-slike.mjs`.
 - [ ] Hipoterapija u tijeku: terapeut, vodič i konj (`hipoterapija.html`).
 - [ ] Aktivnosti pomoću konja: rad s tla ili poligon (`aktivnosti-pomocu-konja.html`).
-- [ ] Šetnja, kamp ili druženje s konjima (`index.html`, sekcija Ostalo u našoj ponudi).
-- [ ] Jahalište i dvorište dvorca Oršić (`aktivnosti-pomocu-konja.html`, Gdje se provode).
 - [ ] Izgradnja ranča u Donjoj Bistri (`o-nama.html`).
 - [ ] Po jedna fotografija svakog konja. Zasad ih imaju Anabela i tri konja.
 - [x] Logo udruge stigao je 17. 11. 2026. (PDF, vektorski; `izvori/logo/`). Puni logo je u podnožju (`site/assets/img/logo-udruge.svg`).
@@ -27,7 +25,7 @@ Udruga je javila da autore fotografija ne treba navoditi i da sadašnje fotograf
 
 Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json` (pasmina, godina, spol, od kada su kod nas, narav, u čemu sudjeluju, priča). Boje crteža složene su prema opisu dlake.
 
-- [ ] Fotografija svakog konja (bez djece). Zasad je ima samo Anabela.
+- [ ] Fotografija svakog konja. Imaju je Anabela, Vihor, Atlas, Jade, Cezar i Epona (18. 11. 2026.); nedostaju Flora, Nera, Dakota, Indy, Simba, Rubi i Poppy.
 - [ ] Koji je konj na kojoj od tri postojeće fotografije (svijetlosmeđi, smeđi, sivi): `site/assets/img/krdo-*`.
 
 ## Nove stranice (17. 11. 2026.)

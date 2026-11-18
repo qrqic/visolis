@@ -41,7 +41,9 @@
     "kodNas": "od 2023.",
     "narav": "društven, staložen, izdržljiv i pouzdan partner",
     "sudjeluje": "sve aktivnosti: hipoterapija, jahanje, šetnje, kampovi",
-    "opis": "Vihor je prvi konj naše instruktorice aktivnosti pomoću konja Gabrijele, zbog čega uživa status posebno razmaženog ljubimca. Njihova međusobna povezanost, bezuvjetno povjerenje i ljubav gotovo se ne mogu opisati riječima. Prepoznat ćete ga i po pasminskom žigu u obliku runolista na stražnjem dijelu."
+    "opis": "Vihor je prvi konj naše instruktorice aktivnosti pomoću konja Gabrijele, zbog čega uživa status posebno razmaženog ljubimca. Njihova međusobna povezanost, bezuvjetno povjerenje i ljubav gotovo se ne mogu opisati riječima. Prepoznat ćete ga i po pasminskom žigu u obliku runolista na stražnjem dijelu.",
+    "fotografija": "krdo-vihor",
+    "opisFotografije": "Vihor, riđi haflinger svijetle grive, s jahačicom u sedlu"
   },
   {
     "ime": "Nera",
@@ -80,7 +82,9 @@
     "kodNas": "od 2025.",
     "narav": "živahan, društven i znatiželjan",
     "sudjeluje": "škola jahanja s naprednijim jahačima",
-    "opis": "Cezar je rođen kod naše Sunčice i njezin je apsolutni ljubimac, pravi konj iz snova. Kao živahna kombinacija arapa i KWPN-a pun je energije, a dugogodišnja veza između njega i Sunčice počiva na dubokom međusobnom razumijevanju i posebnom skladu koji se vidi u svakom njihovom zajedničkom koraku."
+    "opis": "Cezar je rođen kod naše Sunčice i njezin je apsolutni ljubimac, pravi konj iz snova. Kao živahna kombinacija arapa i KWPN-a pun je energije, a dugogodišnja veza između njega i Sunčice počiva na dubokom međusobnom razumijevanju i posebnom skladu koji se vidi u svakom njihovom zajedničkom koraku.",
+    "fotografija": "krdo-cezar",
+    "opisFotografije": "Cezar, pastrvasti sivi konj, s jahačicom u sedlu"
   },
   {
     "ime": "Jade",
@@ -94,7 +98,9 @@
     "narav": "iznimno pametna, zaigrana i energična, ali ponekad i prava mala lijenčina",
     "sudjeluje": "škola jahanja i terensko jahanje za napredne jahače",
     "opis": "Jade je iznimno bistra kobila s dva potpuno različita raspoloženja: ili je zaigrana i puna energije, ili joj se baš ništa ne da i glumi pravu lijenčinu. Upravo zbog svoje inteligencije i temperamenta idealna je partnerica za naprednije jahače koji je znaju motivirati. Prepoznat ćete je po lijepoj bijeloj lisi i bijelim čarapama na tri noge.",
-    "lisa": true
+    "lisa": true,
+    "fotografija": "krdo-jade",
+    "opisFotografije": "Jade, riđa kobila s bijelom lisom i ružičastom kapicom za uši"
   },
   {
     "ime": "Indy",
@@ -133,7 +139,9 @@
     "kodNas": "od 2023., među prvim konjima na ranču",
     "narav": "nježni div ranča: miran, dobroćudan i privržen",
     "sudjeluje": "škola jahanja za naprednije jahače i radionice rada s tla",
-    "opis": "Atlas je među prvim konjima koji su stigli na ranč i pravi je nježni div velikog srca. Za našu Viktoriju on je ostvarenje sna, prva ljubav i najveći mezimac, a njihova neraskidiva povezanost satkana je od iskrene privrženosti, topline i bezuvjetne ljubavi."
+    "opis": "Atlas je među prvim konjima koji su stigli na ranč i pravi je nježni div velikog srca. Za našu Viktoriju on je ostvarenje sna, prva ljubav i najveći mezimac, a njihova neraskidiva povezanost satkana je od iskrene privrženosti, topline i bezuvjetne ljubavi.",
+    "fotografija": "krdo-atlas",
+    "opisFotografije": "Atlas, bijeli konj s crnom kapicom za uši"
   },
   {
     "ime": "Epona",
@@ -146,7 +154,9 @@
     "kodNas": "od 2024.",
     "narav": "jako živahna i pomalo nepredvidljiva, ali društvena i blaga",
     "sudjeluje": "trenutno ne sudjeluje u redovnim aktivnostima jer je u obuci",
-    "opis": "Epona je privatni konj naše Gabrijele, koja je posvećeno školuje i priprema za rad s naprednijim jahačima te za početnike u dresuri. Iako je izrazito živahna i ponekad nepredvidljiva, svojom blagom i društvenom naravi pokazuje da je pred njom sjajna budućnost."
+    "opis": "Epona je privatni konj naše Gabrijele, koja je posvećeno školuje i priprema za rad s naprednijim jahačima te za početnike u dresuri. Iako je izrazito živahna i ponekad nepredvidljiva, svojom blagom i društvenom naravi pokazuje da je pred njom sjajna budućnost.",
+    "fotografija": "krdo-epona",
+    "opisFotografije": "Epona, tamna kobila s ularom ukrašenim kamenčićima, na livadi"
   },
   {
     "ime": "Rubi",

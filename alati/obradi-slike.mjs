@@ -52,6 +52,16 @@ const slike = [
   { izvor: 'tim/hf-gabrijela.png', ime: 'tim-krug-gabrijela', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 320, top: 150, width: 400, height: 400 } },
   { izvor: 'tim/hf-lorena.png', ime: 'tim-krug-lorena', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 295, top: 150, width: 400, height: 400 } },
   { izvor: 'tim/hf-mia.png', ime: 'tim-krug-mia', omjer: 1, sirine: [320], jpg: 320, izrez: { left: 305, top: 90, width: 400, height: 400 } },
+  // Krdo: konji iz grupne fotografije (s lijeva: Vihor, Atlas, Jade, Cezar) i Epona.
+  { izvor: 'slike/jahanje-skupina.jpg', ime: 'krdo-vihor', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 280, top: 440, width: 440, height: 508 } },
+  { izvor: 'slike/jahanje-skupina.jpg', ime: 'krdo-atlas', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 760, top: 300, width: 480, height: 554 } },
+  { izvor: 'slike/jahanje-skupina.jpg', ime: 'krdo-jade', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 1365, top: 290, width: 440, height: 508 } },
+  { izvor: 'slike/jahanje-skupina.jpg', ime: 'krdo-cezar', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 1770, top: 230, width: 480, height: 554 } },
+  { izvor: 'slike/epona.jpg', ime: 'krdo-epona', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 360, top: 300, width: 1000, height: 1155 } },
+  // Članice udruge na konjima: Ostalo u našoj ponudi (početna).
+  { izvor: 'slike/jahanje-skupina.jpg', ime: 'ponuda-jahanje', ...FOTOGRAFIJA },
+  // Dvorište dvorca Oršić i jahalište: Gdje se provode (aktivnosti).
+  { izvor: 'slike/dvorac-izvornik.jpg', ime: 'aktivnosti-dvorac', ...FOTOGRAFIJA },
   // Prava grupna fotografija tima s konjem (O nama).
   { izvor: 'tim/grupa-izvornik.jpg', ime: 'tim-skupa', ...FOTOGRAFIJA },
   { izvor: '463275769_1228874608150361_1008652529814843723_n.jpg', ime: 'logo', sirine: [540], jpg: 540 },

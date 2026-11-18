@@ -136,3 +136,8 @@
   margin-top: 2rem;
   max-width: 42rem;
 }
+
+/* Uspravna fotografija unutar teksta podstranice ne smije biti preširoka. */
+.pod-slika {
+  max-width: 30rem;
+}
