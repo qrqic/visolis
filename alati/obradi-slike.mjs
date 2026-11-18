@@ -42,7 +42,7 @@ const slike = [
   { izvor: 'tim/hf-josipa.png', ime: 'tim-josipa', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 207, top: 85, width: 646, height: 560 } },
   // Gabrijela: prava fotografija, s Higgsfielda uklonjene osobe oko nje i zamućena pozadina (docs/higgsfield.md);
   // gore je dodano 200 px zamućene pozadine (zrcaljeni vrh slike), da vrh trokuta ne reže naočale.
-  { izvor: 'tim/gabrijela-hf-prosireno.png', ime: 'tim-gabrijela', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 0, top: 140, width: 880, height: 762 } },
+  { izvor: 'tim/gabrijela-hf-prosireno.png', ime: 'tim-gabrijela-v2', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 0, top: 140, width: 880, height: 762 } },
   { izvor: 'tim/hf-lorena.png', ime: 'tim-lorena', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 195, top: 5, width: 600, height: 520 } },
   { izvor: 'tim/hf-mia.png', ime: 'tim-mia', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 205, top: 0, width: 600, height: 520 } },
   // Tim s leđa, s logom udruge na majicama (ispod šesterokuta).
