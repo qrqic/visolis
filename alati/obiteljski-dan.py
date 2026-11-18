@@ -1,8 +1,9 @@
 """Fotografije s obiteljskog dana: lica koja se ne smiju vidjeti blago se zamute.
 
-Ulaz i izlaz su u izvori/obiteljski-dan/ (nije u gitu):
-  poni.jpg           -> poni-anonimno.jpg      (dijete na poniju i posjetiteljica u zelenoj majici)
-  vodenje-konja.jpg  -> vodenje-anonimno.jpg   (dječak na konju)
+Ulaz i izlaz su u izvori/ (nije u gitu):
+  obiteljski-dan/poni.jpg           -> poni-anonimno.jpg      (dijete na poniju i posjetiteljica u zelenoj majici)
+  obiteljski-dan/vodenje-konja.jpg  -> vodenje-anonimno.jpg   (dječak na konju)
+  slike/hipoterapija.jpg            -> hipoterapija-anonimno.jpg (dječak na konju)
 
 Fotografije se prikazuju cijele; ostale (oslikavanje, pas) idu bez izmjena.
 Odluke naručitelja od 18. 11. 2026.
@@ -15,12 +16,14 @@ from pathlib import Path
 import cv2
 import numpy as np
 
-MAPA = Path(__file__).resolve().parent.parent / "izvori" / "obiteljski-dan"
+MAPA = Path(__file__).resolve().parent.parent / "izvori"
 
 # Elipse oko lica (središte x, y i poluosi) u pikselima izvorne fotografije, te jačina zamućenja.
 POSLOVI = {
-    "poni.jpg": ("poni-anonimno.jpg", 9, [(1302, 781, 34, 40), (1598, 788, 38, 46)]),
-    "vodenje-konja.jpg": ("vodenje-anonimno.jpg", 14, [(1110, 738, 78, 84)]),
+    "obiteljski-dan/poni.jpg": ("obiteljski-dan/poni-anonimno.jpg", 9, [(1302, 781, 34, 40), (1598, 788, 38, 46)]),
+    "obiteljski-dan/vodenje-konja.jpg": ("obiteljski-dan/vodenje-anonimno.jpg", 14, [(1110, 738, 78, 84)]),
+    # Hipoterapija (početna): lice dječaka na konju.
+    "slike/hipoterapija.jpg": ("slike/hipoterapija-anonimno.jpg", 12, [(620, 466, 52, 60)]),
 }
 
 for ulaz, (izlaz, jacina, lica) in POSLOVI.items():
