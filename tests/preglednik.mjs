@@ -492,6 +492,28 @@ for (const staza of ['hipoterapija.html', 'aktivnosti-pomocu-konja.html']) {
   await zatvori();
 }
 
+// === 9. Donacije (o-nama.html) ===
+{
+  const { stranica, zatvori } = await otvori('o-nama.html');
+  const prozor = stranica.locator('[data-donacije]');
+  provjeri(!(await prozor.isVisible()), 'donacije: prozor je u početku zatvoren');
+  await stranica.locator('[data-donacije-otvori]').click();
+  provjeri(await prozor.isVisible(), 'donacije: klik na gumb otvara prozor');
+  provjeri(await stranica.locator('.donacije-prozor__barkod img').evaluate((s) => s.complete && s.naturalWidth > 0), 'donacije: barkod se učitao');
+  provjeri(await stranica.locator('[data-donacije-rucno]').isHidden(), 'donacije: bez IBAN-a nema podataka za ručnu uplatu');
+  await stranica.keyboard.press('Escape');
+  provjeri(!(await prozor.isVisible()), 'donacije: tipka Esc zatvara prozor');
+  await zatvori();
+}
+{
+  const { stranica, zatvori } = await otvori('o-nama.html', {
+    priprema: (s) => sPostavkama(s, (izvor) => izvor.replace("iban: ''", "iban: 'HR12 3456 7890 1234 5678 9'")),
+  });
+  await stranica.locator('[data-donacije-otvori]').click();
+  provjeri((await stranica.locator('[data-donacije-podaci] > div').count()) >= 2, 'donacije: s IBAN-om se prikazuju podaci za ručnu uplatu');
+  await zatvori();
+}
+
 await preglednik.close();
 posluzitelj.close();
 

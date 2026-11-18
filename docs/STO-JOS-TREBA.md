@@ -51,7 +51,9 @@ Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json
 - [ ] Novosti o izgradnji ranča: što je napravljeno i što slijedi (`o-nama.html`).
 - [ ] Kako doći: parking, autobus, prilaz za invalidska kolica.
 - [ ] Projekti i suradnje koje se smiju navesti („Siguran korak uz konja”, „Konj za svakoga”, drugi partneri).
-- [ ] Podaci za donacije (IBAN, primatelj, opis plaćanja). Gumb "Donacije" u dijelu Izgradnja ranča (`o-nama.html`) zasad ne vodi nikamo.
+- [x] Gumb "Donacije" (`o-nama.html`, Izgradnja ranča) otvara prozor s barkodom za plaćanje s letka udruge (19. 11. 2026.). Na mobitelu se barkod sprema u galeriju i učitava u aplikaciju banke.
+- [ ] Podaci za ručnu uplatu (IBAN, model, poziv na broj): upisati u `postavke.donacije` u `site/js/postavke.js`; prozor ih tada sam prikaže s gumbima "Kopiraj". Barkod se ovdje nije mogao pročitati, pa ga treba jednom probno skenirati aplikacijom banke.
+- [ ] Instagram: na letku piše @ranch.vis_solis, a na stranici je poveznica na udruga_vis_solis. Koji je točan?
 - [ ] Želi li povremenu najavu "Aktualno" i tko javlja tekst.
 
 ## Odluke koje su donesene bez izričite potvrde

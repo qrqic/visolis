@@ -13,11 +13,11 @@
   <link rel="icon" href="assets/img/znak.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/lora.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="assets/fonts/inter-400.woff" as="font" type="font/woff" crossorigin>
-  <link rel="stylesheet" href="css/osnova.css?v=2026111803">
-  <link rel="stylesheet" href="css/tipografija.css?v=2026111803">
-  <link rel="stylesheet" href="css/raspored.css?v=2026111803">
-  <link rel="stylesheet" href="css/komponente.css?v=2026111803">
-  <link rel="stylesheet" href="css/podstranica.css?v=2026111803">
+  <link rel="stylesheet" href="css/osnova.css?v=2026111901">
+  <link rel="stylesheet" href="css/tipografija.css?v=2026111901">
+  <link rel="stylesheet" href="css/raspored.css?v=2026111901">
+  <link rel="stylesheet" href="css/komponente.css?v=2026111901">
+  <link rel="stylesheet" href="css/podstranica.css?v=2026111901">
   <script src="js/rano.js"></script>
   <script type="module" src="js/podstranica.js"></script>
 </head>
@@ -213,8 +213,7 @@
           <div class="donacije">
             <p class="donacije__naslov">Pomozite nam graditi ranč</p>
             <p>Svaka donacija ide u izgradnju ranča i brigu o konjima.</p>
-            <!-- Stranica s podacima za donacije još ne postoji; poveznica će voditi na nju kad je udruga pošalje. -->
-            <a class="gumb" href="#ranc">Donacije</a>
+            <a class="gumb" href="#donacije" data-donacije-otvori>Donacije</a>
           </div>
         </div>
       </section>
@@ -244,6 +243,47 @@
       </div>
     </section>
   </main>
+
+  <dialog class="donacije-prozor" id="donacije" aria-labelledby="donacije-naslov" data-donacije>
+    <form method="dialog">
+      <button class="donacije-prozor__zatvori" type="submit" aria-label="Zatvori">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </form>
+    <div class="donacije-prozor__vrh">
+      <div>
+        <h2 class="donacije-prozor__naslov" id="donacije-naslov">Skenirajte za uplatu</h2>
+        <p>Svaka donacija ide u izgradnju ranča i brigu o konjima. Hvala vam!</p>
+      </div>
+      <img class="donacije-prozor__konj" src="assets/img/donacije-konj.webp" width="474" height="526" alt="">
+    </div>
+    <figure class="donacije-prozor__barkod">
+      <img src="assets/img/donacije-barkod.png" width="1446" height="393" alt="Barkod za uplatu donacije udruzi Vis Solis">
+    </figure>
+    <div class="donacije-prozor__nacini">
+      <section class="donacije-prozor__nacin donacije-prozor__nacin--racunalo">
+        <h3>Gledate na računalu?</h3>
+        <ol>
+          <li>Otvorite aplikaciju svoje banke na mobitelu.</li>
+          <li>Odaberite plaćanje skeniranjem (na primjer „Slikaj i plati”).</li>
+          <li>Usmjerite kameru na barkod, upišite iznos i potvrdite.</li>
+        </ol>
+      </section>
+      <section class="donacije-prozor__nacin donacije-prozor__nacin--mobitel">
+        <h3>Gledate na mobitelu?</h3>
+        <ol>
+          <li>Spremite barkod u galeriju.</li>
+          <li>U aplikaciji banke odaberite plaćanje skeniranjem, pa učitavanje slike iz galerije.</li>
+          <li>Upišite iznos i potvrdite.</li>
+        </ol>
+        <a class="gumb gumb--mali" href="assets/img/donacije-barkod.png" download="Vis-Solis-donacija-barkod.png" data-donacije-spremi>Spremi barkod</a>
+      </section>
+    </div>
+    <section class="donacije-prozor__rucno" data-donacije-rucno hidden>
+      <h3>Ili uplatite ručno</h3>
+      <dl data-donacije-podaci></dl>
+    </section>
+  </dialog>
 
   <footer class="podnozje">
     <div class="spremnik">

@@ -176,3 +176,185 @@
   margin-top: 0.5rem;
   color: var(--krem);
 }
+
+/* Prozor za donacije (o-nama.html) */
+
+.donacije-prozor {
+  width: min(40rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+  border: 0;
+  border-radius: var(--zaobljenje);
+  background: var(--krem);
+  color: var(--tekst);
+  box-shadow: 0 1.5rem 4rem rgba(43, 36, 32, 0.35);
+  overflow-y: auto;
+}
+.donacije-prozor::backdrop {
+  background: rgba(43, 36, 32, 0.6);
+}
+.donacije-prozor[open] {
+  animation: donacije-ulaz 0.35s var(--krivulja);
+}
+@keyframes donacije-ulaz {
+  from { opacity: 0; transform: translateY(1rem); }
+}
+/* Bez JavaScripta prozor se otvara kao obični dio stranice. */
+.donacije-prozor:target:not([open]) {
+  display: block;
+  position: static;
+  margin: 2rem auto;
+}
+
+.donacije-prozor__zatvori {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--pijesak);
+  color: var(--tekst);
+  cursor: pointer;
+}
+.donacije-prozor__zatvori:hover {
+  background: var(--bordo);
+  color: var(--krem);
+}
+
+.donacije-prozor__vrh {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 1rem;
+  padding-right: 2.5rem;
+}
+.donacije-prozor__naslov {
+  font-family: var(--font-naslov);
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  line-height: 1.1;
+  color: var(--bordo);
+  margin-bottom: 0.5rem;
+}
+.donacije-prozor__konj {
+  width: clamp(5.5rem, 22vw, 8.5rem);
+  height: auto;
+  margin-bottom: -1.25rem;
+  transform: rotate(4deg);
+}
+
+.donacije-prozor__barkod {
+  position: relative;
+  margin: 0 0 1.5rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--linija);
+}
+.donacije-prozor__barkod img {
+  width: 100%;
+  height: auto;
+}
+
+.donacije-prozor__nacini {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.donacije-prozor__nacin {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background: var(--pijesak);
+}
+.donacije-prozor h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.donacije-prozor ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+.donacije-prozor ol li + li {
+  margin-top: 0.25rem;
+}
+.donacije-prozor__nacin .gumb {
+  justify-self: start;
+  margin-top: 0.25rem;
+  color: var(--krem);
+}
+
+.donacije-prozor__rucno {
+  margin-top: 1.25rem;
+}
+.donacije-prozor__rucno dl {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+}
+.donacije-prozor__rucno dl > div {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--linija);
+}
+.donacije-prozor__rucno dt {
+  color: var(--prigusen);
+  font-size: 0.875rem;
+}
+.donacije-prozor__rucno dd {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.donacije-prozor__kopiraj {
+  min-height: 2.25rem;
+  padding: 0.25rem 0.9rem;
+  border: 1px solid var(--bordo);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--bordo);
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+.donacije-prozor__kopiraj:hover {
+  background: var(--bordo);
+  color: var(--krem);
+}
+
+/* Na mobitelu je važniji način s galerijom, pa ide prvi. */
+@media (max-width: 40rem) {
+  .donacije-prozor__nacini {
+    grid-template-columns: 1fr;
+  }
+  .donacije-prozor__rucno dl > div {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
+@media (pointer: coarse) {
+  .donacije-prozor__nacin--mobitel {
+    order: -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .donacije-prozor[open] {
+    animation: none;
+  }
+}
