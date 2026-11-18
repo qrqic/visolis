@@ -51,7 +51,7 @@ Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json
 - [ ] Novosti o izgradnji ranča: što je napravljeno i što slijedi (`o-nama.html`).
 - [ ] Kako doći: parking, autobus, prilaz za invalidska kolica.
 - [ ] Projekti i suradnje koje se smiju navesti („Siguran korak uz konja”, „Konj za svakoga”, drugi partneri).
-- [ ] Želi li udruga podatke za donacije na stranici.
+- [ ] Podaci za donacije (IBAN, primatelj, opis plaćanja). Gumb "Donacije" u dijelu Izgradnja ranča (`o-nama.html`) zasad ne vodi nikamo.
 - [ ] Želi li povremenu najavu "Aktualno" i tko javlja tekst.
 
 ## Odluke koje su donesene bez izričite potvrde
