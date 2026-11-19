@@ -43,7 +43,8 @@ const slike = [
   // Tim: portreti s Higgsfielda (docs/higgsfield.md), izrezani za trokute šesterokuta (širina : visina = 1,1547).
   // Trokuti s vrhom dolje: lice u gornjoj trećini; s vrhom gore: lice niže. Logo na majici ostaje izvan kadra.
   { izvor: 'tim/hf-viktorija.png', ime: 'tim-viktorija', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 187, top: 90, width: 646, height: 560 } },
-  { izvor: 'tim/hf-suncica.png', ime: 'tim-suncica', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 192, top: 75, width: 646, height: 560 } },
+  // Sunčica: prava fotografija na konju (19. 11. 2026.), pozadina zamućena alatom alati/suncica-pozadina.py.
+  { izvor: 'tim/suncica-konj-mutno.jpg', ime: 'tim-suncica-v2', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 385, top: 176, width: 620, height: 537 } },
   { izvor: 'tim/hf-josipa.png', ime: 'tim-josipa', omjer: 1.1547, sirine: [400, 600], jpg: 600, izrez: { left: 207, top: 85, width: 646, height: 560 } },
   // Gabrijela: prava fotografija, s Higgsfielda uklonjene osobe oko nje i zamućena pozadina (docs/higgsfield.md);
   // gore je dodano 200 px zamućene pozadine (zrcaljeni vrh slike), da vrh trokuta ne reže naočale.

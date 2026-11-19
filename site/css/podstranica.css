@@ -358,3 +358,48 @@
     animation: none;
   }
 }
+
+/* Popis dokumenata (dokumenti.html) */
+
+.dokumenti {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dokument {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--bordo);
+  border-radius: 0 var(--zaobljenje) var(--zaobljenje) 0;
+  background: var(--pijesak);
+}
+.dokument > div {
+  flex: 1 1 18rem;
+}
+.dokument__naslov {
+  font-family: var(--font-naslov);
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+.dokument__opis {
+  color: var(--prigusen);
+  font-size: 0.9375rem;
+}
+.pod-blok__tekst .dokument .gumb {
+  color: var(--krem);
+}
+.dokument__velicina {
+  opacity: 0.75;
+  font-size: 0.8125rem;
+}
+.dokumenti__napomena {
+  margin-top: 1rem;
+  color: var(--prigusen);
+  font-size: 0.9375rem;
+}

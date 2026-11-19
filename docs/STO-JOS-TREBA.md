@@ -11,7 +11,7 @@ Prije konačne objave nijedan ne smije ostati.
 
 ## Fotografije (sve bez djece)
 
-- [x] Portreti svih šest članica u šesterokutu tima. Portrete izradio je Higgsfield prema pravim fotografijama (vidi `docs/higgsfield.md`); naručitelj ih je odobrio 17. 11. 2026. Slike su u `izvori/tim/`, izrezi u `alati/obradi-slike.mjs`.
+- [x] Portreti svih šest članica u šesterokutu tima. Portrete izradio je Higgsfield prema pravim fotografijama (vidi `docs/higgsfield.md`); naručitelj ih je odobrio 17. 11. 2026. Slike su u `izvori/tim/`, izrezi u `alati/obradi-slike.mjs`. Sunčica je 19. 11. 2026. dobila pravu fotografiju na konju (pozadina zamućena alatom `alati/suncica-pozadina.py`).
 - [x] Hipoterapija na početnoj (19. 11. 2026.): članice u bordo majicama vode konja, lice korisnice zamućeno. Aktivnosti na početnoj: djevojčica na poniju, profil zamućen. Pravilo naručitelja: članice u bordo majicama ne zamućuju se.
 - [ ] Aktivnosti pomoću konja: rad s tla ili poligon (`aktivnosti-pomocu-konja.html`).
 - [ ] Po jedna fotografija svakog konja. Zasad ih imaju Anabela i tri konja.
@@ -33,7 +33,8 @@ Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json
 
 ## Nove stranice (17. 11. 2026.)
 
-- [ ] **Dokumenti** (`dokumenti.html`): javni dokumenti udruge. Najavljen statut udruge (19. 11. 2026.), još nije stigao.
+- [x] **Dokumenti** (`dokumenti.html`, PDF-ovi u `site/dokumenti/`): statut (2024.) i zapisnik s redovne skupštine 2025. (19. 11. 2026.). Zapisnik je objavljen **bez 4. stranice** (popis 25 prisutnih članova s imenom i prezimenom) – treba potvrda udruge smije li i ta stranica javno.
+- [ ] Zapisnici s ostalih redovnih skupština (udruga ih traži).
 - [ ] **Novosti** (`novosti.html`): zasad samo poveznice na društvene mreže. Prvo događanje: advent 19. 12. 2026. (treba vrijeme, mjesto i kratak opis).
 
 ## Tim – treba potvrditi
