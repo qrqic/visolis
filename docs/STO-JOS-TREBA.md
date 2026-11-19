@@ -12,7 +12,7 @@ Prije konačne objave nijedan ne smije ostati.
 ## Fotografije (sve bez djece)
 
 - [x] Portreti svih šest članica u šesterokutu tima. Portrete izradio je Higgsfield prema pravim fotografijama (vidi `docs/higgsfield.md`); naručitelj ih je odobrio 17. 11. 2026. Slike su u `izvori/tim/`, izrezi u `alati/obradi-slike.mjs`.
-- [ ] Hipoterapija u tijeku: terapeut, vodič i konj (`hipoterapija.html`).
+- [x] Hipoterapija na početnoj (19. 11. 2026.): članice u bordo majicama vode konja, lice korisnice zamućeno. Aktivnosti na početnoj: djevojčica na poniju, profil zamućen. Pravilo naručitelja: članice u bordo majicama ne zamućuju se.
 - [ ] Aktivnosti pomoću konja: rad s tla ili poligon (`aktivnosti-pomocu-konja.html`).
 - [ ] Po jedna fotografija svakog konja. Zasad ih imaju Anabela i tri konja.
 - [x] Logo udruge stigao je 17. 11. 2026. (PDF, vektorski; `izvori/logo/`). Puni logo je u podnožju (`site/assets/img/logo-udruge.svg`).
@@ -33,8 +33,8 @@ Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json
 
 ## Nove stranice (17. 11. 2026.)
 
-- [ ] **Dokumenti** (`dokumenti.html`): javni dokumenti udruge. Čeka dokumente (PDF).
-- [ ] **Novosti** (`novosti.html`): zasad samo poveznice na društvene mreže. Treba odlučiti kako će se novosti dodavati.
+- [ ] **Dokumenti** (`dokumenti.html`): javni dokumenti udruge. Najavljen statut udruge (19. 11. 2026.), još nije stigao.
+- [ ] **Novosti** (`novosti.html`): zasad samo poveznice na društvene mreže. Prvo događanje: advent 19. 12. 2026. (treba vrijeme, mjesto i kratak opis).
 
 ## Tim – treba potvrditi
 

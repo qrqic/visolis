@@ -24,6 +24,10 @@ POSLOVI = {
     "obiteljski-dan/vodenje-konja.jpg": ("obiteljski-dan/vodenje-anonimno.jpg", 14, [(1110, 738, 78, 84)]),
     # Hipoterapija (početna): lice dječaka na konju.
     "slike/hipoterapija.jpg": ("slike/hipoterapija-anonimno.jpg", 12, [(620, 466, 52, 60)]),
+    # Hipoterapija (početna, 19. 11. 2026.): lice korisnice na konju; članice u bordo majicama ostaju.
+    "hipoterapija/pocetna-krava.jpg": ("hipoterapija/pocetna-krava-anonimno.jpg", 12, [(893, 262, 40, 52)]),
+    # Aktivnosti (početna, 19. 11. 2026.): profil djevojčice na poniju.
+    "aktivnosti/poni-cunj.jpg": ("aktivnosti/poni-cunj-anonimno.jpg", 10, [(866, 640, 36, 48)]),
     # Izgradnja ranča (O nama): registarska tablica vozila.
     "slike/ranc-nadstresnica.jpg": ("slike/ranc-nadstresnica-anonimno.jpg", 24, [(446, 1475, 44, 34)], 6),
 }

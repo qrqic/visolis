@@ -31,6 +31,10 @@ const slike = [
   // Hipoterapija u tijeku (početna); lice dječaka zamućeno alatom alati/obiteljski-dan.py.
   { izvor: 'slike/hipoterapija-anonimno.jpg', ime: 'hipoterapija-termin', sirine: [640, 1080], jpg: 1080 },
   { izvor: 'DSC0002.jpg', ime: 'aktivnosti-galop', ...FOTOGRAFIJA },
+  // Početna (19. 11. 2026.): hipoterapija s članicama u bordo majicama i jahanje ponija; lica korisnica
+  // zamućena alatom alati/obiteljski-dan.py.
+  { izvor: 'hipoterapija/pocetna-krava-anonimno.jpg', ime: 'hipoterapija-pocetna', sirine: [640, 1200], jpg: 1200, izrez: { left: 0, top: 60, width: 1200, height: 1350 } },
+  { izvor: 'aktivnosti/poni-cunj-anonimno.jpg', ime: 'aktivnosti-poni', sirine: [640, 1200], jpg: 1200, izrez: { left: 0, top: 250, width: 1512, height: 1700 } },
   // Anabela: fotografija ispred kamenog zida.
   { izvor: 'slike/anabela.jpg', ime: 'krdo-anabela', omjer: 0.866, sirine: [480], jpg: 480, izrez: { left: 644, top: 39, width: 900, height: 1039 } },
   { izvor: 'DSC3065.jpg', ime: 'krdo-svijetlosmedi', ...SESTEROKUT, izrez: { left: 690, top: 0, width: 1484, height: 1714 } },
@@ -86,7 +90,10 @@ const slike = [
 
 await mkdir(IZLAZ, { recursive: true });
 
-for (const slika of slike) {
+// Uz imena u naredbenom retku obrađuju se samo te slike, npr.
+//   node alati/obradi-slike.mjs hipoterapija-pocetna
+const odabrane = process.argv.slice(2);
+for (const slika of slike.filter((s) => !odabrane.length || odabrane.includes(s.ime))) {
   const ulaz = path.join(ULAZ, slika.izvor);
   const osnova = () => {
     let cjevovod = sharp(ulaz).rotate();
