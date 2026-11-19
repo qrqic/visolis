@@ -71,7 +71,7 @@ Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json
 
 ## Tehnički
 
-- [ ] **Obrazac** šalje upite preko FormSubmita na udrugavissolis@gmail.com (19. 11. 2026.). Prvi upit šalje na taj e-mail poveznicu "Activate Form" koju treba kliknuti; do tada upit ne stiže.
+- [ ] **Obrazac** šalje upite skriptom `site/posalji.php` na hostingu udrugavissolis.hr (PHP `mail()`, pošiljatelj noreply@udrugavissolis.hr) na udrugavissolis@gmail.com (19. 11. 2026.). Treba potvrditi da prvi probni upit stiže (i provjeriti neželjenu poštu). Na GitHub Pages obrazac ne šalje (nema PHP-a).
 - [x] **Pravila privatnosti** odobrena i javna (19. 11. 2026.); rok čuvanja upita: najduže godinu dana od posljednjeg kontakta.
 - [ ] **Domena.** Stranica je zasad na https://qrqic.github.io/visolis/
 - [ ] **Font naslova.** Privremeno Lora; specifikacija predviđa Fraunces.

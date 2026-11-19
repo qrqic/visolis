@@ -127,7 +127,7 @@ console.log('\nObrazac');
   provjeri((await stranica.locator('[data-greska]:visible').count()) === 0, 'ispravan unos uklanja greške');
   await zatvori();
 }
-for (const [opis, status, tijelo] of [['uspjeh', 200, '{"success":"true"}'], ['neuspjeh', 500, '{}'], ['neaktiviran obrazac', 200, '{"success":"false","message":"This form needs Activation."}']]) {
+for (const [opis, status, tijelo] of [['uspjeh', 200, '{"success":"true"}'], ['neuspjeh', 500, '{}'], ['odbijen upit', 200, '{"success":false,"message":"Nedostaje ime, kontakt ili privola."}']]) {
   let poslano = null;
   const { stranica, zatvori } = await otvori('index.html', {
     priprema: async (s) => {
@@ -146,7 +146,6 @@ for (const [opis, status, tijelo] of [['uspjeh', 200, '{"success":"true"}'], ['n
   if (opis === 'uspjeh') {
     await stranica.waitForSelector('[data-obrazac-uspjeh]:visible');
     provjeri(poslano?.ime === 'Ana Anić' && poslano?.kontakt === 'ana@example.com' && !('web' in poslano), `${opis}: poslani su ime i kontakt, bez skrivenog polja`);
-    provjeri(poslano?._replyto === 'ana@example.com' && Boolean(poslano?._subject), `${opis}: naslov e-maila i adresa za odgovor`);
     provjeri(await stranica.locator('[data-obrazac]').isHidden(), `${opis}: obrazac zamjenjuje poruka zahvale`);
     await snimi(stranica, 'obrazac-uspjeh.png', false);
   } else {
