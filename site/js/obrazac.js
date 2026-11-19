@@ -96,12 +96,17 @@ export function pokreniObrazac() {
     gumb.disabled = true;
     try {
       const { web, privola, ...zaSlanje } = podaci;
+      // Ako je kontakt e-mail, odgovor na poruku ide izravno posjetitelju.
+      const odgovorNa = OBLIK_EPOSTE.test(podaci.kontakt) ? { _replyto: podaci.kontakt } : {};
       const odgovor = await fetch(adresaSlanja, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...dodatnaPolja, ...zaSlanje, privola: 'da' }),
+        body: JSON.stringify({ ...dodatnaPolja, ...odgovorNa, ...zaSlanje, privola: 'da' }),
       });
       if (!odgovor.ok) throw new Error(`Usluga je odgovorila statusom ${odgovor.status}`);
+      // FormSubmit i na neuspjeh (npr. obrazac još nije aktiviran) odgovara statusom 200, s "success": "false".
+      const rezultat = await odgovor.json().catch(() => ({}));
+      if (String(rezultat.success) === 'false') throw new Error(rezultat.message || 'Usluga nije prihvatila upit');
       prikaziUspjeh();
     } catch {
       prikaziPoruku(`Upit nije poslan. Pokušajte ponovno ili nas nazovite na ${telefon}. Vaš tekst je ostao u obrascu.`);

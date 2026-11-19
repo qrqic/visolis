@@ -110,7 +110,9 @@ for (const staza of STRANICE) {
 // === 3. Obrazac ===
 console.log('\nObrazac');
 {
-  const { stranica, zatvori } = await otvori('index.html');
+  const { stranica, zatvori } = await otvori('index.html', {
+    priprema: (s) => sPostavkama(s, (izvor) => izvor.replace(/adresaSlanja: '[^']*'/, "adresaSlanja: ''")),
+  });
   await stranica.click('[data-obrazac] [type=submit]');
   const vidljivih = await stranica.locator('[data-greska]:visible').count();
   provjeri(vidljivih === 3, `prazan obrazac prikazuje tri greške (prikazano: ${vidljivih})`);
@@ -125,14 +127,14 @@ console.log('\nObrazac');
   provjeri((await stranica.locator('[data-greska]:visible').count()) === 0, 'ispravan unos uklanja greške');
   await zatvori();
 }
-for (const [opis, status] of [['uspjeh', 200], ['neuspjeh', 500]]) {
+for (const [opis, status, tijelo] of [['uspjeh', 200, '{"success":"true"}'], ['neuspjeh', 500, '{}'], ['neaktiviran obrazac', 200, '{"success":"false","message":"This form needs Activation."}']]) {
   let poslano = null;
   const { stranica, zatvori } = await otvori('index.html', {
     priprema: async (s) => {
-      await sPostavkama(s, (izvor) => izvor.replace("adresaSlanja: ''", "adresaSlanja: 'https://obrasci.test/upit'"));
+      await sPostavkama(s, (izvor) => izvor.replace(/adresaSlanja: '[^']*'/, "adresaSlanja: 'https://obrasci.test/upit'"));
       await s.route('https://obrasci.test/upit', (ruta) => {
         poslano = ruta.request().postDataJSON();
-        ruta.fulfill({ status, contentType: 'application/json', body: '{}', headers: { 'Access-Control-Allow-Origin': '*' } });
+        ruta.fulfill({ status, contentType: 'application/json', body: tijelo, headers: { 'Access-Control-Allow-Origin': '*' } });
       });
     },
   });
@@ -141,9 +143,10 @@ for (const [opis, status] of [['uspjeh', 200], ['neuspjeh', 500]]) {
   await stranica.fill('[name=poruka]', 'Zanima me termin.');
   await stranica.check('[name=privola]');
   await stranica.click('[data-obrazac] [type=submit]');
-  if (status === 200) {
+  if (opis === 'uspjeh') {
     await stranica.waitForSelector('[data-obrazac-uspjeh]:visible');
     provjeri(poslano?.ime === 'Ana Anić' && poslano?.kontakt === 'ana@example.com' && !('web' in poslano), `${opis}: poslani su ime i kontakt, bez skrivenog polja`);
+    provjeri(poslano?._replyto === 'ana@example.com' && Boolean(poslano?._subject), `${opis}: naslov e-maila i adresa za odgovor`);
     provjeri(await stranica.locator('[data-obrazac]').isHidden(), `${opis}: obrazac zamjenjuje poruka zahvale`);
     await snimi(stranica, 'obrazac-uspjeh.png', false);
   } else {
@@ -157,7 +160,7 @@ for (const [opis, status] of [['uspjeh', 200], ['neuspjeh', 500]]) {
   let zahtjeva = 0;
   const { stranica, zatvori } = await otvori('index.html', {
     priprema: async (s) => {
-      await sPostavkama(s, (izvor) => izvor.replace("adresaSlanja: ''", "adresaSlanja: 'https://obrasci.test/upit'"));
+      await sPostavkama(s, (izvor) => izvor.replace(/adresaSlanja: '[^']*'/, "adresaSlanja: 'https://obrasci.test/upit'"));
       await s.route('https://obrasci.test/upit', (ruta) => {
         zahtjeva += 1;
         ruta.fulfill({ status: 200, body: '{}' });

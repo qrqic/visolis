@@ -33,7 +33,7 @@ Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json
 
 ## Nove stranice (17. 11. 2026.)
 
-- [x] **Dokumenti** (`dokumenti.html`, PDF-ovi u `site/dokumenti/`): statut (2024.) i zapisnik s redovne skupštine 2025. (19. 11. 2026.). Zapisnik je objavljen **bez 4. stranice** (popis 25 prisutnih članova s imenom i prezimenom) – treba potvrda udruge smije li i ta stranica javno.
+- [x] **Dokumenti** (`dokumenti.html`, PDF-ovi u `site/dokumenti/`): statut (2024.) i zapisnik s redovne skupštine 2025. (19. 11. 2026.). Zapisnik je objavljen cijeli, s popisom prisutnih članova (odluka naručitelja 19. 11. 2026.).
 - [ ] Zapisnici s ostalih redovnih skupština (udruga ih traži).
 - [ ] **Novosti** (`novosti.html`): zasad samo poveznice na društvene mreže. Prvo događanje: advent 19. 12. 2026. (treba vrijeme, mjesto i kratak opis).
 
@@ -41,10 +41,10 @@ Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json
 
 - [x] **Tri ili četiri osnivačice?** Prema tekstu udruge četiri. U prvom tekstu osnivačice su Viktorija, Sunčica i Gabrijela, a u priči udruge i Lorena. Na stranici pišu četiri.
 - [x] **Šesta članica:** Mia (17. 11. 2026.).
-- [ ] Pišu li se samo imena ili i prezimena. Sada su samo imena.
-- [ ] Sunčica: osnovno zvanje, gdje i kada je završila edukaciju iz hipoterapije (`hipoterapija.html`, Tko vodi hipoterapiju).
-- [ ] Sudjeluje li u hipoterapiji i fizioterapeutkinja Josipa.
-- [ ] Naziv radionica: na stranici piše "Emmett", udruga je napisala "Emmet".
+- [x] Samo imena, bez prezimena (19. 11. 2026.).
+- [x] Sunčica: ne piše se ništa dodatno (19. 11. 2026.).
+- [x] Josipa sudjeluje u hipoterapiji, ali se zasad ne navodi (19. 11. 2026.).
+- [x] Naziv radionica: Emmet (19. 11. 2026.).
 
 ## Tekstovi – treba dopuniti
 
@@ -53,8 +53,8 @@ Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json
 - [ ] Kako doći: parking, autobus, prilaz za invalidska kolica.
 - [ ] Projekti i suradnje koje se smiju navesti („Siguran korak uz konja”, „Konj za svakoga”, drugi partneri).
 - [x] Gumb "Donacije" (`o-nama.html`, Izgradnja ranča) otvara prozor s barkodom za plaćanje s letka udruge (19. 11. 2026.). Na mobitelu se barkod sprema u galeriju i učitava u aplikaciju banke.
-- [ ] Podaci za ručnu uplatu (IBAN, model, poziv na broj): upisati u `postavke.donacije` u `site/js/postavke.js`; prozor ih tada sam prikaže s gumbima "Kopiraj". Barkod se ovdje nije mogao pročitati, pa ga treba jednom probno skenirati aplikacijom banke.
-- [ ] Instagram: na letku piše @ranch.vis_solis, a na stranici je poveznica na udruga_vis_solis. Koji je točan?
+- [x] Barkod radi (potvrdio naručitelj 19. 11. 2026.). Podaci za ručnu uplatu nisu potrebni; mogu se dodati: upisati u `postavke.donacije` u `site/js/postavke.js`; prozor ih tada sam prikaže s gumbima "Kopiraj". Barkod se ovdje nije mogao pročitati, pa ga treba jednom probno skenirati aplikacijom banke.
+- [x] Instagram: na letku piše @ranch.vis_solis, na stranici je udruga_vis_solis; naručitelj je 19. 11. 2026. rekao da se ne mijenja.
 - [ ] Želi li povremenu najavu "Aktualno" i tko javlja tekst.
 
 ## Odluke koje su donesene bez izričite potvrde
@@ -71,8 +71,8 @@ Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json
 
 ## Tehnički
 
-- [ ] **Obrazac još ne šalje upite.** Treba odabrati uslugu za obrasce i upisati njezinu adresu u `postavke.obrazac.adresaSlanja`, a naziv usluge u pravila privatnosti. Do tada obrazac upućuje na telefon i e-mail.
-- [ ] **Pravila privatnosti:** nacrt treba pročitati predsjednica udruge; nedostaje rok čuvanja upita.
+- [ ] **Obrazac** šalje upite preko FormSubmita na udrugavissolis@gmail.com (19. 11. 2026.). Prvi upit šalje na taj e-mail poveznicu "Activate Form" koju treba kliknuti; do tada upit ne stiže.
+- [x] **Pravila privatnosti** odobrena i javna (19. 11. 2026.); rok čuvanja upita: najduže godinu dana od posljednjeg kontakta.
 - [ ] **Domena.** Stranica je zasad na https://qrqic.github.io/visolis/
 - [ ] **Font naslova.** Privremeno Lora; specifikacija predviđa Fraunces.
 - [ ] **Fontovi u WOFF2.** Sada su WOFF, koji je nešto veći.
