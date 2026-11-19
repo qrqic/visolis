@@ -8,7 +8,7 @@
 import { createRequire } from 'node:module';
 import { createServer } from 'node:http';
 import { readFile, mkdir } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -23,7 +23,9 @@ const VRSTE = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 
 // --- mali poslužitelj statičnih datoteka ---
 const posluzitelj = createServer(async (zahtjev, odgovor) => {
   const staza = decodeURIComponent(new URL(zahtjev.url, 'http://x').pathname);
-  const datoteka = path.join(SITE, staza === '/' ? 'index.html' : staza);
+  let datoteka = path.join(SITE, staza === '/' ? 'index.html' : staza);
+  // Adrese bez nastavka (/hipoterapija) vode na hipoterapija.html, kao na hostingu (.htaccess).
+  if (!(existsSync(datoteka) && statSync(datoteka).isFile()) && existsSync(datoteka + '.html')) datoteka += '.html';
   if (!datoteka.startsWith(SITE) || !existsSync(datoteka)) {
     odgovor.writeHead(404).end('Nema');
     return;
@@ -466,7 +468,7 @@ for (const staza of STRANICE) {
 }
 {
   const { stranica, zatvori } = await otvori('index.html');
-  provjeri((await stranica.locator('#o-nama a[href="o-nama.html#tim"]').count()) === 1, 'početna: O nama vodi na tim');
+  provjeri((await stranica.locator('#o-nama a[href="o-nama#tim"]').count()) === 1, 'početna: O nama vodi na tim');
   provjeri((await stranica.locator('#kontakt a[href="mailto:udrugavissolis@gmail.com"]').count()) === 1, 'početna: u kontaktu je prava e-mail adresa');
   provjeri((await stranica.locator('#ponuda .popis-crtice li').count()) === 5, 'početna: "Ostalo u našoj ponudi" ima pet aktivnosti');
   provjeri((await stranica.locator('#ponuda .ponuda-dan img').count()) === 4, 'početna: uz ponudu su četiri fotografije s obiteljskog dana');

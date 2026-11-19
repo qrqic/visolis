@@ -33,7 +33,7 @@ Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json
 
 ## Nove stranice (17. 11. 2026.)
 
-- [x] **Dokumenti** (`dokumenti.html`, PDF-ovi u `site/dokumenti/`): statut (2024.) i zapisnik s redovne skupštine 2025. (19. 11. 2026.). Zapisnik je objavljen cijeli, s popisom prisutnih članova (odluka naručitelja 19. 11. 2026.).
+- [x] **Dokumenti** (`dokumenti.html`, PDF-ovi u `site/assets/dokumenti/`): statut (2024.) i zapisnik s redovne skupštine 2025. (19. 11. 2026.). Zapisnik je objavljen cijeli, s popisom prisutnih članova (odluka naručitelja 19. 11. 2026.).
 - [ ] Zapisnici s ostalih redovnih skupština (udruga ih traži).
 - [ ] **Novosti** (`novosti.html`): zasad samo poveznice na društvene mreže. Prvo događanje: advent 19. 12. 2026. (treba vrijeme, mjesto i kratak opis).
 

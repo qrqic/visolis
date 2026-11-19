@@ -38,6 +38,8 @@ const posluzitelj = createServer(async (zahtjev, odgovor) => {
     return;
   }
   if (existsSync(datoteka) && statSync(datoteka).isDirectory()) datoteka = path.join(datoteka, 'index.html');
+  // Adrese bez nastavka (/hipoterapija) vode na hipoterapija.html, kao na hostingu (.htaccess).
+  if (!(existsSync(datoteka) && statSync(datoteka).isFile()) && existsSync(datoteka + '.html')) datoteka += '.html';
   // Adrese bez nastavka, npr. /hipoterapija, kao što će raditi nakon objave.
   if (!existsSync(datoteka) && existsSync(`${datoteka}.html`)) datoteka = `${datoteka}.html`;
   if (!existsSync(datoteka)) {
