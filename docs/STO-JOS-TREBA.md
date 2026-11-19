@@ -1,6 +1,6 @@
 # Što još treba
 
-Stanje nakon odgovora udruge od 16. 11. 2026.
+Stanje nakon provjere 19. 11. 2026.
 
 Na stranici su otvorena mjesta označena na dva načina:
 
@@ -13,8 +13,8 @@ Prije konačne objave nijedan ne smije ostati.
 
 - [x] Portreti svih šest članica u šesterokutu tima. Portrete izradio je Higgsfield prema pravim fotografijama (vidi `docs/higgsfield.md`); naručitelj ih je odobrio 17. 11. 2026. Slike su u `izvori/tim/`, izrezi u `alati/obradi-slike.mjs`. Sunčica je 19. 11. 2026. dobila pravu fotografiju na konju (pozadina zamućena alatom `alati/suncica-pozadina.py`).
 - [x] Hipoterapija na početnoj (19. 11. 2026.): članice u bordo majicama vode konja, lice korisnice zamućeno. Aktivnosti na početnoj: djevojčica na poniju, profil zamućen. Pravilo naručitelja: članice u bordo majicama ne zamućuju se.
-- [ ] Aktivnosti pomoću konja: rad s tla ili poligon (`aktivnosti-pomocu-konja.html`).
-- [ ] Po jedna fotografija svakog konja. Zasad ih imaju Anabela i tri konja.
+- [x] Aktivnosti pomoću konja: rad s tla ili poligon (`aktivnosti-pomocu-konja.html`).
+- [x] Po jedna fotografija svakog konja (svih 13, 18. 11. 2026.).
 - [x] Logo udruge stigao je 17. 11. 2026. (PDF, vektorski; `izvori/logo/`). Puni logo je u podnožju (`site/assets/img/logo-udruge.svg`).
 - [x] U zaglavlju je mali logo udruge (`site/assets/img/logo-znak.svg`).
 
@@ -39,8 +39,8 @@ Podaci za svih 13 konja i ponija upisani su 17. 11. 2026. u `site/data/krdo.json
 
 ## Tim – treba potvrditi
 
-- [ ] **Tri ili četiri osnivačice?** U prvom tekstu osnivačice su Viktorija, Sunčica i Gabrijela, a u priči udruge i Lorena. Na stranici pišu četiri.
-- [ ] **Postoji li šesta članica?** Naručitelj je spomenuo šest članova, a opisano ih je pet.
+- [x] **Tri ili četiri osnivačice?** Prema tekstu udruge četiri. U prvom tekstu osnivačice su Viktorija, Sunčica i Gabrijela, a u priči udruge i Lorena. Na stranici pišu četiri.
+- [x] **Šesta članica:** Mia (17. 11. 2026.).
 - [ ] Pišu li se samo imena ili i prezimena. Sada su samo imena.
 - [ ] Sunčica: osnovno zvanje, gdje i kada je završila edukaciju iz hipoterapije (`hipoterapija.html`, Tko vodi hipoterapiju).
 - [ ] Sudjeluje li u hipoterapiji i fizioterapeutkinja Josipa.
